@@ -1,0 +1,184 @@
+import React, { useEffect } from 'react';
+import Logo from '../../Assets/images/logo.png';
+import Bg from '../../Assets/images/bg.jpg';
+import trans from '../../Assets/images/TRANSFERS.png';
+import { connect } from 'react-redux';
+function Home(props) {
+    const { locale } = props;
+    return (
+        <>
+            <div class="section mcb-section" id="features"
+                style={{ paddingTop: 70, paddingBottom: 50, backgroundImage: "url(content/app2/images/home_app2_sep.png)", backgroundRepeat: "no-repeat", backgroundPosition: "center top" }}>
+                <div class="section_wrapper mcb-section-inner">
+                    <div class="wrap mcb-wrap one  valign-top clearfix">
+                        <div class="mcb-wrap-inner">
+                            <div class="column mcb-column one column_column">
+                                <div class="column_attr align_center">
+                                    <h2>{locale.locale.welcome}</h2>
+                                </div>
+                            </div>
+                            <div class="column mcb-column one column_divider ">
+                                <hr class="no_line" style={{ margin: "0 auto 30px" }} />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="wrap mcb-wrap one-second  valign-top clearfix" style={{ padding: "30px 2% 0" }}>
+                        <div class="mcb-wrap-inner">
+                            <div class="column mcb-column two-third column_column">
+                                <div class="column_attr">
+                                    <h3>{locale.locale.creator}</h3>
+                                    <hr class="no_line" style={{ margin: "0 auto 25px" }} />
+                                    <p>
+                                        Cras viverra tellus at vestibulum varius. Nam consequat ullamcorper
+                                        lectus ut porta? Nulla nisl odio, luctus at quam vel, elementum
+                                        feugiat magna. Fusce at sed. Curabitur nec ante tincidunt. Integer
+                                        viverra suscipit sem, aliquam pulvinar turpis feugiat quis.
+                                                </p>
+                                    <p style={{ color: "#9a9ba1" }}>
+                                        Euismod ante et, feugiat nulla. Aliquam erat volutpat. Maecenas
+                                        porta sollicitudin ipsum sit amet. Interdum et malesuada fames.
+                                                </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="wrap mcb-wrap one-second  valign-top clearfix" style={{ padding: "0 0 0 4%" }}>
+                        <div class="mcb-wrap-inner">
+                            <div class="column mcb-column one column_image ">
+                                <div
+                                    class="image_frame image_item no_link scale-with-grid alignright no_border">
+                                    <div class="image_wrapper"><img class="scale-with-grid"
+                                        src={Logo} alt="" width="460"
+                                        height="401" /> </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="wrap mcb-wrap divider  valign-top clearfix">
+                        <div class="mcb-wrap-inner"></div>
+                    </div>
+                    <div class="wrap mcb-wrap one-second  valign-top clearfix" style={{ padding: "0 4% 0 0" }}>
+                        <div class="mcb-wrap-inner">
+                            <div class="column mcb-column one column_image ">
+                                <div class="image_frame image_item no_link scale-with-grid no_border">
+                                    <div class="image_wrapper"><img class="scale-with-grid"
+                                        src="https://img1.wsimg.com/isteam/ip/fe3a6801-4252-4a60-ac21-2964f3b7f4cd/20210526_145041_0000.png" alt="" width="460"
+                                        height="401" /> </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="wrap mcb-wrap one-second  valign-top clearfix" style={{ padding: "30px 2% 0" }}>
+                        <div class="mcb-wrap-inner">
+
+                            <div class="column mcb-column two-third column_column">
+                                <div class="column_attr">
+                                    <h3>{locale.locale.swap}</h3>
+                                    <hr class="no_line" style={{ margin: "0 auto 25px" }} />
+                                    <p>
+                                        Sed pretium dolor at lobortis blandit. Praesent imperdiet id lacus
+                                        ut tincidunt. Proin egestas urna dui; id dictum diam posuere ac?
+                                        Aliquam vestibulum volutpat. Proin convallis ipsum elit. Nulla eget
+                                        erat maximus, laoreet.
+                                                </p>
+                                    <p style={{ color: "#9a9ba1" }}>
+                                        Aliquam eget cursus neque. Praesent id quam molestie, euismod
+                                        posuere. Aliquam tempus eleifend odio at auctor. Etiam sollicitudin
+                                        elit at rhoncus ac ante ipsum.
+                                                </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section mcb-section" id="new" style={{ paddingTop: 90, paddingBottom: 50 }}
+                data-parallax="3d"><img class="mfn-parallax"
+                    src={Bg} alt="parallax background" />
+                <div class="section_wrapper mcb-section-inner">
+                    <div class="wrap mcb-wrap one  valign-top clearfix">
+                        <div class="mcb-wrap-inner">
+                            <div class="column mcb-column one column_column">
+                                <div class="column_attr align_center">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="wrap mcb-wrap one  valign-top clearfix">
+                        <div class="mcb-wrap-inner">
+                            <div class="column mcb-column one-third column_column">
+                                <div class="column_attr align_center"
+                                    style={{ backgroundColor: "#070e2e", backgroundImage: "url(content/app2/images/home_app2_box_border.png)", backgroundRepeat: "no-repeat", backgroundPosition: "center top", padding: "10px 5% 30px" }}>
+                                    <div class="image_frame image_item scale-with-grid alignnone no_border">
+                                        <div class="image_wrapper">
+                                            <a href="#">
+                                                <div class="mask"></div><img class="scale-with-grid"
+                                                    src="content/app2/images/home_app2_box1.png" alt=""
+                                                    width="290" height="240" />
+                                            </a>
+                                            <div class="image_links ">
+                                                <a href="#" class="link"><i class="icon-link"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr class="no_line" style={{ margin: "0 auto 20px" }} />
+                                    <h4 style={{ color: "#fff" }}>{locale.locale.holders}</h4>
+                                    <h5 style={{ color: "#fff" }}>987654</h5>
+                                </div>
+                            </div>
+                            <div class="column mcb-column one-third column_column">
+                                <div class="column_attr align_center"
+                                    style={{ backgroundColor: "#070e2e", backgroundImage: "url(content/app2/images/home_app2_box_border.png)", backgroundRepeat: "no-repeat", backgroundPosition: "center top", padding: "10px 5% 30px" }}>
+                                    <div class="image_frame image_item scale-with-grid alignnone no_border">
+                                        <div class="image_wrapper">
+                                            <a href="#">
+                                                <div class="mask"></div><img class="scale-with-grid"
+                                                    src="content/app2/images/home_app2_box2.png" alt=""
+                                                    width="290" height="240" />
+                                            </a>
+                                            <div class="image_links ">
+                                                <a href="#" class="link"><i class="icon-link"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr class="no_line" style={{ margin: "0 auto 20px" }} />
+                                    <h4 style={{ color: "#fff" }}>{locale.locale.supply}</h4>
+                                    <h5 style={{ color: "#fff" }}>56645465645645</h5>
+                                </div>
+                            </div>
+                            <div class="column mcb-column one-third column_column">
+                                <div class="column_attr align_center"
+                                    style={{
+                                        backgroundColor: "#070e2e", backgroundImage: "url(content/app2/images/home_app2_box_border.png)", backgroundRepeat: "no-repeat", backgroundPosition: "center top", padding: "10px 5% 30px"
+                                    }}>
+                                    <div class="image_frame image_item scale-with-grid alignnone no_border">
+                                        <div class="image_wrapper">
+                                            <a href="#">
+                                                <div class="mask"></div><img class="scale-with-grid"
+                                                    src={trans} alt=""
+                                                    width="290" height="240" />
+                                            </a>
+                                            <div class="image_links ">
+                                                <a href="#" class="link"><i class="icon-link"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr class="no_line" style={{ margin: "0 auto 20px" }} />
+                                    <h4 style={{ color: "#fff" }}>{locale.locale.transfers}</h4>
+                                    <h5 style={{ color: "#fff" }}>987654</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </>
+    )
+
+}
+const MapStateToProps = (state) => {
+    return { locale: state.locale }
+}
+export default connect(MapStateToProps)(Home);
