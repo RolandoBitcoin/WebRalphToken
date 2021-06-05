@@ -8,7 +8,7 @@ function ActionBar(props) {
     let location = useLocation();
     return (
         <div id="Header_creative">
-            <a href="#" className="creative-menu-toggle"><i className="icon-menu"></i></a>
+            <a href="#!" className="creative-menu-toggle"><i className="icon-menu"></i></a>
             <ul className="social creative-social"></ul>
             <div className="creative-wrapper">
                 <div id="Top_bar">
@@ -63,15 +63,7 @@ function ActionBar(props) {
                                             </Link>
                                         </li>
                                     </ul>
-                                </nav><a class="responsive-menu-toggle" href="#"><i class="icon-menu"></i></a>
-                            </div>
-                            <div className="search_wrapper">
-                                <form method="get" id="searchform" action="#">
-                                    <i className="icon_search icon-search"></i><a href="#" className="icon_close"><i
-                                        className="icon-cancel"></i></a>
-                                    <input type="text" className="field" name="s" id="s" placeholder="Enter your search" />
-                                    <input type="submit" className="submit" value="" style={{ display: "none" }} />
-                                </form>
+                                </nav><a class="responsive-menu-toggle" href="#!"><i class="icon-menu"></i></a>
                             </div>
                         </div>
                         <div className="banner_wrapper"></div>

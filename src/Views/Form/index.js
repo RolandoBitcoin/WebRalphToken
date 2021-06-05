@@ -8,17 +8,20 @@ import MetaMask from '../../Assets/images/metamask.png';
 import WC from '../../Assets/images/walletconnect.png';
 import { connect } from 'react-redux';
 import swal from 'sweetalert2';
+import ErrorImg from '../../Assets/images/error.gif';
+import SuccessImg from '../../Assets/images/success.gif';
+import Loading from '../../Assets/images/loading.gif';
 function Formulario(props) {
-    const { locale } = props;
+    const { locale, socket } = props;
     let history = useHistory();
     const [costPerUSD] = useState(280000000)
-    const [modal, setModal] = useState(false)
     const [metamask, setMetamask] = useState(false)
     const [cuenta, setCuenta] = useState(false)
     const [data, setData] = useState({
         amount: 0,
         email: "",
-        referal: ""
+        referal: "",
+        comment: ""
     })
     let back = e => {
         e.stopPropagation();
@@ -84,9 +87,10 @@ function Formulario(props) {
                         </div>
                         <div class="col-md-6" style={{ padding: 0, paddingRight: 25 }}>
                             <div className="shadowForm">
+                                <p>(*) Campo Requeridos</p>
                                 <div className="row flex-column" style={{ flexWrap: "nowrap", margin: 0, }}>
                                     <div class="col-md-12">
-                                        <label for="buyRalph">{locale.locale.step1}</label>
+                                        <label for="buyRalph">{locale.locale.step1} (*)</label>
                                         <label for="inp" class="inp">
                                             <input type="text" id="inp" placeholder="Email" onChange={(e) => Validation("email", e) ? setData({ ...data, email: e.target.value }) : setData({ ...data, email: "" })} required />
                                             <svg width="280px" height="18px" viewBox="0 0 280 18" class="border">
@@ -98,7 +102,7 @@ function Formulario(props) {
                                         </label>
                                     </div>
                                     <div class="col-md-12" style={{ marginBottom: 15 }}>
-                                        <label for="buyRalph">{locale.locale.step2}</label>
+                                        <label for="buyRalph">{locale.locale.step2} (*)</label>
                                         <label for="inp" class="inp">
                                             <input type="text" id="inp" placeholder="amount" onChange={(e) => Validation("amount", e) ? setData({ ...data, amount: e.target.value }) : setData({ ...data, amount: 0 })} required />
                                             <svg width="280px" height="18px" viewBox="0 0 280 18" class="border">
@@ -111,7 +115,7 @@ function Formulario(props) {
                                         {data.amount > 0 && data.amount > 9 && <div class="valid-feedback">You will receive {formatMoney(data.amount * costPerUSD + (data.referal ? (data.amount * costPerUSD) * 0.05 : 0), "RALPH")}</div>}
                                     </div>
                                     <div class="col-md-12">
-                                        <label for="btcAddress">{locale.locale.step3}</label>
+                                        <label for="btcAddress">{locale.locale.step3} (*)</label>
                                         {
                                             cuenta
                                                 ? <p>{`Address: ${cuenta.cuenta} import to ${cuenta.type}`}</p>
@@ -140,7 +144,7 @@ function Formulario(props) {
                                     </div>
                                     <div class="col-md-12">
                                         <label for="comment">{locale.locale.step5} <a href="https://t.me/Saveralphtoken" target="__blank">https://t.me/Saveralphtoken</a></label>
-                                        <textarea style={{ width: "100%" }} rows="5" class="form-control is-valid"></textarea>
+                                        <textarea style={{ width: "100%" }} onChange={(e) => setData({ ...data, comment: e.target.value })} rows="5" class="form-control is-valid"></textarea>
                                     </div>
                                 </div>
                             </div>
@@ -157,44 +161,57 @@ function Formulario(props) {
     )
 
     function SendToken() {
-        // swal.fire({
-        //     title: 'Enviando Formulario!',
-        //     text: 'Por favor espere, estamos procesando los datos.',
-        //     imageUrl: 'https://cdn.dribbble.com/users/798857/screenshots/2677694/run_rabbit_3.gif',
-        //     imageWidth: 400,
-        //     imageHeight: 300,
-        //     imageAlt: 'Custom image',
-        //     showConfirmButton: false,
-        //     backdrop: false
-        // })
-        // setTimeout(() => {
+        swal.fire({
+            title: 'Enviando Formulario!',
+            text: 'Por favor espere, estamos procesando los datos.',
+            imageUrl: Loading,
+            imageWidth: 400,
+            imageHeight: 300,
+            imageAlt: 'Custom image',
+            showConfirmButton: false,
+            backdrop: false
+        })
+        if (data.email && data.amount > 0 && cuenta) {
+            let send = { ...data, wallet: cuenta.cuenta }
+
+            socket.emit("sendTransaction", send, (res) => {
+                console.log(res)
+                if (!res.error) {
+                    // 'hemos procesado tu formulario, recibirás un correo electrónico con una copia, recuerda que la entrega de tus tokens puede de morar 24 a 72h',
+                    swal.fire({
+                        title: 'Datos recibidos por el servidor',
+                        text: JSON.stringify(res),
+                        imageUrl: SuccessImg,
+                        imageWidth: 300,
+                        imageHeight: 300,
+                        imageAlt: 'Custom image',
+                        showConfirmButton: true,
+                        backdrop: false
+                    })
+                } else {
+                    swal.fire({
+                        title: '¡Ocurrio un error!',
+                        text: '(mensaje de error)',
+                        imageUrl: ErrorImg,
+                        imageWidth: 300,
+                        imageHeight: 300,
+                        imageAlt: 'Custom image',
+                        showConfirmButton: true,
+                        backdrop: false
+                    })
+                }
+            })
+        } else {
             swal.fire({
                 title: '¡Ocurrio un error!',
-                text: '(descripcion del error)',
-                imageUrl: 'https://appstickers-cdn.appadvice.com/1458877581/830882375/4de51b890c40ace8c6583c61ce268af9-7.gif',
+                text: 'Debes llenar los campos requeridos',
+                imageUrl: ErrorImg,
                 imageWidth: 300,
                 imageHeight: 300,
                 imageAlt: 'Custom image',
                 showConfirmButton: true,
                 backdrop: false
             })
-        // }, 2000)
-        // setTimeout(() => {
-            // swal.fire({
-            //     title: '¡Hecho!',
-            //     text: 'hemos procesado tu formulario, reciviras un correo electronico con una copia, recuerda que la entrega de tus tokens puede demorar 24 a 72h',
-            //     imageUrl: 'https://pic.funnygifsbox.com/uploads/2020/08/funnygifsbox.com-2020-08-13-09-08-38-78.gif',
-            //     imageWidth: 300,
-            //     imageHeight: 300,
-            //     imageAlt: 'Custom image',
-            //     showConfirmButton: true,
-            //     backdrop: false
-            // })
-        // }, 4000)
-        if (data.email && data.amount > 0 && cuenta) {
-            console.log("Bien")
-        } else {
-            console.log("requerido")
             return
         }
     }
@@ -257,6 +274,6 @@ function Formulario(props) {
 
 }
 const MapStateToProps = (state) => {
-    return { locale: state.locale }
+    return { locale: state.locale, socket: state.socket }
 }
 export default connect(MapStateToProps)(Formulario);

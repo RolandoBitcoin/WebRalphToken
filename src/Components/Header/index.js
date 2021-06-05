@@ -88,14 +88,8 @@ function Header(props) {
                                         className="tp-caption mfnrs_app2_button tp-resizeme rs-parallaxlevel-2"
                                         id="slide-1-layer-3" data-x="center" data-hoffset="220" data-y="bottom"
                                         data-voffset="100" data-width="['auto']" data-height="['auto']"
-                                        data-transform_idle="o:1;"
-                                        data-transform_hover="o:1;rX:0;rY:0;rZ:0;z:0;s:300;e:Linear.easeNone;"
-                                        data-style_hover="c:rgb(0, 0, 0,1.0);bg:rgb(231, 214, 0,1.0);"
-                                        data-transform_in="opacity:0;s:900;e:Power2.easeInOut;"
-                                        data-transform_out="opacity:0;s:300;s:300;" data-start="800" data-splitin="none"
-                                        data-splitout="none"
-                                        data-responsive_offset="on"
-                                        style={{ zIndex: 10, whiteSpace: "nowrap", cursor: "pointer", color: "#000", borderColor: "rgb(231, 214, 0)" }}
+
+                                        style={{ zIndex: 10, fontSize: 20, borderRadius: 20, whiteSpace: "nowrap", cursor: "pointer", color: "#000", backgroundColor: "rgb(231, 214, 0)", borderColor: "rgb(231, 214, 0)" }}
                                         to={{
                                             pathname: `/buyToken`,
                                             state: { background: location }

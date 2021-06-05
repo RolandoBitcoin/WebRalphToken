@@ -1,12 +1,19 @@
 import React, { useEffect } from 'react';
 import Navigation from './Components/Navigation';
 import "./Components/Imports/css"
-function App() {
+import { setSocket } from './Redux/reducers/Socket';
+import { connect } from 'react-redux';
+function App(props) {
+  const { socket, setSocket } = props;
   useEffect(() => {
-    var userLang = navigator.language || navigator.userLanguage;
-    console.log(userLang)
+    setSocket(socket)
   }, [])
   return <Navigation />
 }
-
-export default App;
+const MapStateToProps = (state) => {
+  return {}
+}
+const MapDispacthToProps = dispatch => ({
+  setSocket: (socket) => dispatch(setSocket(socket)),
+})
+export default connect(MapStateToProps, MapDispacthToProps)(App);

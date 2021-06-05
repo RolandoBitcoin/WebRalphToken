@@ -13,6 +13,7 @@ export const appendScript = () => {
         scriptToAppend.id = script.id;
         scriptToAppend.async = true;
         document.body.appendChild(scriptToAppend);
+        return
     })
 }
 

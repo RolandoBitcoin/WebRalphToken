@@ -1,7 +1,9 @@
 import React, { useEffect } from 'react';
 import Logo from '../../Assets/images/logo.png';
 import Bg from '../../Assets/images/bg.jpg';
-import trans from '../../Assets/images/TRANSFERS.png';
+import transfers from '../../Assets/images/transfers.png';
+import holders from '../../Assets/images/holders.png';
+import supply from '../../Assets/images/supply.png';
 import { connect } from 'react-redux';
 function Home(props) {
     const { locale } = props;
@@ -110,13 +112,13 @@ function Home(props) {
                         <div class="mcb-wrap-inner">
                             <div class="column mcb-column one-third column_column">
                                 <div class="column_attr align_center"
-                                    style={{ backgroundColor: "#070e2e", backgroundImage: "url(content/app2/images/home_app2_box_border.png)", backgroundRepeat: "no-repeat", backgroundPosition: "center top", padding: "10px 5% 30px" }}>
+                                    style={{ backgroundColor: "#161616", backgroundImage: "url(content/app2/images/home_app2_box_border.png)", backgroundRepeat: "no-repeat", backgroundPosition: "center top", padding: "10px 5% 30px" }}>
                                     <div class="image_frame image_item scale-with-grid alignnone no_border">
                                         <div class="image_wrapper">
                                             <a href="#">
                                                 <div class="mask"></div><img class="scale-with-grid"
-                                                    src="content/app2/images/home_app2_box1.png" alt=""
-                                                    width="290" height="240" />
+                                                    src={Logo} alt=""
+                                                    style={{ width: 290, height: 300 }} />
                                             </a>
                                             <div class="image_links ">
                                                 <a href="#" class="link"><i class="icon-link"></i></a>
@@ -130,13 +132,13 @@ function Home(props) {
                             </div>
                             <div class="column mcb-column one-third column_column">
                                 <div class="column_attr align_center"
-                                    style={{ backgroundColor: "#070e2e", backgroundImage: "url(content/app2/images/home_app2_box_border.png)", backgroundRepeat: "no-repeat", backgroundPosition: "center top", padding: "10px 5% 30px" }}>
+                                    style={{ backgroundColor: "#161616", backgroundImage: "url(content/app2/images/home_app2_box_border.png)", backgroundRepeat: "no-repeat", backgroundPosition: "center top", padding: "10px 5% 30px" }}>
                                     <div class="image_frame image_item scale-with-grid alignnone no_border">
                                         <div class="image_wrapper">
                                             <a href="#">
                                                 <div class="mask"></div><img class="scale-with-grid"
-                                                    src="content/app2/images/home_app2_box2.png" alt=""
-                                                    width="290" height="240" />
+                                                    src={Logo} alt=""
+                                                    style={{ width: 290, height: 300 }} />
                                             </a>
                                             <div class="image_links ">
                                                 <a href="#" class="link"><i class="icon-link"></i></a>
@@ -151,14 +153,14 @@ function Home(props) {
                             <div class="column mcb-column one-third column_column">
                                 <div class="column_attr align_center"
                                     style={{
-                                        backgroundColor: "#070e2e", backgroundImage: "url(content/app2/images/home_app2_box_border.png)", backgroundRepeat: "no-repeat", backgroundPosition: "center top", padding: "10px 5% 30px"
+                                        backgroundColor: "#161616", backgroundImage: "url(content/app2/images/home_app2_box_border.png)", backgroundRepeat: "no-repeat", backgroundPosition: "center top", padding: "10px 5% 30px"
                                     }}>
                                     <div class="image_frame image_item scale-with-grid alignnone no_border">
                                         <div class="image_wrapper">
                                             <a href="#">
                                                 <div class="mask"></div><img class="scale-with-grid"
-                                                    src={trans} alt=""
-                                                    width="290" height="240" />
+                                                    src={Logo} alt=""
+                                                    style={{ width: 290, height: 300 }} />
                                             </a>
                                             <div class="image_links ">
                                                 <a href="#" class="link"><i class="icon-link"></i></a>
