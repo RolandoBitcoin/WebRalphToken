@@ -85,7 +85,7 @@ function Header(props) {
                                         style={{ zIndex: 9, whiteSpace: "nowrap", color: "#e7d600", textTransform: "uppercase", fontSize: 30 }}>
                                         Save Ralph Token </div>
                                     <Link
-                                        className="tp-caption mfnrs_app2_button tp-resizeme rs-parallaxlevel-2 animate__animated animate__pulse animate__infinite animate__slower"
+                                        className="tp-caption mfnrs_app2_button tp-resizeme rs-parallaxlevel-2 animate__animated animate__bounce animate__infinite animate__slower"
                                         id="slide-1-layer-3" data-x="center" data-hoffset="220" data-y="bottom"
                                         data-voffset="100" data-width="['auto']" data-height="['auto']"
 
