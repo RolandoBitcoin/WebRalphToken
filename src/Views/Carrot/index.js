@@ -12,9 +12,7 @@ function Carrot(props) {
                         <div class="column mcb-column one column_column">
                             <div class="column_attr">
                                 <h2 style={{ color: "#e7d600" }}>{locale.locale.carrot}</h2>
-                                <hr class="no_line" style={{ margin: "0 auto 35px" }} />
-                                <span class="button_label" style={{ color: "#fff" }}>Will  be used for transaction fees in the Save RalphSwap and It will be used for governance in the decision making process by the community in the ecosystem.</span><br />
-                                <span class="button_label" style={{ color: "#fff" }}>The Save Ralph platform and protocol aim to be an autonomous ecosystem that will be governed by Carrot Token holders, who will be tasked with voting on governance proposals, in time Save Ralph and Carrot tokens intends to transition to a fully decentralized structure.</span>
+                                <p class="button_label big" style={{ color: "#fff", textAlign: "justify" }} dangerouslySetInnerHTML={{ __html: locale.locale.carrotTXT }}></p>
                             </div>
                         </div>
                     </div>

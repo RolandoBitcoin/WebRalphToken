@@ -49,7 +49,7 @@ export const Validation = (type, e) => {
         case "amount":
             var result = false;
             if (e.target.value > 9.99) {
-                const re = /^[0-9]+([.,]+[0-9]{1,3})?$/;
+                const re = /^[0-9]+([.,]+[0-9]{1,2})?$/;
                 result = re.test(e.target.value);
                 if (result) {
                     e.target.parentElement.classList.add("valid")

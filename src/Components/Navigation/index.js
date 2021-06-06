@@ -8,6 +8,9 @@ import About from '../../Views/About';
 import Carrot from '../../Views/Carrot';
 import Footer from '../Header/Footer';
 import Formulario from '../../Views/Form';
+import VideoFrame from '../../Views/Video';
+import RiskDisclosure from '../../Views/RiskDisclosure';
+import LegalDisclaimer from '../../Views/LegalDisclaimer';
 function Navigation(props) {
     let location = useLocation();
     let background = location.state && location.state.background;
@@ -27,6 +30,9 @@ function Navigation(props) {
                                         <Home />
                                         <About />
                                         <Carrot />
+                                        <VideoFrame />
+                                        <RiskDisclosure />
+                                        <LegalDisclaimer/>
                                     </>
                                 } />
 

@@ -13,7 +13,11 @@ function Footer(props) {
                         <aside className="widget widget_text">
                             <div className="textwidget">
                                 <p style={{ fontSize: 32, lineHeight: 3, margin: 0, textAlign: "center" }}>
-                                    <a href="#!"><i className="icon-facebook-circled"></i></a><a href="#!"><i className="icon-gplus-circled"></i></a><a href="#!"><i className="icon-twitter-circled"></i></a><a href="#!"><i className="icon-pinterest-circled"></i></a><a href="#!"><i className="icon-linkedin-circled"></i></a>
+                                    <a style={{ padding: "0px 10px 0px 10px" }} href="https://t.me/Saveralphtoken" target="__blank"><i className="fab fa-telegram-plane"></i></a>
+                                    <a style={{ padding: "0px 10px 0px 10px" }} href="https://www.instagram.com/saveralphtoken/" target="__blank"><i className="fab fa-instagram"></i></a>
+                                    <a style={{ padding: "0px 10px 0px 10px" }} href="https://www.reddit.com/user/saveralphtoken/" target="__blank"><i className="fab fa-reddit-alien"></i></a>
+                                    <a style={{ padding: "0px 10px 0px 10px" }} href="https://twitter.com/RalphToken" target="__blank"><i className="fab fa-twitter"></i></a>
+                                    <a style={{ padding: "0px 10px 0px 10px" }} href="https://saveralphtoken.medium.com/" target="__blank"><i className="fab fa-medium-m"></i></a>
                                 </p>
                             </div>
                         </aside>

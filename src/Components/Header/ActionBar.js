@@ -40,16 +40,7 @@ function ActionBar(props) {
                                             <a href="#join" data-hash="#join"><span>Carrot</span></a>
                                         </li>
                                         <li class="">
-                                            <a href="#languaje">
-                                                <div class="dropdown">
-                                                    <button class="dropbtn">{locale.locale.languaje}</button>
-                                                    <div class="dropdown-content">
-                                                        <a href="#es" onClick={(e) => { e.preventDefault(); setLocale("es"); }}> {locale.locale.es}</a>
-                                                        <a href="#en" onClick={(e) => { e.preventDefault(); setLocale("en"); }}> {locale.locale.en}</a>
-                                                        <a href="#ch" onClick={(e) => { e.preventDefault(); setLocale("ch"); }}> {locale.locale.ch}</a>
-                                                    </div>
-                                                </div>
-                                            </a>
+                                            <a href="#LegalDisclaimer" data-hash="#join"><span>{locale.locale.LegalDisclaimer}</span></a>
                                         </li>
                                         <li class="last">
                                             <Link
@@ -61,6 +52,21 @@ function ActionBar(props) {
                                             >
                                                 <span><span style={{ padding: 0, color: "rgb(231, 214, 0)" }}>{locale.locale.btnby}</span></span>
                                             </Link>
+                                        </li>
+                                        <li class="">
+                                            <a className="animate__animated animate__pulse animate__infinite" href="#risk" data-hash="#join" style={{ color: "red" }}><span>{locale.locale.RiskDisclosure}</span></a>
+                                        </li>
+                                        <li class="">
+                                            <a href="#languaje">
+                                                <div class="dropdown">
+                                                    <button class="dropbtn">{locale.locale.languaje}</button>
+                                                    <div class="dropdown-content">
+                                                        <a href="#es" onClick={(e) => { e.preventDefault(); setLocale("es"); }}> {locale.locale.es}</a>
+                                                        <a href="#en" onClick={(e) => { e.preventDefault(); setLocale("en"); }}> {locale.locale.en}</a>
+                                                        {/* <a href="#ch" onClick={(e) => { e.preventDefault(); setLocale("ch"); }}> {locale.locale.ch}</a> */}
+                                                    </div>
+                                                </div>
+                                            </a>
                                         </li>
                                     </ul>
                                 </nav><a class="responsive-menu-toggle" href="#!"><i class="icon-menu"></i></a>

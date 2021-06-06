@@ -11,12 +11,18 @@ import swal from 'sweetalert2';
 import ErrorImg from '../../Assets/images/error.gif';
 import SuccessImg from '../../Assets/images/success.gif';
 import Loading from '../../Assets/images/loading.gif';
+import Countdown from "react-countdown";
+import moment from 'moment-timezone';
 function Formulario(props) {
-    const { locale, socket } = props;
+    const { locale, socket, location } = props;
     let history = useHistory();
-    const [costPerUSD] = useState(280000000)
+    const [costPerUSD] = useState(270000000)
+    const [round] = useState(7)
     const [metamask, setMetamask] = useState(false)
     const [cuenta, setCuenta] = useState(false)
+    const [utc] = useState(moment.tz({ year: 2021, month: 5, day: 6, hour: 18 }, "Atlantic/Azores").valueOf())
+    const [day] = useState(moment(utc).add(2, 'days').valueOf())
+    console.log(utc)
     const [data, setData] = useState({
         amount: 0,
         email: "",
@@ -27,8 +33,27 @@ function Formulario(props) {
         e.stopPropagation();
         history.goBack();
     };
+    const renderer = ({ days, hours, minutes, seconds, completed }) => {
+        if (completed) {
+            return <span>You are good to go!</span>;
+        } else {
+            return <div class="count">
+                <h1 id="headline" style={{ color: "#fff" }}>{locale.locale.countDownTXT} # {round}:</h1>
+                <div id="countdown">
+                    <ul>
+                        <li><span id="days">{days}</span><p style={{ paddingTop: 20 }}>{locale.locale.days}</p></li>
+                        <li><span id="hours">{hours}</span><p style={{ paddingTop: 20 }}>{locale.locale.hours}</p></li>
+                        <li><span id="minutes">{minutes}</span><p style={{ paddingTop: 20 }}>{locale.locale.minutes}</p></li>
+                        <li><span id="seconds">{seconds}</span><p style={{ paddingTop: 20 }}>{locale.locale.seconds}</p></li>
+                    </ul>
+                </div>
+            </div>;
+        }
+    };
+
     useEffect(() => {
         async function MetamaskProvider() {
+
             const provider = await detectEthereumProvider();
             if (provider) {
                 if (!provider.isMetaMask) {
@@ -81,13 +106,25 @@ function Formulario(props) {
                         <div className="col-md-6">
                             <div style={{ paddingRight: 25 }}>
                                 {locale.locale.formBigText.map((text, index) => {
-                                    return <p key={index} dangerouslySetInnerHTML={{ __html: text }}></p>
+                                    return <p key={index} dangerouslySetInnerHTML={{ __html: text.replace("{round}", round).replace("{amount}", formatMoney(costPerUSD)) }}></p>
                                 })}
                             </div>
+                            <Countdown date={utc + (day - utc)} renderer={renderer} />
+                            <aside className="widget widget_text">
+                                <div className="textwidget">
+                                    <p style={{ fontSize: 32, lineHeight: 3, margin: 0, textAlign: "center" }}>
+                                        <a style={{ padding: "0px 10px 0px 10px" }} href="https://t.me/Saveralphtoken" target="__blank"><i className="fab fa-telegram-plane"></i></a>
+                                        <a style={{ padding: "0px 10px 0px 10px" }} href="https://www.instagram.com/saveralphtoken/" target="__blank"><i className="fab fa-instagram"></i></a>
+                                        <a style={{ padding: "0px 10px 0px 10px" }} href="https://www.reddit.com/user/saveralphtoken/" target="__blank"><i className="fab fa-reddit-alien"></i></a>
+                                        <a style={{ padding: "0px 10px 0px 10px" }} href="https://twitter.com/RalphToken" target="__blank"><i className="fab fa-twitter"></i></a>
+                                        <a style={{ padding: "0px 10px 0px 10px" }} href="https://saveralphtoken.medium.com/" target="__blank"><i className="fab fa-medium-m"></i></a>
+                                    </p>
+                                </div>
+                            </aside>
                         </div>
                         <div class="col-md-6" style={{ padding: 0, paddingRight: 25 }}>
                             <div className="shadowForm">
-                                <p>(*) Campo Requeridos</p>
+                                <p>(*) Campo Requeridos {utc}</p>
                                 <div className="row flex-column" style={{ flexWrap: "nowrap", margin: 0, }}>
                                     <div class="col-md-12">
                                         <label for="buyRalph">{locale.locale.step1} (*)</label>
@@ -274,6 +311,6 @@ function Formulario(props) {
 
 }
 const MapStateToProps = (state) => {
-    return { locale: state.locale, socket: state.socket }
+    return { locale: state.locale, socket: state.socket, location: state.location }
 }
 export default connect(MapStateToProps)(Formulario);

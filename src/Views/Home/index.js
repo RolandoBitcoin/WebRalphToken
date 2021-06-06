@@ -26,20 +26,10 @@ function Home(props) {
                     </div>
                     <div class="wrap mcb-wrap one-second  valign-top clearfix" style={{ padding: "30px 2% 0" }}>
                         <div class="mcb-wrap-inner">
-                            <div class="column mcb-column two-third column_column">
+                            <div class="column mcb-column two-two column_column">
                                 <div class="column_attr">
                                     <h3>{locale.locale.creator}</h3>
-                                    <hr class="no_line" style={{ margin: "0 auto 25px" }} />
-                                    <p>
-                                        Cras viverra tellus at vestibulum varius. Nam consequat ullamcorper
-                                        lectus ut porta? Nulla nisl odio, luctus at quam vel, elementum
-                                        feugiat magna. Fusce at sed. Curabitur nec ante tincidunt. Integer
-                                        viverra suscipit sem, aliquam pulvinar turpis feugiat quis.
-                                                </p>
-                                    <p style={{ color: "#9a9ba1" }}>
-                                        Euismod ante et, feugiat nulla. Aliquam erat volutpat. Maecenas
-                                        porta sollicitudin ipsum sit amet. Interdum et malesuada fames.
-                                                </p>
+                                    <p style={{ textAlign: "justify" }}>{locale.locale.creatorTXT}</p>
                                 </div>
                             </div>
                         </div>
@@ -72,22 +62,10 @@ function Home(props) {
                     </div>
                     <div class="wrap mcb-wrap one-second  valign-top clearfix" style={{ padding: "30px 2% 0" }}>
                         <div class="mcb-wrap-inner">
-
-                            <div class="column mcb-column two-third column_column">
+                            <div class="column mcb-column two-two column_column">
                                 <div class="column_attr">
                                     <h3>{locale.locale.swap}</h3>
-                                    <hr class="no_line" style={{ margin: "0 auto 25px" }} />
-                                    <p>
-                                        Sed pretium dolor at lobortis blandit. Praesent imperdiet id lacus
-                                        ut tincidunt. Proin egestas urna dui; id dictum diam posuere ac?
-                                        Aliquam vestibulum volutpat. Proin convallis ipsum elit. Nulla eget
-                                        erat maximus, laoreet.
-                                                </p>
-                                    <p style={{ color: "#9a9ba1" }}>
-                                        Aliquam eget cursus neque. Praesent id quam molestie, euismod
-                                        posuere. Aliquam tempus eleifend odio at auctor. Etiam sollicitudin
-                                        elit at rhoncus ac ante ipsum.
-                                                </p>
+                                    <p style={{textAlign:"justify"}}>{locale.locale.swapTXT}</p>
                                 </div>
                             </div>
                         </div>

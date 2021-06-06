@@ -82,10 +82,10 @@ function Header(props) {
                                         data-transform_in="opacity:0;s:900;e:Power2.easeInOut;"
                                         data-transform_out="opacity:0;s:300;s:300;" data-start="800" data-splitin="none"
                                         data-splitout="none" data-responsive_offset="on"
-                                        style={{ zIndex: 9, whiteSpace: "nowrap", color: "#e7d600" }}>
+                                        style={{ zIndex: 9, whiteSpace: "nowrap", color: "#e7d600", textTransform: "uppercase", fontSize: 30 }}>
                                         Save Ralph Token </div>
                                     <Link
-                                        className="tp-caption mfnrs_app2_button tp-resizeme rs-parallaxlevel-2"
+                                        className="tp-caption mfnrs_app2_button tp-resizeme rs-parallaxlevel-2 animate__animated animate__pulse animate__infinite animate__slower"
                                         id="slide-1-layer-3" data-x="center" data-hoffset="220" data-y="bottom"
                                         data-voffset="100" data-width="['auto']" data-height="['auto']"
 
