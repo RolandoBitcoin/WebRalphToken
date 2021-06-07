@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react';
 import Logo from '../../Assets/images/logo.png';
 import Bg from '../../Assets/images/bg.jpg';
-// import transfers from '../../Assets/images/transfers.png';
-// import holders from '../../Assets/images/holders.png';
-// import supply from '../../Assets/images/supply.png';
+import transfers from '../../Assets/images/transfers.png';
+import holders from '../../Assets/images/holders.png';
+import supply from '../../Assets/images/supply.png';
 import { connect } from 'react-redux';
 function Home(props) {
     const { locale } = props;
@@ -95,7 +95,7 @@ function Home(props) {
                                         <div class="image_wrapper">
                                             <a href="#">
                                                 <div class="mask"></div><img class="scale-with-grid"
-                                                    src={Logo} alt=""
+                                                    src={holders} alt=""
                                                     style={{ width: 290, height: 300 }} />
                                             </a>
                                             <div class="image_links ">
@@ -115,7 +115,7 @@ function Home(props) {
                                         <div class="image_wrapper">
                                             <a href="#">
                                                 <div class="mask"></div><img class="scale-with-grid"
-                                                    src={Logo} alt=""
+                                                    src={supply} alt=""
                                                     style={{ width: 290, height: 300 }} />
                                             </a>
                                             <div class="image_links ">
@@ -137,7 +137,7 @@ function Home(props) {
                                         <div class="image_wrapper">
                                             <a href="#">
                                                 <div class="mask"></div><img class="scale-with-grid"
-                                                    src={Logo} alt=""
+                                                    src={transfers} alt=""
                                                     style={{ width: 290, height: 300 }} />
                                             </a>
                                             <div class="image_links ">

@@ -1,5 +1,5 @@
 import React from 'react';
-import Bg from '../../Assets/images/bg.jpg';
+import Bg from '../../Assets/images/bg.mp4';
 import Logo from '../../Assets/images/logo.png';
 import Part1 from '../../Assets/images/home_app2_slider_particles1.png';
 import Part2 from '../../Assets/images/home_app2_slider_particles2.png';
@@ -25,14 +25,12 @@ function Header(props) {
                                     data-param3="" data-param4="" data-param5="" data-param6="" data-param7=""
                                     data-param8="" data-param9="" data-param10="" data-description="">
                                     <div style={{ height: "100%", width: "100%", backgroundColor: "rgb(0, 0, 0,0.5)", position: "absolute", top: 0, right: 0, left: 0, bottom: 0, zIndex: 8 }} />
-                                    <img src={Bg} alt="" width="1920"
-                                        height="900" data-bgposition="center center" data-kenburns="on"
-                                        data-duration="10000" data-ease="Linear.easeNone" data-scalestart="120"
-                                        data-scaleend="100" data-rotatestart="0" data-rotateend="0"
-                                        data-offsetstart="0 0" data-offsetend="0 0" data-bgparallax="15"
-                                        className="rev-slidebg" data-no-retina />
+                                    <video id="video" style={{ width: "100%", height: "100%" }} alt="" width="1920"
+                                        height="900" autoPlay loop muted  >
+                                        <source src={Bg} type="video/mp4" />
+                                    </video>
 
-                                    <div className="tp-caption   tp-resizeme rs-parallaxlevel-8" id="slide-1-layer-6"
+                                    {/* <div className="tp-caption   tp-resizeme rs-parallaxlevel-8" id="slide-1-layer-6"
                                         data-x="center" data-hoffset="707" data-y="center" data-voffset="-291"
                                         data-width="['none','none','none','none']"
                                         data-height="['none','none','none','none']" data-transform_idle="o:1;"
@@ -42,9 +40,9 @@ function Header(props) {
                                         <img
                                             src={Glow} alt="" width="2057"
                                             height="2057" data-ww="2057px" data-hh="2057px" data-no-retina />
-                                    </div>
+                                    </div> */}
 
-                                    <div className="tp-caption   tp-resizeme rs-parallaxlevel-6" id="slide-1-layer-7"
+                                    {/* <div className="tp-caption   tp-resizeme rs-parallaxlevel-6" id="slide-1-layer-7"
                                         data-x="center" data-hoffset="-467" data-y="center" data-voffset="16"
                                         data-width="['none','none','none','none']"
                                         data-height="['none','none','none','none']" data-transform_idle="o:1;"
@@ -64,7 +62,7 @@ function Header(props) {
                                         data-responsive_offset="on" style={{ zIndex: 7 }}>
                                         <img src={Part2} alt=""
                                             width="1293" height="781" data-ww="1293px" data-hh="781px" data-no-retina />
-                                    </div>
+                                    </div> */}
                                     <div className="tp-caption   tp-resizeme rs-parallaxlevel-1" id="slide-1-layer-1"
                                         data-x="center" data-hoffset="" data-y="center" data-voffset="-60"
                                         data-width="['none','none','none','none']"
