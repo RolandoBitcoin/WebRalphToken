@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import Logo from '../../Assets/images/logo.png';
 import Bg from '../../Assets/images/bg.jpg';
-import transfers from '../../Assets/images/transfers.png';
+import transfers from '../../Assets/images/transfer.png';
 import holders from '../../Assets/images/holders.png';
 import supply from '../../Assets/images/supply.png';
 import { connect } from 'react-redux';
