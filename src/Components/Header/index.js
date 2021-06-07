@@ -1,5 +1,4 @@
 import React from 'react';
-import Bg from '../../Assets/images/bg.mp4';
 import Logo from '../../Assets/images/logo.png';
 import Part1 from '../../Assets/images/home_app2_slider_particles1.png';
 import Part2 from '../../Assets/images/home_app2_slider_particles2.png';
@@ -27,7 +26,7 @@ function Header(props) {
                                     <div style={{ height: "100%", width: "100%", backgroundColor: "rgb(0, 0, 0,0.5)", position: "absolute", top: 0, right: 0, left: 0, bottom: 0, zIndex: 8 }} />
                                     <video id="video" style={{ width: "100%", height: "100%" }} alt="" width="1920"
                                         height="900" autoPlay loop muted  >
-                                        <source src={Bg} type="video/mp4" />
+                                        <source src="https://files-ralph.s3.us-east-2.amazonaws.com/bg.mp4" type="video/mp4" />
                                     </video>
 
                                     {/* <div className="tp-caption   tp-resizeme rs-parallaxlevel-8" id="slide-1-layer-6"
