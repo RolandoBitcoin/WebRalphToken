@@ -3,10 +3,20 @@ import Navigation from './Components/Navigation';
 import "./Components/Imports/css"
 import { setSocket } from './Redux/reducers/Socket';
 import { connect } from 'react-redux';
+import { setPrices } from './Redux/reducers/Price';
+import axios from 'axios';
+import { setLocation } from './Redux/reducers/Location';
 function App(props) {
-  const { socket, setSocket } = props;
+  const { socket, setSocket, setPrices, setLocation } = props;
   useEffect(() => {
     setSocket(socket)
+    socket.emit("CryptoCoins", (res) => {
+      setPrices(res)
+    })
+    socket.on("ActualizarPrecios", (res) => {
+      setPrices(res)
+    })
+    axios.get("https://geolocation-db.com/json/f9902210-97f0-11eb-a459-b997d30983f1").then(r => setLocation(r.data))
   }, [])
   return <Navigation />
 }
@@ -15,5 +25,7 @@ const MapStateToProps = (state) => {
 }
 const MapDispacthToProps = dispatch => ({
   setSocket: (socket) => dispatch(setSocket(socket)),
+  setPrices: (prices) => dispatch(setPrices(prices)),
+  setLocation: (location) => dispatch(setLocation(location)),
 })
 export default connect(MapStateToProps, MapDispacthToProps)(App);

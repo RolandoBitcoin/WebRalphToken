@@ -1,9 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
-
+import abogado from '../../Assets/images/abogado.png'
 function LegalDisclaimer(props) {
     const { locale } = props;
-    return (<div class="section mcb-section" id="risk" style={{ paddingTop: 90, paddingBottom: 0 }}>
+    return (<div class="section mcb-section" id="LegalDisclaimer" style={{ paddingTop: 90, paddingBottom: 0 }}>
         <div class="section_wrapper mcb-section-inner">
             <div class="wrap mcb-wrap one-second  valign-top clearfix" style={{ padding: "30px 2% 0" }}>
                 <div class="mcb-wrap-inner">
@@ -20,7 +20,7 @@ function LegalDisclaimer(props) {
                     <div class="column mcb-column one column_image ">
                         <div class="image_frame image_item no_link scale-with-grid no_border">
                             <div class="image_wrapper"><img class="scale-with-grid"
-                                src="https://assets.entrepreneur.com/images/misc/1618435141_save-ralph-poster-1.jpg" alt="" width="460"
+                                src={abogado} alt="" width="460"
                                 height="401" /> </div>
                         </div>
                     </div>

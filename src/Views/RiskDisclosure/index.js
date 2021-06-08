@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-
+import divulgacion from '../../Assets/images/divulgacion.png'
 function RiskDisclosure(props) {
     const { locale } = props;
     return (<div class="section mcb-section" id="risk" style={{ paddingTop: 90, paddingBottom: 0 }}>
@@ -10,7 +10,7 @@ function RiskDisclosure(props) {
                     <div class="column mcb-column one column_image ">
                         <div class="image_frame image_item no_link scale-with-grid no_border">
                             <div class="image_wrapper"><img class="scale-with-grid"
-                                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMuWOUsKVugocoIMWwLntd86PR-LCaZh_Wxg&usqp=CAU" alt="" width="460"
+                                src={divulgacion} alt="" width="460"
                                 height="401" /> </div>
                         </div>
                     </div>

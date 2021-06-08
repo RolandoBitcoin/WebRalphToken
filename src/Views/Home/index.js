@@ -66,7 +66,7 @@ function Home(props) {
                             <div class="column mcb-column two-two column_column">
                                 <div class="column_attr">
                                     <h3>{locale.locale.swap}</h3>
-                                    <p style={{textAlign:"justify"}}>{locale.locale.swapTXT}</p>
+                                    <p style={{ textAlign: "justify" }}>{locale.locale.swapTXT}</p>
                                 </div>
                             </div>
                         </div>
@@ -93,40 +93,40 @@ function Home(props) {
                                 <div class="column_attr align_center"
                                     style={{ backgroundColor: "#161616", backgroundImage: "url(content/app2/images/home_app2_box_border.png)", backgroundRepeat: "no-repeat", backgroundPosition: "center top", padding: "10px 5% 30px" }}>
                                     <div class="image_frame image_item scale-with-grid alignnone no_border">
-                                        <div class="image_wrapper">
-                                            <a href="#">
+                                        <a href="https://bscscan.com/token/0x02618C556d075D2C5ACA9021Be2773764969bb51" target="__blank">
+                                            <div class="image_wrapper">
                                                 <div class="mask"></div><img class="scale-with-grid"
                                                     src={holders} alt=""
                                                     style={{ width: 290, height: 300 }} />
-                                            </a>
-                                            <div class="image_links ">
-                                                <a href="#" class="link"><i class="icon-link"></i></a>
+                                                <div class="image_links ">
+                                                    <a href="#" class="link"><i class="icon-link"></i></a>
+                                                </div>
                                             </div>
-                                        </div>
+                                        </a>
                                     </div>
                                     <hr class="no_line" style={{ margin: "0 auto 20px" }} />
                                     <h4 style={{ color: "#fff" }}>{locale.locale.holders}</h4>
-                                    <h5 style={{ color: "#fff" }}>987654</h5>
+                                    <h5 style={{ color: "#fff" }}>1,550</h5>
                                 </div>
                             </div>
                             <div class="column mcb-column one-third column_column">
                                 <div class="column_attr align_center"
                                     style={{ backgroundColor: "#161616", backgroundImage: "url(content/app2/images/home_app2_box_border.png)", backgroundRepeat: "no-repeat", backgroundPosition: "center top", padding: "10px 5% 30px" }}>
                                     <div class="image_frame image_item scale-with-grid alignnone no_border">
-                                        <div class="image_wrapper">
-                                            <a href="#">
+                                        <a href="https://bscscan.com/token/0x02618C556d075D2C5ACA9021Be2773764969bb51" target="__blank">
+                                            <div class="image_wrapper">
                                                 <div class="mask"></div><img class="scale-with-grid"
                                                     src={supply} alt=""
                                                     style={{ width: 290, height: 300 }} />
-                                            </a>
-                                            <div class="image_links ">
-                                                <a href="#" class="link"><i class="icon-link"></i></a>
+                                                <div class="image_links ">
+                                                    <a href="#" class="link"><i class="icon-link"></i></a>
+                                                </div>
                                             </div>
-                                        </div>
+                                        </a>
                                     </div>
                                     <hr class="no_line" style={{ margin: "0 auto 20px" }} />
                                     <h4 style={{ color: "#fff" }}>{locale.locale.supply}</h4>
-                                    <h5 style={{ color: "#fff" }}>56645465645645</h5>
+                                    <h5 style={{ color: "#fff" }}>1,000,000,000,000,000</h5>
                                 </div>
                             </div>
                             <div class="column mcb-column one-third column_column">
@@ -135,20 +135,17 @@ function Home(props) {
                                         backgroundColor: "#161616", backgroundImage: "url(content/app2/images/home_app2_box_border.png)", backgroundRepeat: "no-repeat", backgroundPosition: "center top", padding: "10px 5% 30px"
                                     }}>
                                     <div class="image_frame image_item scale-with-grid alignnone no_border">
-                                        <div class="image_wrapper">
-                                            <a href="#">
+                                        <a href="https://bscscan.com/token/0x02618C556d075D2C5ACA9021Be2773764969bb51" target="__blank">
+                                            <div class="image_wrapper">
                                                 <div class="mask"></div><img class="scale-with-grid"
                                                     src={transfers} alt=""
                                                     style={{ width: 290, height: 300 }} />
-                                            </a>
-                                            <div class="image_links ">
-                                                <a href="#" class="link"><i class="icon-link"></i></a>
                                             </div>
-                                        </div>
+                                        </a>
                                     </div>
                                     <hr class="no_line" style={{ margin: "0 auto 20px" }} />
                                     <h4 style={{ color: "#fff" }}>{locale.locale.transfers}</h4>
-                                    <h5 style={{ color: "#fff" }}>987654</h5>
+                                    <h5 style={{ color: "#fff" }}>3,056</h5>
                                 </div>
                             </div>
                         </div>

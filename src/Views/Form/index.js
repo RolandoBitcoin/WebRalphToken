@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router';
-import { formatMoney, Validation } from '../../Helpers';
+import { CostPerCripto, CriptoMax, CriptoMin, formatMoney, Validation } from '../../Helpers';
 import detectEthereumProvider from '@metamask/detect-provider';
 import WalletConnect from "@walletconnect/client";
 import QRCodeModal from "@walletconnect/qrcode-modal";
@@ -14,24 +14,39 @@ import Loading from '../../Assets/images/loading.gif';
 import Countdown from "react-countdown";
 import moment from 'moment-timezone';
 function Formulario(props) {
-    const { locale, socket, location } = props;
+    const { locale, socket, location, prices } = props;
     let history = useHistory();
-    const [costPerUSD] = useState(270000000)
-    const [round] = useState(7)
+    const [costPerUSD] = useState(265000000)
+    const [round] = useState(8)
     const [metamask, setMetamask] = useState(false)
+    const [FormType, setFormType] = useState("bsc")
     const [cuenta, setCuenta] = useState(false)
-    const [utc] = useState(moment.tz({ year: 2021, month: 5, day: 6, hour: 18 }, "Atlantic/Azores").valueOf())
+    const [utc] = useState(moment.tz({ year: 2021, month: 5, day: 7, hour: 18 }, "Atlantic/Azores").valueOf())
     const [day] = useState(moment(utc).add(2, 'days').valueOf())
-    console.log(utc)
     const [data, setData] = useState({
         amount: 0,
         email: "",
         referal: "",
-        comment: ""
+        comment: "",
+        round: round,
+        cost: costPerUSD,
+        ip: { ip: location.IPv4, country: location.country_name }
+    })
+    const [dataCoin, setDataCoin] = useState({
+        symbol: "BTC",
+        costSymbol: 3157642,
+        amount: 0,
+        cripto: 0,
+        referal: "",
+        comment: "",
+        email: "",
+        round: round,
+        cost: costPerUSD,
+        ip: { ip: location.IPv4, country: location.country_name }
     })
     let back = e => {
         e.stopPropagation();
-        history.goBack();
+        history.go(-2);
     };
     const renderer = ({ days, hours, minutes, seconds, completed }) => {
         if (completed) {
@@ -71,10 +86,25 @@ function Formulario(props) {
             }
         }
         MetamaskProvider()
+        // openCity()
         return () => {
             setCuenta(false)
         }
     }, [])
+
+    function openCity(evt, cityName) {
+        var i, x, tablinks;
+        x = document.getElementsByClassName("city");
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablink");
+        for (i = 0; i < x.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" activeTab", "");
+        }
+        document.getElementById(cityName).style.display = "block";
+        evt.currentTarget.className += " activeTab";
+    }
 
     return (
         <div
@@ -88,7 +118,7 @@ function Formulario(props) {
                 zIndex: 999
             }}
         >
-            <div className="modal animate__animated animate__zoomInDown"
+            <div className="section_wrapper mcb-section-inner"
                 style={{
                     position: "absolute",
                     background: "#161616",
@@ -100,88 +130,173 @@ function Formulario(props) {
                 }}
             >
                 <p style={{ width: 10, height: 10, position: "absolute", top: 0, bottom: 0, right: 0, left: "98%", paddingTop: 3, paddingRight: 10, fontSize: 25, cursor: "pointer" }} onClick={back}>x</p>
-                <div style={{ padding: 10 }}>
+                <div className="mcb-section-inner" style={{ padding: 10 }}>
                     <h1 style={{ color: "#e7d600" }}>{locale.locale.formtitle}</h1>
-                    <div className="row" style={{ flexWrap: "nowrap" }}>
-                        <div className="col-md-6">
-                            <div style={{ paddingRight: 25 }}>
+                    <div className="wrap mcb-wrap one  valign-top clearfix">
+                        <div className="column mcb-column one-two column_column" style={{ marginBottom: 0 }}>
+                            {/* <div style={{ paddingRight: 25 }}>
                                 {locale.locale.formBigText.map((text, index) => {
                                     return <p key={index} dangerouslySetInnerHTML={{ __html: text.replace("{round}", round).replace("{amount}", formatMoney(costPerUSD)) }}></p>
                                 })}
-                            </div>
+                            </div> */}
                             <Countdown date={utc + (day - utc)} renderer={renderer} />
-                            <aside className="widget widget_text">
-                                <div className="textwidget">
-                                    <p style={{ fontSize: 32, lineHeight: 3, margin: 0, textAlign: "center" }}>
-                                        <a style={{ padding: "0px 10px 0px 10px" }} href="https://t.me/Saveralphtoken" target="__blank"><i className="fab fa-telegram-plane"></i></a>
-                                        <a style={{ padding: "0px 10px 0px 10px" }} href="https://www.instagram.com/saveralphtoken/" target="__blank"><i className="fab fa-instagram"></i></a>
-                                        <a style={{ padding: "0px 10px 0px 10px" }} href="https://www.reddit.com/user/saveralphtoken/" target="__blank"><i className="fab fa-reddit-alien"></i></a>
-                                        <a style={{ padding: "0px 10px 0px 10px" }} href="https://twitter.com/RalphToken" target="__blank"><i className="fab fa-twitter"></i></a>
-                                        <a style={{ padding: "0px 10px 0px 10px" }} href="https://saveralphtoken.medium.com/" target="__blank"><i className="fab fa-medium-m"></i></a>
-                                    </p>
-                                </div>
-                            </aside>
                         </div>
-                        <div class="col-md-6" style={{ padding: 0, paddingRight: 25 }}>
+                        <div class="column mcb-column one-two column_column" style={{ padding: 0 }}>
                             <div className="shadowForm">
-                                <p>(*) Campo Requeridos {utc}</p>
-                                <div className="row flex-column" style={{ flexWrap: "nowrap", margin: 0, }}>
-                                    <div class="col-md-12">
-                                        <label for="buyRalph">{locale.locale.step1} (*)</label>
-                                        <label for="inp" class="inp">
-                                            <input type="text" id="inp" placeholder="Email" onChange={(e) => Validation("email", e) ? setData({ ...data, email: e.target.value }) : setData({ ...data, email: "" })} required />
-                                            <svg width="280px" height="18px" viewBox="0 0 280 18" class="border">
-                                                <path d="M0,12 L223.166144,12 C217.241379,12 217.899687,12 225.141066,12 C236.003135,12 241.9279,12 249.827586,12 C257.727273,12 264.639498,12 274.514107,12 C281.097179,12 281.755486,12 276.489028,12"></path>
-                                            </svg>
-                                            <svg width="14px" height="12px" viewBox="0 0 14 12" class="check">
-                                                <path d="M1 7 5.5 11 L13 1"></path>
-                                            </svg>
-                                        </label>
-                                    </div>
-                                    <div class="col-md-12" style={{ marginBottom: 15 }}>
-                                        <label for="buyRalph">{locale.locale.step2} (*)</label>
-                                        <label for="inp" class="inp">
-                                            <input type="text" id="inp" placeholder="amount" onChange={(e) => Validation("amount", e) ? setData({ ...data, amount: e.target.value }) : setData({ ...data, amount: 0 })} required />
-                                            <svg width="280px" height="18px" viewBox="0 0 280 18" class="border">
-                                                <path d="M0,12 L223.166144,12 C217.241379,12 217.899687,12 225.141066,12 C236.003135,12 241.9279,12 249.827586,12 C257.727273,12 264.639498,12 274.514107,12 C281.097179,12 281.755486,12 276.489028,12"></path>
-                                            </svg>
-                                            <svg width="14px" height="12px" viewBox="0 0 14 12" class="check">
-                                                <path d="M1 7 5.5 11 L13 1"></path>
-                                            </svg>
-                                        </label>
-                                        {data.amount > 0 && data.amount > 9 && <div class="valid-feedback">You will receive {formatMoney(data.amount * costPerUSD + (data.referal ? (data.amount * costPerUSD) * 0.05 : 0), "RALPH")}</div>}
-                                    </div>
-                                    <div class="col-md-12">
-                                        <label for="btcAddress">{locale.locale.step3} (*)</label>
-                                        {
-                                            cuenta
-                                                ? <p>{`Address: ${cuenta.cuenta} import to ${cuenta.type}`}</p>
-                                                : <div class="dropdown">
-                                                    <button class="dropbtn">Connect your wallet</button>
-                                                    <div class="dropdown-content">
-                                                        <a href="#!" onClick={(e) => { e.preventDefault(); getMetaMask() }}><img src={MetaMask} style={{ width: 20, height: 20, top: "-2%" }} /> MetaMask</a>
-                                                        <a href="#!" onClick={(e) => { e.preventDefault(); GetTrust() }}> <img src={WC} style={{ width: 20, height: 20, top: "-2%" }} /> Wallet Connect</a>
-                                                    </div>
-                                                </div>
-                                        }
-                                    </div>
-                                    <div class="col-md-12" style={{ marginBottom: 15 }}>
-                                        <label for="Referal">{locale.locale.step4} <a href="#!" onClick={(e) => { e.preventDefault(); document.getElementById("Referal").value = "0xF237eC922A478dAbf28a9474D205A4f49d604ee3"; setData({ ...data, referal: "0xF237eC922A478dAbf28a9474D205A4f49d604ee3" }) }}>0xF237eC922A478dAbf28a9474D205A4f49d604ee3</a></label>
-                                        <label for="Referal" class="inp" style={{ width: 500, maxWidth: 500 }}>
-                                            <input type="text" id="Referal" defaultValue={data.referal} placeholder="Referal" onKeyUp={(e) => Validation("wallet", e) ? setData({ ...data, referal: e.target.value }) : setData({ ...data, referal: "" })} required />
-                                            <svg width="500px" height="18px" viewBox="0 0 500 18" class="border">
-                                                <path d="M0,12 L223.166144,12 C217.241379,12 217.899687,12 225.141066,12 C236.003135,12 241.9279,12 249.827586,12 C257.727273,12 264.639498,12 274.514107,12 C281.097179,12 281.755486,12 500.489028,12"></path>
-                                            </svg>
-                                            <svg width="14px" height="12px" viewBox="0 0 14 12" class="check">
-                                                <path d="M1 7 5.5 11 L13 1"></path>
-                                            </svg>
-                                        </label>
-                                        {data.amount > 0 && data.amount > 9 && data.referal && <div class="valid-feedback">Your referral will receive {formatMoney((data.amount * costPerUSD) * 0.05, "RALPH")}</div>}
+                                <p>(*) {locale.locale.required}</p>
+                                <div class="w3-bar w3-black">
+                                    <a style={{ cursor: "pointer" }} class="w3-bar-item tablink activeTab" onClick={(e) => { openCity(e, 'bsc'); setFormType("bsc") }}>Binance p2p</a>
+                                    <a style={{ cursor: "pointer" }} class="w3-bar-item tablink" onClick={(e) => { openCity(e, 'coinpay'); setFormType("coinpay") }}>CoinPayments</a>
+                                </div>
 
+                                <div id="bsc" class="city">
+                                    <div className="row flex-column" style={{ flexWrap: "nowrap", margin: 0, }}>
+                                        <div class="col-md-12">
+                                            <label for="buyRalph">{locale.locale.step1} (*)</label>
+                                            <label for="inp" class="inp">
+                                                <input type="text" id="inp" placeholder="Email" onChange={(e) => Validation("email", e) ? setData({ ...data, email: e.target.value }) : setData({ ...data, email: "" })} required />
+                                                <svg width="280px" height="18px" viewBox="0 0 280 18" class="border">
+                                                    <path d="M0,12 L223.166144,12 C217.241379,12 217.899687,12 225.141066,12 C236.003135,12 241.9279,12 249.827586,12 C257.727273,12 264.639498,12 274.514107,12 C281.097179,12 281.755486,12 276.489028,12"></path>
+                                                </svg>
+                                                <svg width="14px" height="12px" viewBox="0 0 14 12" class="check">
+                                                    <path d="M1 7 5.5 11 L13 1"></path>
+                                                </svg>
+                                            </label>
+                                        </div>
+                                        <div class="col-md-12" style={{ marginBottom: 15 }}>
+                                            <label for="buyRalph">{locale.locale.step2} (*)</label>
+                                            <label for="inp" class="inp">
+                                                <input type="text" id="inp" placeholder="amount" onChange={(e) => Validation("amount", e) ? setData({ ...data, amount: parseFloat(e.target.value) }) : setData({ ...data, amount: 0 })} required />
+                                                <svg width="280px" height="18px" viewBox="0 0 280 18" class="border">
+                                                    <path d="M0,12 L223.166144,12 C217.241379,12 217.899687,12 225.141066,12 C236.003135,12 241.9279,12 249.827586,12 C257.727273,12 264.639498,12 274.514107,12 C281.097179,12 281.755486,12 276.489028,12"></path>
+                                                </svg>
+                                                <svg width="14px" height="12px" viewBox="0 0 14 12" class="check">
+                                                    <path d="M1 7 5.5 11 L13 1"></path>
+                                                </svg>
+                                            </label>
+                                            {data.amount > 0 && data.amount > 9 && <div class="valid-feedback">You will receive {formatMoney(data.amount * costPerUSD + (data.referal ? (data.amount * costPerUSD) * 0.05 : 0), "RALPH")}</div>}
+                                        </div>
+                                        <div class="col-md-12">
+                                            <label for="btcAddress">{locale.locale.step3} (*)</label>
+                                            {
+                                                cuenta
+                                                    ? <p>{`Address: ${cuenta.cuenta} import to ${cuenta.type}`}</p>
+                                                    : <div class="dropdown">
+                                                        <button class="dropbtn">{locale.locale.connectWallet}</button>
+                                                        <div class="dropdown-content">
+                                                            <a href="#!" onClick={(e) => { e.preventDefault(); getMetaMask() }}><img src={MetaMask} style={{ width: 20, height: 20, top: "-2%" }} /> MetaMask</a>
+                                                            <a href="#!" onClick={(e) => { e.preventDefault(); GetTrust() }}> <img src={WC} style={{ width: 20, height: 20, top: "-2%" }} /> Wallet Connect</a>
+                                                        </div>
+                                                    </div>
+                                            }
+                                        </div>
+                                        <div class="col-md-12" style={{ marginBottom: 15 }}>
+                                            <label for="Referal">{locale.locale.step4} <a href="#!" onClick={(e) => { e.preventDefault(); document.getElementById("Referal").value = "0xF237eC922A478dAbf28a9474D205A4f49d604ee3"; setData({ ...data, referal: "0xF237eC922A478dAbf28a9474D205A4f49d604ee3" }) }}>0xF237eC922A478dAbf28a9474D205A4f49d604ee3</a></label>
+                                            <label for="Referal" class="inp" style={{ width: 500, maxWidth: 500 }}>
+                                                <input type="text" id="Referal" defaultValue={data.referal} placeholder="Referal" onKeyUp={(e) => Validation("wallet", e) ? setData({ ...data, referal: e.target.value }) : setData({ ...data, referal: "" })} required />
+                                                <svg width="500px" height="18px" viewBox="0 0 500 18" class="border">
+                                                    <path d="M0,12 L223.166144,12 C217.241379,12 217.899687,12 225.141066,12 C236.003135,12 241.9279,12 249.827586,12 C257.727273,12 264.639498,12 274.514107,12 C281.097179,12 281.755486,12 500.489028,12"></path>
+                                                </svg>
+                                                <svg width="14px" height="12px" viewBox="0 0 14 12" class="check">
+                                                    <path d="M1 7 5.5 11 L13 1"></path>
+                                                </svg>
+                                            </label>
+                                            {data.amount > 0 && data.amount > 9 && data.referal && <div class="valid-feedback">Your referral will receive {formatMoney((data.amount * costPerUSD) * 0.05, "RALPH")}</div>}
+
+                                        </div>
+                                        <div class="col-md-12">
+                                            <label for="comment">{locale.locale.step5} <a href="https://t.me/Saveralphtoken" target="__blank">https://t.me/Saveralphtoken</a></label>
+                                            <textarea style={{ width: "100%" }} onChange={(e) => setData({ ...data, comment: e.target.value })} rows="5" class="form-control is-valid"></textarea>
+                                        </div>
                                     </div>
-                                    <div class="col-md-12">
-                                        <label for="comment">{locale.locale.step5} <a href="https://t.me/Saveralphtoken" target="__blank">https://t.me/Saveralphtoken</a></label>
-                                        <textarea style={{ width: "100%" }} onChange={(e) => setData({ ...data, comment: e.target.value })} rows="5" class="form-control is-valid"></textarea>
+                                </div>
+
+
+                                <div id="coinpay" class="city" style={{ display: "none" }}>
+                                    <div className="row flex-column" style={{ flexWrap: "nowrap", margin: 0, }}>
+                                        <div class="col-md-12">
+                                            <label for="buyRalph">{locale.locale.step1Crypto} (*)</label>
+                                            <select className="form-control" onChange={(e) => setDataCoin({ ...dataCoin, symbol: prices[e.target.value].symbol, costSymbol: prices[e.target.value].amount })}>
+                                                {prices && prices.map((price, index) => <option key={price._id} value={index}>{price.symbol} ${formatMoney(price.amount, "", 2)}</option>)}
+                                            </select>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <label for="buyRalph">{locale.locale.step2Crypto} (*)</label>
+                                            <label for="inp" class="inp">
+                                                <input type="text" id="inp" placeholder="Email" onChange={(e) => Validation("email", e) ? setDataCoin({ ...dataCoin, email: e.target.value }) : setDataCoin({ ...dataCoin, email: "" })} required />
+                                                <svg width="280px" height="18px" viewBox="0 0 280 18" class="border">
+                                                    <path d="M0,12 L223.166144,12 C217.241379,12 217.899687,12 225.141066,12 C236.003135,12 241.9279,12 249.827586,12 C257.727273,12 264.639498,12 274.514107,12 C281.097179,12 281.755486,12 276.489028,12"></path>
+                                                </svg>
+                                                <svg width="14px" height="12px" viewBox="0 0 14 12" class="check">
+                                                    <path d="M1 7 5.5 11 L13 1"></path>
+                                                </svg>
+                                            </label>
+                                        </div>
+                                        <div class="col-md-12" style={{ marginBottom: 15 }}>
+                                            <label for="buyRalph">{locale.locale.step3Crypto.replace("{crypto}", dataCoin.symbol).replace("{min}", CriptoMin(dataCoin.costSymbol, dataCoin.symbol)).replace("{max}", CriptoMax(dataCoin.costSymbol, dataCoin.symbol))} {dataCoin.symbol} (*)</label>
+                                            <label for="inp" class="inp">
+                                                <input type="text" id="inp" placeholder="amount" onChange={(e) => Validation("CryptoCurrencie", e, dataCoin.costSymbol) ? setDataCoin({ ...dataCoin, amount: parseFloat(e.target.value) }) : setDataCoin({ ...dataCoin, amount: 0 })} required />
+                                                <svg width="280px" height="18px" viewBox="0 0 280 18" class="border">
+                                                    <path d="M0,12 L223.166144,12 C217.241379,12 217.899687,12 225.141066,12 C236.003135,12 241.9279,12 249.827586,12 C257.727273,12 264.639498,12 274.514107,12 C281.097179,12 281.755486,12 276.489028,12"></path>
+                                                </svg>
+                                                <svg width="14px" height="12px" viewBox="0 0 14 12" class="check">
+                                                    <path d="M1 7 5.5 11 L13 1"></path>
+                                                </svg>
+                                            </label>
+                                            {parseFloat(dataCoin.amount) > 0.00000000 && CostPerCripto(dataCoin.amount, dataCoin.costSymbol) > 9 &&
+                                                <div class="valid-feedback">
+                                                    <p>You will receive {formatMoney((dataCoin.amount * dataCoin.costSymbol) * costPerUSD + (data.referal ? ((dataCoin.amount * dataCoin.costSymbol) * costPerUSD) * 0.05 : 0), "RALPH")}</p>
+                                                    <p>{formatMoney(((dataCoin.amount * dataCoin.costSymbol) * costPerUSD) / dataCoin.amount)} RALPH per {dataCoin.symbol}</p>
+                                                </div>
+                                            }
+                                        </div>
+                                        <div class="col-md-12">
+                                            <label for="btcAddress">{locale.locale.step3} (*)</label>
+                                            {
+                                                cuenta
+                                                    ? <p>{`Address: ${cuenta.cuenta} import to ${cuenta.type}`}</p>
+                                                    : <div class="dropdown">
+                                                        <button class="dropbtn">Connect your wallet</button>
+                                                        <div class="dropdown-content">
+                                                            <a href="#!" onClick={(e) => { e.preventDefault(); getMetaMask() }}><img src={MetaMask} style={{ width: 20, height: 20, top: "-2%" }} /> MetaMask</a>
+                                                            <a href="#!" onClick={(e) => { e.preventDefault(); GetTrust() }}> <img src={WC} style={{ width: 20, height: 20, top: "-2%" }} /> Wallet Connect</a>
+                                                        </div>
+                                                    </div>
+                                            }
+                                        </div>
+                                        <div class="col-md-12" style={{ marginBottom: 15 }}>
+                                            <label for="Referal">{locale.locale.step4} <a href="#!" onClick={(e) => { e.preventDefault(); document.getElementById("Referal").value = "0xF237eC922A478dAbf28a9474D205A4f49d604ee3"; setData({ ...data, referal: "0xF237eC922A478dAbf28a9474D205A4f49d604ee3" }) }}>0xF237eC922A478dAbf28a9474D205A4f49d604ee3</a></label>
+                                            <label for="Referal" class="inp" style={{ width: 500, maxWidth: 500 }}>
+                                                <input type="text" id="Referal" defaultValue={data.referal} placeholder="Referal" onKeyUp={(e) => Validation("wallet", e) ? setData({ ...data, referal: e.target.value }) : setData({ ...data, referal: "" })} required />
+                                                <svg width="500px" height="18px" viewBox="0 0 500 18" class="border">
+                                                    <path d="M0,12 L223.166144,12 C217.241379,12 217.899687,12 225.141066,12 C236.003135,12 241.9279,12 249.827586,12 C257.727273,12 264.639498,12 274.514107,12 C281.097179,12 281.755486,12 500.489028,12"></path>
+                                                </svg>
+                                                <svg width="14px" height="12px" viewBox="0 0 14 12" class="check">
+                                                    <path d="M1 7 5.5 11 L13 1"></path>
+                                                </svg>
+                                            </label>
+                                            {data.amount > 0 && data.amount > 9 && data.referal && <div class="valid-feedback">Your referral will receive {formatMoney((data.amount * costPerUSD) * 0.05, "RALPH")}</div>}
+
+                                        </div>
+
+                                        <div class="col-md-12" style={{ marginBottom: 15 }}>
+                                            <table>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>SubTotal:</td>
+                                                        <td>{formatMoney(parseFloat(dataCoin.amount), "", dataCoin.symbol !== "DOGE" && dataCoin.symbol !== "USDT.ERC20" ? 8 : 2)} {dataCoin.symbol}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Fee 5%:</td>
+                                                        <td>{formatMoney(parseFloat(dataCoin.amount * 0.05), "", dataCoin.symbol !== "DOGE" && dataCoin.symbol !== "USDT.ERC20" ? 8 : 2)} {dataCoin.symbol}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Total to Pay:</td>
+                                                        <td>{formatMoney(parseFloat(dataCoin.amount * 0.05) + parseFloat(dataCoin.amount), "", dataCoin.symbol !== "DOGE" && dataCoin.symbol !== "USDT.ERC20" ? 8 : 2)} {dataCoin.symbol}</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -190,17 +305,28 @@ function Formulario(props) {
                     </div>
                 </div>
                 <div style={{ textAlign: "center", paddingTop: 25 }}>
-                    <button onClick={() => SendToken()}>{locale.locale.btnSend}</button>
+                    <button onClick={() => FormType === "bsc" ? SendToken() : SendCoinPayment()}>{locale.locale.btnSend}</button>
                 </div>
+                <aside className="widget widget_text">
+                    <div className="textwidget">
+                        <p style={{ fontSize: 32, lineHeight: 3, margin: 0, textAlign: "center" }}>
+                            <a style={{ padding: "0px 10px 0px 10px" }} href="https://t.me/Saveralphtoken" target="__blank"><i className="fab fa-telegram-plane"></i></a>
+                            <a style={{ padding: "0px 10px 0px 10px" }} href="https://www.instagram.com/saveralphtoken/" target="__blank"><i className="fab fa-instagram"></i></a>
+                            <a style={{ padding: "0px 10px 0px 10px" }} href="https://www.reddit.com/user/saveralphtoken/" target="__blank"><i className="fab fa-reddit-alien"></i></a>
+                            <a style={{ padding: "0px 10px 0px 10px" }} href="https://twitter.com/RalphToken" target="__blank"><i className="fab fa-twitter"></i></a>
+                            <a style={{ padding: "0px 10px 0px 10px" }} href="https://saveralphtoken.medium.com/" target="__blank"><i className="fab fa-medium-m"></i></a>
+                        </p>
+                    </div>
+                </aside>
             </div>
 
         </div>
     )
 
-    function SendToken() {
+    function SendCoinPayment() {
         swal.fire({
-            title: 'Enviando Formulario!',
-            text: 'Por favor espere, estamos procesando los datos.',
+            title: locale.locale.TitleLoading,
+            text: locale.locale.TxtLoading,
             imageUrl: Loading,
             imageWidth: 400,
             imageHeight: 300,
@@ -208,26 +334,26 @@ function Formulario(props) {
             showConfirmButton: false,
             backdrop: false
         })
-        if (data.email && data.amount > 0 && cuenta) {
-            let send = { ...data, wallet: cuenta.cuenta }
-
-            socket.emit("sendTransaction", send, (res) => {
-                console.log(res)
+        if (dataCoin.amount > 0 && cuenta && dataCoin.email) {
+            let send = { ...dataCoin, wallet: cuenta.cuenta }
+            socket.emit("sendTransactionCoinPayment", send, (res) => {
+                console.log(res.success)
                 if (!res.error) {
-                    // 'hemos procesado tu formulario, recibirás un correo electrónico con una copia, recuerda que la entrega de tus tokens puede de morar 24 a 72h',
                     swal.fire({
-                        title: 'Datos recibidos por el servidor',
-                        text: JSON.stringify(res),
+                        title: locale.locale.TitleSuccess,
+                        text: locale.locale.TxtSuccessCoin,
                         imageUrl: SuccessImg,
-                        imageWidth: 300,
-                        imageHeight: 300,
+                        imageWidth: 400,
+                        imageHeight: 400,
                         imageAlt: 'Custom image',
-                        showConfirmButton: true,
                         backdrop: false
                     })
+                    setTimeout(() => {
+                        window.location.href = res.success.checkout_url
+                    }, 5000);
                 } else {
                     swal.fire({
-                        title: '¡Ocurrio un error!',
+                        title: locale.locale.TitleError,
                         text: '(mensaje de error)',
                         imageUrl: ErrorImg,
                         imageWidth: 300,
@@ -240,8 +366,62 @@ function Formulario(props) {
             })
         } else {
             swal.fire({
-                title: '¡Ocurrio un error!',
-                text: 'Debes llenar los campos requeridos',
+                title: locale.locale.TitleError,
+                text: locale.locale.TxtError,
+                imageUrl: ErrorImg,
+                imageWidth: 300,
+                imageHeight: 300,
+                imageAlt: 'Custom image',
+                showConfirmButton: true,
+                backdrop: false
+            })
+            return
+        }
+    }
+
+    function SendToken() {
+        swal.fire({
+            title: locale.locale.TitleLoading,
+            text: locale.locale.TxtLoading,
+            imageUrl: Loading,
+            imageWidth: 400,
+            imageHeight: 300,
+            imageAlt: 'Custom image',
+            showConfirmButton: false,
+            backdrop: false
+        })
+        if (data.email && data.amount > 0 && cuenta) {
+            let send = { ...data, wallet: cuenta.cuenta }
+
+            socket.emit("sendTransaction", send, (res) => {
+                if (!res.error) {
+                    swal.fire({
+                        title: locale.locale.TitleSuccess,
+                        text: locale.locale.TxtSuccess,
+                        imageUrl: SuccessImg,
+                        imageWidth: 400,
+                        imageHeight: 400,
+                        imageAlt: 'Custom image',
+                        showConfirmButton: true,
+                        backdrop: false
+                    })
+                } else {
+                    swal.fire({
+                        title: locale.locale.TitleError,
+                        text: '(mensaje de error)',
+                        imageUrl: ErrorImg,
+                        imageWidth: 300,
+                        imageHeight: 300,
+                        imageAlt: 'Custom image',
+                        showConfirmButton: true,
+                        backdrop: false
+                    })
+                }
+            })
+        } else {
+            swal.fire({
+                title: locale.locale.TitleError,
+                text: locale.locale.TxtError,
                 imageUrl: ErrorImg,
                 imageWidth: 300,
                 imageHeight: 300,
@@ -311,6 +491,6 @@ function Formulario(props) {
 
 }
 const MapStateToProps = (state) => {
-    return { locale: state.locale, socket: state.socket, location: state.location }
+    return { locale: state.locale, socket: state.socket, location: state.location, prices: state.prices }
 }
 export default connect(MapStateToProps)(Formulario);

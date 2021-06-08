@@ -17,7 +17,18 @@ export const appendScript = () => {
     })
 }
 
+export const CostPerCripto = (cripto, cost) => {
+    return parseFloat(cripto) * parseFloat(cost);
+}
 
+
+export const CriptoMin = (cost, type) => {
+    return (1 * 10 / parseFloat(cost)).toFixed(type !== "DOGE" && type !== "USDT.ERC20" ? 6 : 2);
+}
+
+export const CriptoMax = (cost, type) => {
+    return (1 * 20000 / parseFloat(cost)).toFixed(type !== "DOGE" && type !== "USDT.ERC20" ? 6 : 2);
+}
 export const formatMoney = (amount, moneda = "", decimalCount = false, decimal = ",", thousands = ".") => {
     try {
         decimalCount = Math.abs(decimalCount);
@@ -35,7 +46,7 @@ export const formatMoney = (amount, moneda = "", decimalCount = false, decimal =
 };
 
 
-export const Validation = (type, e) => {
+export const Validation = (type, e, cost = 0) => {
     switch (type) {
         case "email":
             var re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -48,7 +59,7 @@ export const Validation = (type, e) => {
             return result;
         case "amount":
             var result = false;
-            if (e.target.value > 9.99) {
+            if (e.target.value > 9.99 && e.target.value < 10000.01) {
                 const re = /^[0-9]+([.,]+[0-9]{1,2})?$/;
                 result = re.test(e.target.value);
                 if (result) {
@@ -76,7 +87,23 @@ export const Validation = (type, e) => {
                 result = false
             }
             return result
+        case "CryptoCurrencie":
+            var result = false;
+            if (CostPerCripto(e.target.value, cost) > 9.99 && CostPerCripto(e.target.value, cost) < 10000.01) {
+                const re = /^[0-9]+([.,]+[0-9]{1,19})?$/;
+                result = re.test(e.target.value);
+                if (result) {
+                    e.target.parentElement.classList.add("valid")
+                } else {
+                    e.target.parentElement.classList.remove("valid")
+                }
+            } else {
+                e.target.parentElement.classList.remove("valid")
+                result = false
+            }
+            return result;
         default:
             return false;
     }
 }
+

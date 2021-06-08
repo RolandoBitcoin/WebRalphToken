@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import Logo from '../../Assets/images/logo.png';
+import token from '../../Assets/images/token.png';
 function About(props) {
     const { locale } = props;
     return (
@@ -12,7 +12,7 @@ function About(props) {
                             <div class="column mcb-column one column_image ">
                                 <div class="image_frame image_item no_link scale-with-grid no_border">
                                     <div class="image_wrapper"><img class="scale-with-grid"
-                                        src={Logo} alt="" width="460"
+                                        src={token} alt="" width="460"
                                         height="401" /> </div>
                                 </div>
                             </div>

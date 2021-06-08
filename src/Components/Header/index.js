@@ -88,7 +88,7 @@ function Header(props) {
 
                                         style={{ zIndex: 10, fontSize: 20, borderRadius: 20, whiteSpace: "nowrap", cursor: "pointer", color: "#000", backgroundColor: "rgb(231, 214, 0)", borderColor: "rgb(231, 214, 0)" }}
                                         to={{
-                                            pathname: `/buyToken`,
+                                            pathname: `/Terms`,
                                             state: { background: location }
                                         }}
                                     >

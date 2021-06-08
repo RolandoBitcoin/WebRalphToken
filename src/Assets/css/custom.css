@@ -2993,3 +2993,8 @@
     display: block;
     font-size: 4.5rem;
 }
+
+.activeTab {
+    color: #000 !important;
+    background-color: #e7d600 !important;
+}

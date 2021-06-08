@@ -40,7 +40,7 @@ function ActionBar(props) {
                                             <a href="#join" data-hash="#join"><span>Carrot</span></a>
                                         </li>
                                         <li class="">
-                                            <a href="#LegalDisclaimer" data-hash="#join"><span>{locale.locale.LegalDisclaimer}</span></a>
+                                            <a href="#LegalDisclaimer" data-hash="#LegalDisclaimer"><span>{locale.locale.LegalDisclaimer}</span></a>
                                         </li>
                                         <li class="last">
                                             <Link
