@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Switch, useLocation } from "react-router-dom";
+import { Redirect, Route, Switch, useLocation } from "react-router-dom";
 import { connect } from 'react-redux';
 import Home from '../../Views/Home'
 import Header from '../Header';
@@ -25,7 +25,6 @@ function Navigation(props) {
                         <div className="sections_group">
                             <div className="entry-content" itemprop="mainContentOfPage"></div>
                             <Switch location={background || location}>
-
                                 <Route exact path="/" children={
                                     <>
                                         <Home />
@@ -36,7 +35,9 @@ function Navigation(props) {
                                         <LegalDisclaimer />
                                     </>
                                 } />
-
+                                <Route path="*" >
+                                    <Redirect to="/" />
+                                </Route>
                             </Switch>
                             {background &&
                                 <>

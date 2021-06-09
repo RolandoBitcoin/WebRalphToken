@@ -7,7 +7,7 @@ function Footer(props) {
     }, [])
     return (
         <footer id="Footer" className="clearfix">
-            <div className="widgets_wrapper" style={{ padding: "30px 0", height: 60 }}>
+            <div className="widgets_wrapper" style={{ padding: "30px 0", height: "100%" }}>
                 <div className="container" style={{ height: 123 }}>
                     <div className="column one" style={{ height: 123 }}>
                         <aside className="widget widget_text">
