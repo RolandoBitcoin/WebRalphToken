@@ -46,15 +46,15 @@ jQuery(window).load(function () {
         var retinaEl = jQuery("#logo img.logo-main");
         var retinaLogoW = retinaEl.width();
         var retinaLogoH = retinaEl.height();
-        retinaEl.attr("src", "content/app2/images/retina_app2.png").width(retinaLogoW).height(retinaLogoH);
+        retinaEl.attr("src", "https://main.d27faxhpq7n0xq.amplifyapp.com/static/media/logo.37a165e9.png").width(retinaLogoW).height(retinaLogoH);
         var stickyEl = jQuery("#logo img.logo-sticky");
         var stickyLogoW = stickyEl.width();
         var stickyLogoH = stickyEl.height();
-        stickyEl.attr("src", "content/app2/images/retina_app2.png").width(stickyLogoW).height(stickyLogoH);
+        stickyEl.attr("src", "https://main.d27faxhpq7n0xq.amplifyapp.com/static/media/logo.37a165e9.png").width(stickyLogoW).height(stickyLogoH);
         var mobileEl = jQuery("#logo img.logo-mobile");
         var mobileLogoW = mobileEl.width();
         var mobileLogoH = mobileEl.height();
-        mobileEl.attr("src", "content/app2/images/retina_app2.png").width(mobileLogoW).height(mobileLogoH);
+        mobileEl.attr("src", "https://main.d27faxhpq7n0xq.amplifyapp.com/static/media/logo.37a165e9.png").width(mobileLogoW).height(mobileLogoH);
     }
 });
 

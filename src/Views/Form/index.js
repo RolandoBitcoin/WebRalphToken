@@ -157,7 +157,7 @@ function Formulario(props) {
                                             <label for="buyRalph">{locale.locale.step1} (*)</label>
                                             <label for="inp" class="inp">
                                                 <input type="text" id="inp" placeholder="Email" onChange={(e) => Validation("email", e) ? setData({ ...data, email: e.target.value }) : setData({ ...data, email: "" })} required />
-                                                <svg width="280px" height="18px" viewBox="0 0 280 18" class="border">
+                                                <svg style={{ width: "100%" }} height="18px" viewBox="0 0 280 18" class="border">
                                                     <path d="M0,12 L223.166144,12 C217.241379,12 217.899687,12 225.141066,12 C236.003135,12 241.9279,12 249.827586,12 C257.727273,12 264.639498,12 274.514107,12 C281.097179,12 281.755486,12 276.489028,12"></path>
                                                 </svg>
                                                 <svg width="14px" height="12px" viewBox="0 0 14 12" class="check">
@@ -169,7 +169,7 @@ function Formulario(props) {
                                             <label for="buyRalph">{locale.locale.step2} (*)</label>
                                             <label for="inp" class="inp">
                                                 <input type="text" id="inp" placeholder="amount" onChange={(e) => Validation("amount", e) ? setData({ ...data, amount: parseFloat(e.target.value) }) : setData({ ...data, amount: 0 })} required />
-                                                <svg width="280px" height="18px" viewBox="0 0 280 18" class="border">
+                                                <svg style={{ width: "100%" }} height="18px" viewBox="0 0 280 18" class="border">
                                                     <path d="M0,12 L223.166144,12 C217.241379,12 217.899687,12 225.141066,12 C236.003135,12 241.9279,12 249.827586,12 C257.727273,12 264.639498,12 274.514107,12 C281.097179,12 281.755486,12 276.489028,12"></path>
                                                 </svg>
                                                 <svg width="14px" height="12px" viewBox="0 0 14 12" class="check">
@@ -224,9 +224,9 @@ function Formulario(props) {
                                         </div>
                                         <div class="col-md-12">
                                             <label for="buyRalph">{locale.locale.step2Crypto} (*)</label>
-                                            <label for="inp" class="inp">
+                                            <label for="inp" class="inp" style={{ width: "100%", maxWidth: 500 }}>
                                                 <input type="text" id="inp" placeholder="Email" onChange={(e) => Validation("email", e) ? setDataCoin({ ...dataCoin, email: e.target.value }) : setDataCoin({ ...dataCoin, email: "" })} required />
-                                                <svg width="280px" height="18px" viewBox="0 0 280 18" class="border">
+                                                <svg style={{ width: "100%" }} height="18px" viewBox="0 0 280 18" class="border">
                                                     <path d="M0,12 L223.166144,12 C217.241379,12 217.899687,12 225.141066,12 C236.003135,12 241.9279,12 249.827586,12 C257.727273,12 264.639498,12 274.514107,12 C281.097179,12 281.755486,12 276.489028,12"></path>
                                                 </svg>
                                                 <svg width="14px" height="12px" viewBox="0 0 14 12" class="check">
@@ -234,11 +234,11 @@ function Formulario(props) {
                                                 </svg>
                                             </label>
                                         </div>
-                                        <div class="col-md-12" style={{ marginBottom: 15 }}>
+                                        <div class="col-md-12" style={{ width: "100%", marginBottom: 15 }}>
                                             <label for="buyRalph">{locale.locale.step3Crypto.replace("{crypto}", dataCoin.symbol).replace("{min}", CriptoMin(dataCoin.costSymbol, dataCoin.symbol)).replace("{max}", CriptoMax(dataCoin.costSymbol, dataCoin.symbol))} {dataCoin.symbol} (*)</label>
                                             <label for="inp" class="inp">
                                                 <input type="text" id="inp" placeholder="amount" onChange={(e) => Validation("CryptoCurrencie", e, dataCoin.costSymbol) ? setDataCoin({ ...dataCoin, amount: parseFloat(e.target.value) }) : setDataCoin({ ...dataCoin, amount: 0 })} required />
-                                                <svg width="280px" height="18px" viewBox="0 0 280 18" class="border">
+                                                <svg style={{ width: "100%" }} height="18px" viewBox="0 0 280 18" class="border">
                                                     <path d="M0,12 L223.166144,12 C217.241379,12 217.899687,12 225.141066,12 C236.003135,12 241.9279,12 249.827586,12 C257.727273,12 264.639498,12 274.514107,12 C281.097179,12 281.755486,12 276.489028,12"></path>
                                                 </svg>
                                                 <svg width="14px" height="12px" viewBox="0 0 14 12" class="check">
@@ -268,9 +268,9 @@ function Formulario(props) {
                                         </div>
                                         <div class="col-md-12" style={{ marginBottom: 15 }}>
                                             <label for="Referal">{locale.locale.step4.replace("{percent}", formatMoney(costPerUSD * 0.05))} <a href="#!" onClick={(e) => { e.preventDefault(); document.getElementById("Referal").value = "0xF237eC922A478dAbf28a9474D205A4f49d604ee3"; setData({ ...data, referal: "0xF237eC922A478dAbf28a9474D205A4f49d604ee3" }) }}>0xF237eC922A478dAbf28a9474D205A4f49d604ee3</a></label>
-                                            <label for="Referal" class="inp" style={{ width: 500, maxWidth: 500 }}>
+                                            <label for="Referal" class="inp" style={{ width: "100%", maxWidth: 500 }}>
                                                 <input type="text" id="Referal" defaultValue={data.referal} placeholder="Referal" onKeyUp={(e) => Validation("wallet", e) ? setData({ ...data, referal: e.target.value }) : setData({ ...data, referal: "" })} required />
-                                                <svg width="500px" height="18px" viewBox="0 0 500 18" class="border">
+                                                <svg style={{ width: "100%" }} height="18px" viewBox="0 0 500 18" class="border">
                                                     <path d="M0,12 L223.166144,12 C217.241379,12 217.899687,12 225.141066,12 C236.003135,12 241.9279,12 249.827586,12 C257.727273,12 264.639498,12 274.514107,12 C281.097179,12 281.755486,12 500.489028,12"></path>
                                                 </svg>
                                                 <svg width="14px" height="12px" viewBox="0 0 14 12" class="check">
