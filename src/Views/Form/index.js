@@ -85,7 +85,11 @@ function Formulario(props) {
                 console.log('Please install MetaMask!');
             }
         }
-        MetamaskProvider()
+        // if (!prices) {
+        //     MetamaskProvider()
+        // } else {
+        //     setDataCoin({ ...dataCoin, amount: 0 })
+        // }
         // openCity()
         return () => {
             setCuenta(false)
@@ -182,7 +186,7 @@ function Formulario(props) {
                                             <label for="btcAddress">{locale.locale.step3} (*)</label>
                                             {
                                                 cuenta
-                                                    ? <p>{`Address: ${cuenta.cuenta} import to ${cuenta.type}`}</p>
+                                                    ? <p style={{ wordBreak: "break-all" }}>{`Address: ${cuenta.cuenta} import to ${cuenta.type}`}</p>
                                                     : <div class="dropdown">
                                                         <button class="dropbtn">{locale.locale.connectWallet}</button>
                                                         <div class="dropdown-content">
@@ -193,7 +197,7 @@ function Formulario(props) {
                                             }
                                         </div>
                                         <div class="col-md-12" style={{ marginBottom: 15 }}>
-                                            <label for="Referal">{locale.locale.step4.replace("{percent}", formatMoney(costPerUSD * 0.05))} <a href="#!" onClick={(e) => { e.preventDefault(); document.getElementById("Referal").value = "0xF237eC922A478dAbf28a9474D205A4f49d604ee3"; setData({ ...data, referal: "0xF237eC922A478dAbf28a9474D205A4f49d604ee3" }) }}>0xF237eC922A478dAbf28a9474D205A4f49d604ee3</a></label>
+                                            <label for="Referal" style={{ wordBreak: "break-all" }}>{locale.locale.step4.replace("{percent}", formatMoney(costPerUSD * 0.05))} <a href="#!" onClick={(e) => { e.preventDefault(); document.getElementById("Referal").value = "0xF237eC922A478dAbf28a9474D205A4f49d604ee3"; setData({ ...data, referal: "0xF237eC922A478dAbf28a9474D205A4f49d604ee3" }) }}>0xF237eC922A478dAbf28a9474D205A4f49d604ee3</a></label>
                                             <label for="Referal" class="inp" style={{ width: "100%", maxWidth: 500 }}>
                                                 <input type="text" id="Referal" defaultValue={data.referal} placeholder="Referal" onKeyUp={(e) => Validation("wallet", e) ? setData({ ...data, referal: e.target.value }) : setData({ ...data, referal: "" })} required />
                                                 <svg style={{ width: "100%" }} height="18px" viewBox="0 0 500 18" class="border">
@@ -218,13 +222,13 @@ function Formulario(props) {
                                     <div className="row flex-column" style={{ flexWrap: "nowrap", margin: 0, }}>
                                         <div class="col-md-12">
                                             <label for="buyRalph">{locale.locale.step1Crypto} (*)</label>
-                                            <select className="form-control" onChange={(e) => setDataCoin({ ...dataCoin, symbol: prices[e.target.value].symbol, costSymbol: prices[e.target.value].amount })}>
+                                            <select className="form-control" onChange={(e) => { setDataCoin({ ...dataCoin, symbol: prices[e.target.value].symbol, costSymbol: prices[e.target.value].amount, amount: 0 }) }}>
                                                 {prices && prices.map((price, index) => <option key={price._id} value={index}>{price.symbol} ${formatMoney(price.amount, "", 2)}</option>)}
                                             </select>
                                         </div>
                                         <div class="col-md-12">
                                             <label for="buyRalph">{locale.locale.step2Crypto} (*)</label>
-                                            <label for="inp" class="inp" style={{ width: "100%", maxWidth: 500 }}>
+                                            <label for="inp" class="inp" style={{ width: "100%" }}>
                                                 <input type="text" id="inp" placeholder="Email" onChange={(e) => Validation("email", e) ? setDataCoin({ ...dataCoin, email: e.target.value }) : setDataCoin({ ...dataCoin, email: "" })} required />
                                                 <svg style={{ width: "100%" }} height="18px" viewBox="0 0 280 18" class="border">
                                                     <path d="M0,12 L223.166144,12 C217.241379,12 217.899687,12 225.141066,12 C236.003135,12 241.9279,12 249.827586,12 C257.727273,12 264.639498,12 274.514107,12 C281.097179,12 281.755486,12 276.489028,12"></path>
@@ -256,7 +260,7 @@ function Formulario(props) {
                                             <label for="btcAddress">{locale.locale.step3} (*)</label>
                                             {
                                                 cuenta
-                                                    ? <p>{`Address: ${cuenta.cuenta} import to ${cuenta.type}`}</p>
+                                                    ? <p style={{ wordBreak: "break-all" }}>{`Address: ${cuenta.cuenta} import to ${cuenta.type}`}</p>
                                                     : <div class="dropdown">
                                                         <button class="dropbtn">Connect your wallet</button>
                                                         <div class="dropdown-content">
@@ -267,7 +271,7 @@ function Formulario(props) {
                                             }
                                         </div>
                                         <div class="col-md-12" style={{ marginBottom: 15 }}>
-                                            <label for="Referal">{locale.locale.step4.replace("{percent}", formatMoney(costPerUSD * 0.05))} <a href="#!" onClick={(e) => { e.preventDefault(); document.getElementById("Referal").value = "0xF237eC922A478dAbf28a9474D205A4f49d604ee3"; setData({ ...data, referal: "0xF237eC922A478dAbf28a9474D205A4f49d604ee3" }) }}>0xF237eC922A478dAbf28a9474D205A4f49d604ee3</a></label>
+                                            <label for="Referal" style={{ wordBreak: "break-all" }}>{locale.locale.step4.replace("{percent}", formatMoney(costPerUSD * 0.05))} <a href="#!" onClick={(e) => { e.preventDefault(); document.getElementById("Referal").value = "0xF237eC922A478dAbf28a9474D205A4f49d604ee3"; setData({ ...data, referal: "0xF237eC922A478dAbf28a9474D205A4f49d604ee3" }) }}>0xF237eC922A478dAbf28a9474D205A4f49d604ee3</a></label>
                                             <label for="Referal" class="inp" style={{ width: "100%", maxWidth: 500 }}>
                                                 <input type="text" id="Referal" defaultValue={data.referal} placeholder="Referal" onKeyUp={(e) => Validation("wallet", e) ? setData({ ...data, referal: e.target.value }) : setData({ ...data, referal: "" })} required />
                                                 <svg style={{ width: "100%" }} height="18px" viewBox="0 0 500 18" class="border">

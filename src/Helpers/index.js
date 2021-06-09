@@ -18,16 +18,17 @@ export const appendScript = () => {
 }
 
 export const CostPerCripto = (cripto, cost) => {
-    return parseFloat(cripto) * parseFloat(cost);
+    let result = (parseFloat(cripto) * parseFloat(cost)).toFixed(3)
+    return parseFloat(result);
 }
 
 
 export const CriptoMin = (cost, type) => {
-    return (1 * 3 / parseFloat(cost)).toFixed(type !== "DOGE" && type !== "USDT.ERC20" ? 6 : 2);
+    return (1 * 50 / parseFloat(cost)).toFixed(type !== "DOGE" && type !== "USDT.ERC20" ? 8 : 2);
 }
 
 export const CriptoMax = (cost, type) => {
-    return (1 * 20000 / parseFloat(cost)).toFixed(type !== "DOGE" && type !== "USDT.ERC20" ? 6 : 2);
+    return (1 * 20000 / parseFloat(cost)).toFixed(type !== "DOGE" && type !== "USDT.ERC20" ? 8 : 2);
 }
 export const formatMoney = (amount, moneda = "", decimalCount = false, decimal = ",", thousands = ".") => {
     try {
@@ -89,7 +90,7 @@ export const Validation = (type, e, cost = 0) => {
             return result
         case "CryptoCurrencie":
             var result = false;
-            if (CostPerCripto(e.target.value, cost) > 2.99 && CostPerCripto(e.target.value, cost) < 10000.01) {
+            if (CostPerCripto(e.target.value, cost) > 49.9999999 && CostPerCripto(e.target.value, cost) < 10000.01) {
                 const re = /^[0-9]+([.,]+[0-9]{1,19})?$/;
                 result = re.test(e.target.value);
                 if (result) {
