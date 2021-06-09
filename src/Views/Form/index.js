@@ -86,7 +86,7 @@ function Formulario(props) {
             }
         }
         // if (!prices) {
-        //     MetamaskProvider()
+            MetamaskProvider()
         // } else {
         //     setDataCoin({ ...dataCoin, amount: 0 })
         // }
