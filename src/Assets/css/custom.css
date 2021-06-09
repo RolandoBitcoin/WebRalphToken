@@ -2998,3 +2998,7 @@
     color: #000 !important;
     background-color: #e7d600 !important;
 }
+
+.dropdown-content a{
+    padding: 15px !important;
+}
