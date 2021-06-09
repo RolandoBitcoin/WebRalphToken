@@ -21,7 +21,7 @@ function Formulario(props) {
     const [metamask, setMetamask] = useState(false)
     const [FormType, setFormType] = useState("bsc")
     const [cuenta, setCuenta] = useState(false)
-    const [utc] = useState(moment.tz({ year: 2021, month: 5, day: 7, hour: 18 }, "Atlantic/Azores").valueOf())
+    const [utc] = useState(moment.tz({ year: 2021, month: 5, day: 9, hour: 18 }, "Atlantic/Azores").valueOf())
     const [day] = useState(moment(utc).add(2, 'days').valueOf())
     const [data, setData] = useState({
         amount: 0,
