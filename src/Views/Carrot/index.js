@@ -7,7 +7,7 @@ function Carrot(props) {
         <div class="section mcb-section" id="join" style={{ paddingTop: 40, paddingBottom: 0, backgroundColor: "#1c112f", backgroundImage: `url(${Bg})`, backgroundRepeat: "no-repeat", backgroundPosition: "center bottom" }}>
             <div style={{ width: "100%", height: "100%", backgroundColor: "rgba(0,0,0,0.5)", position: "absolute", top: 0, bottom: 0, left: 0, right: 0, zIndex: 1 }} />
             <div class="section_wrapper mcb-section-inner">
-                <div class="wrap mcb-wrap one-second  valign-top clearfix" style={{ padding: "60px 0 0 0" }}>
+                <div class="wrap mcb-wrap one-second  valign-top clearfix" style={{ padding: "60px 2% 0px" }}>
                     <div class="mcb-wrap-inner">
                         <div class="column mcb-column one column_column">
                             <div class="column_attr">
