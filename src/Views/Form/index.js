@@ -345,8 +345,8 @@ function Formulario(props) {
                         title: locale.locale.TitleSuccess,
                         text: locale.locale.TxtSuccessCoin,
                         imageUrl: SuccessImg,
-                        imageWidth: 400,
-                        imageHeight: 400,
+                        imageWidth: 300,
+                        imageHeight: 300,
                         imageAlt: 'Custom image',
                         backdrop: false
                     })
@@ -401,8 +401,8 @@ function Formulario(props) {
                         title: locale.locale.TitleSuccess,
                         text: locale.locale.TxtSuccess,
                         imageUrl: SuccessImg,
-                        imageWidth: 400,
-                        imageHeight: 400,
+                        imageWidth: 300,
+                        imageHeight: 300,
                         imageAlt: 'Custom image',
                         showConfirmButton: true,
                         backdrop: false
