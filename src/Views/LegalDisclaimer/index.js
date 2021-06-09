@@ -10,7 +10,7 @@ function LegalDisclaimer(props) {
                     <div class="column mcb-column two-two column_column">
                         <div class="column_attr">
                             <h3>{locale.locale.LegalDisclaimer}</h3>
-                            <p className="big" style={{ textAlign: "justify" }}>{locale.locale.LegalDisclaimerTXT}</p>
+                            <p style={{ textAlign: "justify" }}>{locale.locale.LegalDisclaimerTXT}</p>
                         </div>
                     </div>
                 </div>

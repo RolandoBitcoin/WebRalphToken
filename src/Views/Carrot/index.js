@@ -12,7 +12,7 @@ function Carrot(props) {
                         <div class="column mcb-column one column_column">
                             <div class="column_attr">
                                 <h2 style={{ color: "#e7d600" }}>{locale.locale.carrot}</h2>
-                                <p class="button_label big" style={{ color: "#fff", textAlign: "justify" }} dangerouslySetInnerHTML={{ __html: locale.locale.carrotTXT }}></p>
+                                <p class="button_label" style={{ color: "#fff", textAlign: "justify" }} dangerouslySetInnerHTML={{ __html: locale.locale.carrotTXT }}></p>
                             </div>
                         </div>
                     </div>

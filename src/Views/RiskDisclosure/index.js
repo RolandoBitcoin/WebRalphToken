@@ -21,7 +21,7 @@ function RiskDisclosure(props) {
                     <div class="column mcb-column two-two column_column">
                         <div class="column_attr">
                             <h3>{locale.locale.RiskDisclosure}</h3>
-                            <p className="big" style={{ textAlign: "justify" }} dangerouslySetInnerHTML={{ __html: locale.locale.RiskDisclosureTXT }}></p>
+                            <p style={{ textAlign: "justify" }} dangerouslySetInnerHTML={{ __html: locale.locale.RiskDisclosureTXT }}></p>
                         </div>
                     </div>
                 </div>

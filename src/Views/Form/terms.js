@@ -41,7 +41,7 @@ function Terms(props) {
                     <h1 style={{ color: "#e7d600" }}>{locale.locale.formtitle}</h1>
                     <div className="wrap mcb-wrap one  valign-top clearfix">
                         <div className="column mcb-column one-two column_column">
-                            <div style={{ paddingRight: 25 }}>
+                            <div style={{ paddingRight: 25, wordBreak: "break-all" }}>
                                 {locale.locale.formBigText.map((text, index) => {
                                     return <p key={index} dangerouslySetInnerHTML={{ __html: text.replace("{round}", round).replace("{amount}", formatMoney(costPerUSD)) }}></p>
                                 })}

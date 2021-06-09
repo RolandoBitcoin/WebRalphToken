@@ -25,7 +25,7 @@ function About(props) {
                             <div class="column mcb-column two-two column_column">
                                 <div class="column_attr">
                                     <h3>{locale.locale.mission}</h3>
-                                    <p className="big" style={{ textAlign: "justify" }}>{locale.locale.missionTXT}</p>
+                                    <p style={{ textAlign: "justify" }}>{locale.locale.missionTXT}</p>
                                 </div>
                             </div>
                         </div>
