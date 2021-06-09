@@ -23,7 +23,7 @@ export const CostPerCripto = (cripto, cost) => {
 
 
 export const CriptoMin = (cost, type) => {
-    return (1 * 10 / parseFloat(cost)).toFixed(type !== "DOGE" && type !== "USDT.ERC20" ? 6 : 2);
+    return (1 * 3 / parseFloat(cost)).toFixed(type !== "DOGE" && type !== "USDT.ERC20" ? 6 : 2);
 }
 
 export const CriptoMax = (cost, type) => {
@@ -89,7 +89,7 @@ export const Validation = (type, e, cost = 0) => {
             return result
         case "CryptoCurrencie":
             var result = false;
-            if (CostPerCripto(e.target.value, cost) > 9.99 && CostPerCripto(e.target.value, cost) < 10000.01) {
+            if (CostPerCripto(e.target.value, cost) > 2.99 && CostPerCripto(e.target.value, cost) < 10000.01) {
                 const re = /^[0-9]+([.,]+[0-9]{1,19})?$/;
                 result = re.test(e.target.value);
                 if (result) {
