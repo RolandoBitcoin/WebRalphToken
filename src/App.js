@@ -9,6 +9,7 @@ import { setLocation } from './Redux/reducers/Location';
 function App(props) {
   const { socket, setSocket, setPrices, setLocation } = props;
   useEffect(() => {
+    axios.get("https://geolocation-db.com/json/f9902210-97f0-11eb-a459-b997d30983f1").then(r => setLocation(r.data))
     setSocket(socket)
     socket.emit("CryptoCoins", (res) => {
       setPrices(res)
@@ -16,7 +17,6 @@ function App(props) {
     socket.on("ActualizarPrecios", (res) => {
       setPrices(res)
     })
-    axios.get("https://geolocation-db.com/json/f9902210-97f0-11eb-a459-b997d30983f1").then(r => setLocation(r.data))
   }, [])
   return <Navigation />
 }

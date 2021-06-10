@@ -86,7 +86,7 @@ function Formulario(props) {
             }
         }
         // if (!prices) {
-            MetamaskProvider()
+        MetamaskProvider()
         // } else {
         //     setDataCoin({ ...dataCoin, amount: 0 })
         // }
@@ -135,7 +135,7 @@ function Formulario(props) {
                     border: "2px solid #444"
                 }}
             >
-                <p style={{ width: 10, height: 10, position: "absolute", top: 0, bottom: 0, right: 0, left: "98%", paddingTop: 3, paddingRight: 10, fontSize: 25, cursor: "pointer" }} onClick={back}>x</p>
+                <p id="closeBtn" style={{ width: 10, height: 10, position: "absolute", top: 0, bottom: 0, right: 0, left: "98%", paddingTop: 3, paddingRight: 10, fontSize: 25, cursor: "pointer" }} onClick={back}>x</p>
                 <div className="mcb-section-inner" style={{ padding: 10 }}>
                     <h1 style={{ color: "#e7d600" }}>{locale.locale.formtitle}</h1>
                     <div className="wrap mcb-wrap one  valign-top clearfix">
@@ -343,7 +343,6 @@ function Formulario(props) {
         if (dataCoin.amount > 0 && cuenta && dataCoin.email) {
             let send = { ...dataCoin, wallet: cuenta.cuenta }
             socket.emit("sendTransactionCoinPayment", send, (res) => {
-                console.log(res.success)
                 if (!res.error) {
                     swal.fire({
                         title: locale.locale.TitleSuccess,
@@ -357,6 +356,7 @@ function Formulario(props) {
                     setTimeout(() => {
                         window.location.href = res.success.checkout_url
                     }, 5000);
+                    document.getElementById("closeBtn").click()
                 } else {
                     swal.fire({
                         title: locale.locale.TitleError,
@@ -411,6 +411,7 @@ function Formulario(props) {
                         showConfirmButton: true,
                         backdrop: false
                     })
+                    document.getElementById("closeBtn").click()
                 } else {
                     swal.fire({
                         title: locale.locale.TitleError,
