@@ -446,6 +446,31 @@ function Formulario(props) {
             const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
             const account = accounts[0];
             setCuenta({ cuenta: account, type: "MetaMask" });
+
+
+            window.ethereum
+                .request({
+                    method: 'wallet_watchAsset',
+                    params: {
+                        type: 'ERC20',
+                        options: {
+                            address: '0x02618C556d075D2C5ACA9021Be2773764969bb51',
+                            symbol: 'Ralph',
+                            decimals: 18,
+                            image: 'https://www.saveralphtoken.com/static/media/logo.37a165e9.png',
+                        },
+                    },
+                })
+                .then((success) => {
+                    if (success) {
+                        console.log('FOO successfully added to wallet!')
+                    } else {
+                        throw new Error('Something went wrong.')
+                    }
+                })
+                .catch(console.error)
+
+
             window.ethereum.on('accountsChanged', function (accounts) {
                 setCuenta({ cuenta: accounts[0], type: "MetaMask" });
                 // Time to reload your interface with accounts[0]!
