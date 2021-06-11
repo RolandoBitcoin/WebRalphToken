@@ -3000,3 +3000,23 @@
     color: #000 !important;
     background-color: #e7d600 !important;
 }
+
+.text-center {
+    text-align: center !important;
+}
+
+.mgrpdf-navigation__controls--wrapper {
+    background-color: transparent !important;
+}
+
+@media (min-width:576px) {
+    .mgrpdf__wrapper canvas {
+        width: 100% !important;
+        height: 100% !important;
+    }
+}
+
+.mgrpdf__wrapper canvas {
+    width: 60% !important;
+    height: 100% !important;
+}
