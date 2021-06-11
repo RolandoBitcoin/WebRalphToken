@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import Bg from '../../Assets/images/bg.jpg';
 import { Button, Icon, Position, SpecialZoomLevel, Tooltip, Viewer, Worker, ProgressBar } from '@react-pdf-viewer/core';
@@ -18,6 +18,18 @@ function WhitePaper(props) {
     const disableScrollPluginInstance = disableScrollPlugin();
     const pageNavigationPluginInstance = pageNavigationPlugin();
     const { GoToNextPage, GoToPreviousPage } = pageNavigationPluginInstance;
+    useEffect(() => {
+        fetch(esp, {
+            headers: {
+                "Access-Control-Allow-Headers": "Content-Type",
+                "Access-Control-Allow-Origin": "*",
+                "Access-Control-Allow-Methods": "OPTIONS,POST,GET"
+            },
+        }).then(response => response.blob())
+            .then(blob => {
+                console.log(blob)
+            });
+    }, [])
     return (
         locale && <div class="section mcb-section" id="new" style={{ paddingTop: 50, paddingBottom: 90 }}
             data-parallax="3d"><img class="mfn-parallax"
