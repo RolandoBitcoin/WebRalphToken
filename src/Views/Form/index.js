@@ -147,7 +147,7 @@ function Formulario(props) {
                             </div> */}
                             <Countdown date={utc + (day - utc)} renderer={renderer} />
                         </div>
-                        <div class="column mcb-column one-two column_column" style={{ padding: 0 }}>
+                        <div class="column mcb-column one-two column_column" style={{ padding: 0, width: "100%" }}>
                             <div className="shadowForm">
                                 <p>(*) {locale.locale.required}</p>
                                 <div class="w3-bar w3-black">
@@ -252,9 +252,9 @@ function Formulario(props) {
                         </div>
                     </div>
                 </div>
-                <div style={{ textAlign: "center", paddingTop: 25 }}>
+                {FormType === "coinpay" && <div style={{ textAlign: "center", paddingTop: 25 }}>
                     <button onClick={() => FormType === "bsc" ? SendToken() : SendCoinPayment()}>{locale.locale.btnSend}</button>
-                </div>
+                </div>}
                 <aside className="widget widget_text">
                     <div className="textwidget">
                         <p style={{ fontSize: 32, lineHeight: 3, margin: 0, textAlign: "center" }}>
