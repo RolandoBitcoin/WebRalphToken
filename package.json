@@ -32,6 +32,7 @@
     "sweetalert2": "^11.0.16",
     "web-vitals": "^1.0.1"
   },
+  "proxy": "https://files-ralph.s3.us-east-2.amazonaws.com/",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
