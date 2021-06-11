@@ -155,66 +155,8 @@ function Formulario(props) {
                                     <a style={{ cursor: "pointer" }} class="w3-bar-item tablink" onClick={(e) => { openCity(e, 'coinpay'); setFormType("coinpay") }}>CoinPayments</a>
                                 </div>
 
-                                <div id="bsc" class="city">
-                                    <div className="row flex-column" style={{ flexWrap: "nowrap", margin: 0, }}>
-                                        <div class="col-md-12">
-                                            <label for="buyRalph">{locale.locale.step1} (*)</label>
-                                            <label for="inp" class="inp">
-                                                <input type="text" id="inp" placeholder="Email" onChange={(e) => Validation("email", e) ? setData({ ...data, email: e.target.value }) : setData({ ...data, email: "" })} required />
-                                                <svg style={{ width: "100%" }} height="18px" viewBox="0 0 280 18" class="border">
-                                                    <path d="M0,12 L223.166144,12 C217.241379,12 217.899687,12 225.141066,12 C236.003135,12 241.9279,12 249.827586,12 C257.727273,12 264.639498,12 274.514107,12 C281.097179,12 281.755486,12 276.489028,12"></path>
-                                                </svg>
-                                                <svg width="14px" height="12px" viewBox="0 0 14 12" class="check">
-                                                    <path d="M1 7 5.5 11 L13 1"></path>
-                                                </svg>
-                                            </label>
-                                        </div>
-                                        <div class="col-md-12" style={{ marginBottom: 15 }}>
-                                            <label for="buyRalph">{locale.locale.step2} (*)</label>
-                                            <label for="inp" class="inp">
-                                                <input type="text" id="inp" placeholder="amount" onChange={(e) => Validation("amount", e) ? setData({ ...data, amount: parseFloat(e.target.value) }) : setData({ ...data, amount: 0 })} required />
-                                                <svg style={{ width: "100%" }} height="18px" viewBox="0 0 280 18" class="border">
-                                                    <path d="M0,12 L223.166144,12 C217.241379,12 217.899687,12 225.141066,12 C236.003135,12 241.9279,12 249.827586,12 C257.727273,12 264.639498,12 274.514107,12 C281.097179,12 281.755486,12 276.489028,12"></path>
-                                                </svg>
-                                                <svg width="14px" height="12px" viewBox="0 0 14 12" class="check">
-                                                    <path d="M1 7 5.5 11 L13 1"></path>
-                                                </svg>
-                                            </label>
-                                            {data.amount > 0 && data.amount > 9 && <div class="valid-feedback">You will receive {formatMoney(data.amount * costPerUSD + (data.referal ? (data.amount * costPerUSD) * 0.05 : 0), "RALPH")}</div>}
-                                        </div>
-                                        <div class="col-md-12">
-                                            <label for="btcAddress">{locale.locale.step3} (*)</label>
-                                            {
-                                                cuenta
-                                                    ? <p style={{ wordBreak: "break-all" }}>{`Address: ${cuenta.cuenta} import to ${cuenta.type}`}</p>
-                                                    : <div class="dropdown">
-                                                        <button class="dropbtn">{locale.locale.connectWallet}</button>
-                                                        <div class="dropdown-content">
-                                                            <a href="#!" onClick={(e) => { e.preventDefault(); getMetaMask() }}><img src={MetaMask} style={{ width: 20, height: 20, top: "-2%" }} /> MetaMask</a>
-                                                            <a href="#!" onClick={(e) => { e.preventDefault(); GetTrust() }}> <img src={WC} style={{ width: 20, height: 20, top: "-2%" }} /> Wallet Connect</a>
-                                                        </div>
-                                                    </div>
-                                            }
-                                        </div>
-                                        <div class="col-md-12" style={{ marginBottom: 15 }}>
-                                            <label for="Referal" style={{ wordBreak: "break-all" }}>{locale.locale.step4.replace("{percent}", formatMoney(costPerUSD * 0.05))} <a href="#!" onClick={(e) => { e.preventDefault(); document.getElementById("Referal").value = "0xF237eC922A478dAbf28a9474D205A4f49d604ee3"; setData({ ...data, referal: "0xF237eC922A478dAbf28a9474D205A4f49d604ee3" }) }}>0xF237eC922A478dAbf28a9474D205A4f49d604ee3</a></label>
-                                            <label for="Referal" class="inp" style={{ width: "100%", maxWidth: 500 }}>
-                                                <input type="text" id="Referal" defaultValue={data.referal} placeholder="Referal" onKeyUp={(e) => Validation("wallet", e) ? setData({ ...data, referal: e.target.value }) : setData({ ...data, referal: "" })} required />
-                                                <svg style={{ width: "100%" }} height="18px" viewBox="0 0 500 18" class="border">
-                                                    <path d="M0,12 L223.166144,12 C217.241379,12 217.899687,12 225.141066,12 C236.003135,12 241.9279,12 249.827586,12 C257.727273,12 264.639498,12 274.514107,12 C281.097179,12 281.755486,12 500.489028,12"></path>
-                                                </svg>
-                                                <svg width="14px" height="12px" viewBox="0 0 14 12" class="check">
-                                                    <path d="M1 7 5.5 11 L13 1"></path>
-                                                </svg>
-                                            </label>
-                                            {data.amount > 0 && data.amount > 9 && data.referal && <div class="valid-feedback">Your referral will receive {formatMoney((data.amount * costPerUSD) * 0.05, "RALPH")}</div>}
-
-                                        </div>
-                                        <div class="col-md-12">
-                                            <label for="comment">{locale.locale.step5} <a href="https://t.me/Saveralphtoken" target="__blank">https://t.me/Saveralphtoken</a></label>
-                                            <textarea style={{ width: "100%" }} onChange={(e) => setData({ ...data, comment: e.target.value })} rows="5" class="form-control is-valid"></textarea>
-                                        </div>
-                                    </div>
+                                <div id="bsc" class="city" style={{ minWidth: 800, minHeight: 800 }}>
+                                    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeIMMFZ7ZRg3BnO2anDbkFOk9Qrod0pdrD1yLExxQA2gO-7GQ/viewform" style={{ width: "100%", height: 800 }} />
                                 </div>
 
 
