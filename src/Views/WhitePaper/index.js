@@ -113,7 +113,7 @@ function WhitePaper(props) {
                             </div>
                             <Worker workerUrl="https://unpkg.com/pdfjs-dist@2.6.347/build/pdf.worker.min.js">
                                 <Viewer
-                                    fileUrl={`https://files-ralph.s3.us-east-2.amazonaws.com/${locale.locale.whitePaper}`}
+                                    fileUrl={esp}
                                     initialPage={1}
                                     options={{
                                         httpHeaders: {
