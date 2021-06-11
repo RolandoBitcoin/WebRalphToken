@@ -4,8 +4,8 @@ import Bg from '../../Assets/images/bg.jpg';
 // import PDFViewer from 'pdf-viewer-reactjs'
 import PDFViewer from 'mgr-pdf-viewer-react';
 // import { Document, Page } from 'react-pdf';
-import esp from '../../Assets/WhiteESP.pdf'
-import eng from '../../Assets/WhiteENG.pdf'
+import esp from '../../Assets/whitepaperesp.pdf'
+import eng from '../../Assets/whitepapereng.pdf'
 function WhitePaper(props) {
     const { locale } = props;
     console.log(locale.locale.in8)
