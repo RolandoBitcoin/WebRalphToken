@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import Bg from '../../Assets/images/bg.jpg';
 import { Button, Icon, Position, SpecialZoomLevel, Tooltip, Viewer, Worker, ProgressBar } from '@react-pdf-viewer/core';
@@ -18,28 +18,24 @@ function WhitePaper(props) {
     const disableScrollPluginInstance = disableScrollPlugin();
     const pageNavigationPluginInstance = pageNavigationPlugin();
     const { GoToNextPage, GoToPreviousPage } = pageNavigationPluginInstance;
-    useEffect(() => {
-        fetch(`https://www.saveralphtoken.com/${esp}`, {
-            headers: {
-                "Access-Control-Allow-Headers": "Content-Type",
-                "Access-Control-Allow-Origin": "*",
-                "Access-Control-Allow-Methods": "OPTIONS,POST,GET"
-            },
-        }).then(response => response.blob())
-            .then(blob => {
-                console.log(blob)
-            });
-    }, [])
+
     return (
         locale && <div class="section mcb-section" id="new" style={{ paddingTop: 50, paddingBottom: 90 }}
             data-parallax="3d"><img class="mfn-parallax"
-                src={Bg} alt="parallax background" test={esp} />
+                src={Bg} alt="parallax background" />
             <div style={{ width: "100%", height: "100%", backgroundColor: "rgb(0, 0, 0,0.5)", position: "absolute", top: 0, bottom: 0, left: 0, right: 0, zIndex: 1 }} />
-            {/* <div class="section_wrapper mcb-section-inner">
+            <div class="section_wrapper mcb-section-inner">
                 <div class="wrap mcb-wrap one  valign-top clearfix">
 
                     <div class="mcb-wrap-inner text-center pdfView">
                         <h2 style={{ color: "#e7d600" }}>CARROT PAPER</h2>
+                        {/* <PDFViewer document={{
+                                url: locale.locale.whitePaper,
+                            }}
+                                // scale={3}
+                                scaleStep={11}
+                                canvasCss="canvasStyle"
+                            /> */}
                         <div
                             class="mcb-column one-third column_column"
                             style={{
@@ -106,7 +102,7 @@ function WhitePaper(props) {
                             </div>
                             <Worker workerUrl="https://unpkg.com/pdfjs-dist@2.6.347/build/pdf.worker.min.js">
                                 <Viewer
-                                    fileUrl={require("../../Assets/whitepaperesp.pdf").default}
+                                    fileUrl={`https://files-ralph.s3.us-east-2.amazonaws.com/${locale.locale.whitePaper}`}
                                     initialPage={1}
                                     options={{
                                         httpHeaders: {
@@ -131,9 +127,9 @@ function WhitePaper(props) {
                         </div>
                     </div>
                 </div>
-            </div> */}
+            </div>
 
-            {/* <iframe title="carrotPaper" src={`${esp}#toolbar=0`} style={{ width: "85vw", height: "80vh" }} /> */}
+            {/* <iframe title="carrotPaper" src={`${locale.locale.whitePaper}#toolbar=0`} style={{ width: "85vw", height: "80vh" }} /> */}
             {/* <Document
                                 file={locale.locale.whitePaper}
                                 onLoadSuccess={onDocumentLoadSuccess}
