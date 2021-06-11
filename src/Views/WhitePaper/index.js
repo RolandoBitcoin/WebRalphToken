@@ -33,20 +33,13 @@ function WhitePaper(props) {
     return (
         locale && <div class="section mcb-section" id="new" style={{ paddingTop: 50, paddingBottom: 90 }}
             data-parallax="3d"><img class="mfn-parallax"
-                src={Bg} alt="parallax background" />
+                src={Bg} alt="parallax background" test={esp} />
             <div style={{ width: "100%", height: "100%", backgroundColor: "rgb(0, 0, 0,0.5)", position: "absolute", top: 0, bottom: 0, left: 0, right: 0, zIndex: 1 }} />
-            <div class="section_wrapper mcb-section-inner">
+            {/* <div class="section_wrapper mcb-section-inner">
                 <div class="wrap mcb-wrap one  valign-top clearfix">
 
                     <div class="mcb-wrap-inner text-center pdfView">
                         <h2 style={{ color: "#e7d600" }}>CARROT PAPER</h2>
-                        {/* <PDFViewer document={{
-                                url: locale.locale.whitePaper,
-                            }}
-                                // scale={3}
-                                scaleStep={11}
-                                canvasCss="canvasStyle"
-                            /> */}
                         <div
                             class="mcb-column one-third column_column"
                             style={{
@@ -138,9 +131,9 @@ function WhitePaper(props) {
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> */}
 
-            {/* <iframe title="carrotPaper" src={`${locale.locale.whitePaper}#toolbar=0`} style={{ width: "85vw", height: "80vh" }} /> */}
+            {/* <iframe title="carrotPaper" src={`${esp}#toolbar=0`} style={{ width: "85vw", height: "80vh" }} /> */}
             {/* <Document
                                 file={locale.locale.whitePaper}
                                 onLoadSuccess={onDocumentLoadSuccess}
