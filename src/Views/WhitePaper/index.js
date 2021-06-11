@@ -103,6 +103,10 @@ function WhitePaper(props) {
                                 <Viewer
                                     fileUrl={`https://files-ralph.s3.us-east-2.amazonaws.com/${locale.locale.whitePaper}`}
                                     initialPage={1}
+                                    httpHeaders={{
+                                        'Content-Type': 'application/json',
+                                        Accept: 'application/pdf',
+                                    }}
                                     renderLoader={(percentages) => (
                                         <div style={{ width: '240px' }}>
                                             <ProgressBar progress={Math.round(percentages)} />
