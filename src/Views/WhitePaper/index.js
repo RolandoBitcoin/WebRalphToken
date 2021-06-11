@@ -51,7 +51,8 @@ function WhitePaper(props) {
                                 scaleStep={11}
                                 canvasCss="canvasStyle"
                             /> */}
-                            <Document
+                            <iframe title="carrotPaper" src={`${locale.locale.whitePaper}#toolbar=0`} style={{ width: "85vw", height: "80vh" }} />
+                            {/* <Document
                                 file={locale.locale.whitePaper}
                                 onLoadSuccess={onDocumentLoadSuccess}
                                 options={options}
@@ -76,7 +77,7 @@ function WhitePaper(props) {
                                 >
                                     Next
         </button>
-                            </div>
+                            </div> */}
                         </div>
                     </div>
                 </div>
