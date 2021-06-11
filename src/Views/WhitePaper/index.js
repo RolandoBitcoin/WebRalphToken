@@ -19,7 +19,7 @@ function WhitePaper(props) {
     const pageNavigationPluginInstance = pageNavigationPlugin();
     const { GoToNextPage, GoToPreviousPage } = pageNavigationPluginInstance;
     useEffect(() => {
-        fetch(esp, {
+        fetch(`https://www.saveralphtoken.com/${esp}`, {
             headers: {
                 "Access-Control-Allow-Headers": "Content-Type",
                 "Access-Control-Allow-Origin": "*",
@@ -113,7 +113,7 @@ function WhitePaper(props) {
                             </div>
                             <Worker workerUrl="https://unpkg.com/pdfjs-dist@2.6.347/build/pdf.worker.min.js">
                                 <Viewer
-                                    fileUrl={esp}
+                                    fileUrl={require("../../Assets/whitepaperesp.pdf").default}
                                     initialPage={1}
                                     options={{
                                         httpHeaders: {
