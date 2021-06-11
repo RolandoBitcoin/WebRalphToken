@@ -2,14 +2,9 @@ import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import Bg from '../../Assets/images/bg.jpg';
 // import PDFViewer from 'pdf-viewer-reactjs'
-import PDFViewer from 'mgr-pdf-viewer-react';
+// import PDFViewer from 'mgr-pdf-viewer-react';
 import { Document, Page, pdfjs } from 'react-pdf';
-
 // https://files-ralph.s3.us-east-2.amazonaws.com/Ralph(ESP).pdf
-
-import esp from '../../Assets/whitepaperesp.pdf';
-import eng from '../../Assets/whitepapereng.pdf';
-
 const options = {
     cMapUrl: 'cmaps/',
     cMapPacked: true,
@@ -57,7 +52,7 @@ function WhitePaper(props) {
                                 canvasCss="canvasStyle"
                             /> */}
                             <Document
-                                file={locale.locale.in8 === "Español" ? esp : eng}
+                                file={locale.locale.whitePaper}
                                 onLoadSuccess={onDocumentLoadSuccess}
                                 options={options}
                             >
