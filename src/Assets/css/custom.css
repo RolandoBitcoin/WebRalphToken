@@ -3022,8 +3022,38 @@
         display: initial !important;
     }
 }
+
 .react-pdf__Page canvas {
     width: 60%;
     height: 100% !important;
     display: initial !important;
+}
+
+.rpv-scroll-mode-wrapped::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+
+.rpv-scroll-mode-wrapped {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+.rpv-core-inner-page {
+    background-color: transparent !important;
+}
+
+@media (max-height:650px) {
+    .pdfView {
+        height: 500px !important;
+    }
+}
+
+@media (min-height:700px) {
+    .pdfView {
+        height: 750px !important;
+    }
 }
