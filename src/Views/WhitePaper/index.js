@@ -101,7 +101,7 @@ function WhitePaper(props) {
                             </div>
                             <Worker workerUrl="https://unpkg.com/pdfjs-dist@2.6.347/build/pdf.worker.min.js">
                                 <Viewer
-                                    fileUrl={locale.locale.in8 === "Español" ? esp : eng}
+                                    fileUrl={locale.locale.whitePaper}
                                     initialPage={1}
                                     renderLoader={(percentages) => (
                                         <div style={{ width: '240px' }}>
