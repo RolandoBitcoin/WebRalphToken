@@ -182,7 +182,7 @@ body.header-rtl.header-creative.header-open {
 
 #Top_bar .logo {
 	float: left;
-	margin: 0 30px 0 20px;
+	/* margin: 0 30px 0 20px; */
 }
 
 #Top_bar .logo h1 {
