@@ -62,7 +62,7 @@ function ActionBar(props) {
                                         <li class="">
                                             <a href="#languaje">
                                                 <div class="dropdown">
-                                                    <button class="dropbtn">{locale.locale.languaje}</button>
+                                                    <a class="dropbtn">{locale.locale.languaje}</a>
                                                     <div class="dropdown-content">
                                                         <a href="#es" onClick={(e) => { e.preventDefault(); setLocale("es"); }}> {locale.locale.es}</a>
                                                         <a href="#en" onClick={(e) => { e.preventDefault(); setLocale("en"); }}> {locale.locale.en}</a>

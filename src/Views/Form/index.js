@@ -205,7 +205,7 @@ function Formulario(props) {
                                                     ? <p style={{ wordBreak: "break-all" }}>{`Address: ${cuenta.cuenta} import to ${cuenta.type}`}</p>
                                                     : <div class="dropdown">
                                                         <button class="dropbtn">Connect your wallet</button>
-                                                        <div class="dropdown-content">
+                                                        <div class="dropdown-content wallets">
                                                             <a href="#!" onClick={(e) => { e.preventDefault(); getMetaMask() }}><img src={MetaMask} style={{ width: 20, height: 20, top: "-2%" }} /> MetaMask</a>
                                                             <a href="#!" onClick={(e) => { e.preventDefault(); GetTrust() }}> <img src={WC} style={{ width: 20, height: 20, top: "-2%" }} /> Wallet Connect</a>
                                                         </div>
