@@ -20,7 +20,7 @@ function WhitePaper(props) {
     const { GoToNextPage, GoToPreviousPage } = pageNavigationPluginInstance;
 
     return (
-        locale && <div class="section mcb-section" id="new" style={{ paddingTop: 50, paddingBottom: 90 }}
+        locale && <div class="section mcb-section" id="carrotPaper" style={{ paddingTop: 50, paddingBottom: 90 }}
             data-parallax="3d"><img class="mfn-parallax"
                 src={Bg} alt="parallax background" />
             <div style={{ width: "100%", height: "100%", backgroundColor: "rgb(0, 0, 0,0.5)", position: "absolute", top: 0, bottom: 0, left: 0, right: 0, zIndex: 1 }} />

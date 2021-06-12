@@ -1,7 +1,6 @@
 import { Plugin, RenderViewer } from '@react-pdf-viewer/core';
 
 const disableScrollPlugin = (props) => {
-    console.log(props)
     const renderViewer = (props) => {
         const { slot } = props;
 
