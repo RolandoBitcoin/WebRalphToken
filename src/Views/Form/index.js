@@ -16,12 +16,12 @@ import moment from 'moment-timezone';
 function Formulario(props) {
     const { locale, socket, location, prices } = props;
     let history = useHistory();
-    const [costPerUSD] = useState(260000000)
-    const [round] = useState(9)
+    const [costPerUSD] = useState(255000000)
+    const [round] = useState(10)
     const [metamask, setMetamask] = useState(false)
     const [FormType, setFormType] = useState("bsc")
     const [cuenta, setCuenta] = useState(false)
-    const [utc] = useState(moment.tz({ year: 2021, month: 5, day: 9, hour: 18 }, "Atlantic/Azores").valueOf())
+    const [utc] = useState(moment.tz({ year: 2021, month: 5, day: 12, hour: 18 }, "Atlantic/Azores").valueOf())
     const [day] = useState(moment(utc).add(3, 'days').valueOf())
     const [data, setData] = useState({
         amount: 0,
