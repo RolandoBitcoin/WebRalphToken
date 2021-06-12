@@ -56,7 +56,7 @@ function Terms(props) {
                                     state: { background: background }
                                 }}
                             >
-                                I agree
+                                {locale.locale.iagree}
                             </Link>
                         </div>
                     </div>
