@@ -104,7 +104,7 @@ function WhitePaper(props) {
                                 <Viewer
                                     // fileUrl={`https://files-ralph.s3.us-east-2.amazonaws.com/${locale.locale.whitePaper}`}
                                     fileUrl="https://files-ralph.s3.us-east-2.amazonaws.com/Ralph(ING).pdf"
-                                    initialPage={1}
+                                    initialPage={0}
                                     options={{
                                         httpHeaders: {
                                             'Content-Type': 'application/json',
