@@ -126,7 +126,7 @@ function Home(props) {
                                     </div>
                                     <hr class="no_line" style={{ margin: "0 auto 20px" }} />
                                     <h4 style={{ color: "#fff" }}>{locale.locale.supply}</h4>
-                                    <h5 style={{ color: "#fff" }}>893,878,427,444,629.504</h5>
+                                    <h5 style={{ color: "#fff" }}>1,000,000,000,000,000</h5>
                                 </div>
                             </div>
                             <div class="column mcb-column one-third column_column">
