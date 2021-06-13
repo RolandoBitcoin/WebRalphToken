@@ -9,8 +9,6 @@ import '@react-pdf-viewer/page-navigation/lib/styles/index.css';
 // import PDFViewer from 'mgr-pdf-viewer-react';
 // import { Document, Page, pdfjs } from 'react-pdf';
 // https://files-ralph.s3.us-east-2.amazonaws.com/Ralph(ESP).pdf
-import esp from '../../Assets/whitepaperesp.pdf';
-import eng from '../../Assets/whitepapereng.pdf';
 import disableScrollPlugin from './disable';
 
 function WhitePaper(props) {
@@ -102,8 +100,7 @@ function WhitePaper(props) {
                             </div>
                             <Worker workerUrl="https://unpkg.com/pdfjs-dist@2.6.347/build/pdf.worker.min.js">
                                 <Viewer
-                                    // fileUrl={`https://files-ralph.s3.us-east-2.amazonaws.com/${locale.locale.whitePaper}`}
-                                    fileUrl="https://files-ralph.s3.us-east-2.amazonaws.com/Ralph(ING).pdf"
+                                    fileUrl={`https://files-ralph.s3.us-east-2.amazonaws.com/${locale.locale.whitePaper}`}
                                     initialPage={0}
                                     options={{
                                         httpHeaders: {
@@ -129,34 +126,6 @@ function WhitePaper(props) {
                     </div>
                 </div>
             </div>
-
-            {/* <iframe title="carrotPaper" src={`${locale.locale.whitePaper}#toolbar=0`} style={{ width: "85vw", height: "80vh" }} /> */}
-            {/* <Document
-                                file={locale.locale.whitePaper}
-                                onLoadSuccess={onDocumentLoadSuccess}
-                                options={options}
-                            >
-                                <Page pageNumber={pageNumber} />
-                            </Document>
-                            <div>
-                                <p>
-                                    Page {pageNumber || (numPages ? 1 : '--')} of {numPages || '--'}
-                                </p>
-                                <button
-                                    type="button"
-                                    disabled={pageNumber <= 1}
-                                    onClick={previousPage}
-                                >
-                                    Previous
-        </button>
-                                <button
-                                    type="button"
-                                    disabled={pageNumber >= numPages}
-                                    onClick={nextPage}
-                                >
-                                    Next
-        </button>
-                            </div> */}
         </div>
     )
 

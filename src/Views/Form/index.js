@@ -214,7 +214,7 @@ function Formulario(props) {
                                             }
                                         </div>
                                         <div class="col-md-12" style={{ marginBottom: 15 }}>
-                                            <label for="Referal" style={{ wordBreak: "break-all" }}>{locale.locale.step4.replace("{percent}", formatMoney(costPerUSD * 0.05))} <a href="#!" onClick={(e) => { e.preventDefault(); document.getElementById("Referal").value = "0xF237eC922A478dAbf28a9474D205A4f49d604ee3"; setData({ ...data, referal: "0xF237eC922A478dAbf28a9474D205A4f49d604ee3" }) }}>0xF237eC922A478dAbf28a9474D205A4f49d604ee3</a></label>
+                                            <label for="Referal" style={{ wordBreak: "break-all" }}>{locale.locale.step4.replace("{percent}", formatMoney(costPerUSD * 0.05))} <a href="#!" onClick={(e) => { e.preventDefault(); document.getElementById("Referal").value = "0xe1D9A84dFb1C13916caf64300b6EA42EF3eA72c8"; setData({ ...data, referal: "0xe1D9A84dFb1C13916caf64300b6EA42EF3eA72c8" }) }}>0xe1D9A84dFb1C13916caf64300b6EA42EF3eA72c8</a></label>
                                             <label for="Referal" class="inp" style={{ width: "100%", maxWidth: 500 }}>
                                                 <input type="text" id="Referal" defaultValue={data.referal} placeholder="Referal" onKeyUp={(e) => Validation("wallet", e) ? setData({ ...data, referal: e.target.value }) : setData({ ...data, referal: "" })} required />
                                                 <svg style={{ width: "100%" }} height="18px" viewBox="0 0 500 18" class="border">
