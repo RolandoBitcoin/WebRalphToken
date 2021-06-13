@@ -13,6 +13,7 @@ import SuccessImg from '../../Assets/images/success.gif';
 import Loading from '../../Assets/images/loading.gif';
 import Countdown from "react-countdown";
 import moment from 'moment-timezone';
+import RedSociales from '../../Components/Header/RedSociales';
 function Formulario(props) {
     const { locale, socket, location, prices } = props;
     let history = useHistory();
@@ -255,17 +256,7 @@ function Formulario(props) {
                 {FormType === "coinpay" && <div style={{ textAlign: "center", paddingTop: 25 }}>
                     <button onClick={() => FormType === "bsc" ? SendToken() : SendCoinPayment()}>{locale.locale.btnSend}</button>
                 </div>}
-                <aside className="widget widget_text">
-                    <div className="textwidget">
-                        <p style={{ fontSize: 32, lineHeight: 3, margin: 0, textAlign: "center" }}>
-                            <a style={{ padding: "0px 10px 0px 10px" }} href="https://t.me/Saveralphtoken" target="__blank"><i className="fab fa-telegram-plane"></i></a>
-                            <a style={{ padding: "0px 10px 0px 10px" }} href="https://www.instagram.com/saveralphtoken/" target="__blank"><i className="fab fa-instagram"></i></a>
-                            <a style={{ padding: "0px 10px 0px 10px" }} href="https://www.reddit.com/user/saveralphtoken/" target="__blank"><i className="fab fa-reddit-alien"></i></a>
-                            <a style={{ padding: "0px 10px 0px 10px" }} href="https://twitter.com/RalphToken" target="__blank"><i className="fab fa-twitter"></i></a>
-                            <a style={{ padding: "0px 10px 0px 10px" }} href="https://saveralphtoken.medium.com/" target="__blank"><i className="fab fa-medium-m"></i></a>
-                        </p>
-                    </div>
-                </aside>
+                <RedSociales />
             </div>
 
         </div>
