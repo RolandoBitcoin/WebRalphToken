@@ -17,12 +17,12 @@ import RedSociales from '../../Components/Header/RedSociales';
 function Formulario(props) {
     const { locale, socket, location, prices } = props;
     let history = useHistory();
-    const [costPerUSD] = useState(235000000)
-    const [round] = useState(14)
+    const [costPerUSD] = useState(230000000)
+    const [round] = useState(15)
     const [metamask, setMetamask] = useState(false)
     const [FormType, setFormType] = useState("bsc")
     const [cuenta, setCuenta] = useState(false)
-    const [utc] = useState(moment.tz({ year: 2021, month: 5, day: 24, hour: 18 }, "Atlantic/Azores").valueOf())
+    const [utc] = useState(moment.tz({ year: 2021, month: 5, day: 27, hour: 18 }, "Atlantic/Azores").valueOf())
     const [day] = useState(moment(utc).add(3, 'days').valueOf())
     const [data, setData] = useState({
         amount: 0,
