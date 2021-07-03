@@ -7,8 +7,8 @@ import { formatMoney } from '../../Helpers';
 function Terms(props) {
     const { locale, background } = props;
     let history = useHistory();
-    const [costPerUSD] = useState(225000000)
-    const [round] = useState(16)
+    const [costPerUSD] = useState(220000000)
+    const [round] = useState(17)
     let back = e => {
         e.stopPropagation();
         history.goBack();
