@@ -214,9 +214,9 @@ function Formulario(props) {
                                             }
                                         </div>
                                         <div class="col-md-12" style={{ marginBottom: 15 }}>
-                                            <label for="Referal" style={{ wordBreak: "break-all" }}>{locale.locale.step4.replace("{percent}", formatMoney(costPerUSD * 0.05))} <a href="#!" onClick={(e) => { e.preventDefault(); document.getElementById("Referal").value = "0xe1D9A84dFb1C13916caf64300b6EA42EF3eA72c8"; setData({ ...data, referal: "0xe1D9A84dFb1C13916caf64300b6EA42EF3eA72c8" }) }}>0xe1D9A84dFb1C13916caf64300b6EA42EF3eA72c8</a></label>
+                                            <label for="Referal" style={{ wordBreak: "break-all" }}>{locale.locale.step4.replace("{percent}", formatMoney(costPerUSD * 0.05))} <a href="#!" onClick={(e) => { e.preventDefault(); document.getElementById("Referal").value = "0xe1D9A84dFb1C13916caf64300b6EA42EF3eA72c8"; setDataCoin({ ...dataCoin, referal: "0xe1D9A84dFb1C13916caf64300b6EA42EF3eA72c8" }) }}>0xe1D9A84dFb1C13916caf64300b6EA42EF3eA72c8</a></label>
                                             <label for="Referal" class="inp" style={{ width: "100%", maxWidth: 500 }}>
-                                                <input type="text" id="Referal" defaultValue={data.referal} placeholder="Referal" onKeyUp={(e) => Validation("wallet", e) ? setData({ ...data, referal: e.target.value }) : setData({ ...data, referal: "" })} required />
+                                                <input type="text" id="Referal" defaultValue={data.referal} placeholder="Referal" onKeyUp={(e) => Validation("wallet", e) ? setDataCoin({ ...dataCoin, referal: e.target.value }) : setDataCoin({ ...dataCoin, referal: "" })} required />
                                                 <svg style={{ width: "100%" }} height="18px" viewBox="0 0 500 18" class="border">
                                                     <path d="M0,12 L223.166144,12 C217.241379,12 217.899687,12 225.141066,12 C236.003135,12 241.9279,12 249.827586,12 C257.727273,12 264.639498,12 274.514107,12 C281.097179,12 281.755486,12 500.489028,12"></path>
                                                 </svg>
@@ -254,7 +254,7 @@ function Formulario(props) {
                     </div>
                 </div>
                 {FormType === "coinpay" && <div style={{ textAlign: "center", paddingTop: 25 }}>
-                    <button onClick={() => FormType === "bsc" ? SendToken() : SendCoinPayment()}>{locale.locale.btnSend}</button>
+                    <button onClick={() => SendCoinPayment()}>{locale.locale.btnSend}</button>
                 </div>}
                 <RedSociales />
             </div>
