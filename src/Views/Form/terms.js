@@ -8,7 +8,7 @@ function Terms(props) {
     const { locale, background } = props;
     let history = useHistory();
     const [costPerUSD] = useState(210000000)
-    const [round] = useState(9)
+    const [round] = useState(19)
     let back = e => {
         e.stopPropagation();
         history.goBack();
