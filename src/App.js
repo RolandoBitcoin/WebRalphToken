@@ -11,12 +11,12 @@ function App(props) {
   useEffect(() => {
     axios.get("https://geolocation-db.com/json/f9902210-97f0-11eb-a459-b997d30983f1").then(r => setLocation(r.data))
     setSocket(socket)
-    socket.emit("CryptoCoins", (res) => {
-      setPrices(res)
-    })
-    socket.on("ActualizarPrecios", (res) => {
-      setPrices(res)
-    })
+    // socket.emit("CryptoCoins", (res) => {
+    //   setPrices(res)
+    // })
+    // socket.on("ActualizarPrecios", (res) => {
+    //   setPrices(res)
+    // })
   }, [])
   return <Navigation />
 }
