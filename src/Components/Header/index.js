@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Logo from '../../Assets/images/logo.png';
 import Part1 from '../../Assets/images/home_app2_slider_particles1.png';
 import Part2 from '../../Assets/images/home_app2_slider_particles2.png';
@@ -9,6 +9,9 @@ import { connect } from 'react-redux';
 function Header(props) {
     const { locale } = props;
     let location = useLocation();
+    useEffect(() => {
+        document.getElementById("thanksbtn").click();
+    }, [])
     return (
         <div id="Header_wrapper">
             <header id="Header">
@@ -79,20 +82,17 @@ function Header(props) {
                                         data-transform_in="opacity:0;s:900;e:Power2.easeInOut;"
                                         data-transform_out="opacity:0;s:300;s:300;" data-start="800" data-splitin="none"
                                         data-splitout="none" data-responsive_offset="on"
-                                        style={{ zIndex: 9, whiteSpace: "nowrap", color: "#e7d600", textTransform: "uppercase", fontSize: 30 }}>
+                                        style={{ zIndex: 9, width: "100%", whiteSpace: "nowrap", color: "#e7d600", textTransform: "uppercase", fontSize: 30 }}>
                                         Save Ralph Token </div>
                                     <Link
-                                        className="tp-caption mfnrs_app2_button tp-resizeme rs-parallaxlevel-2 animate__animated animate__bounce animate__infinite animate__slower"
-                                        id="slide-1-layer-3" data-x="center" data-hoffset="220" data-y="bottom"
+                                        id="thanksbtn" data-x="center" data-hoffset="220" data-y="bottom"
                                         data-voffset="100" data-width="['auto']" data-height="['auto']"
-
-                                        style={{ zIndex: 10, fontSize: 20, borderRadius: 20, whiteSpace: "nowrap", cursor: "pointer", color: "#000", backgroundColor: "rgb(231, 214, 0)", borderColor: "rgb(231, 214, 0)" }}
+                                        style={{ zIndex: -1, display: "none", fontSize: 20, borderRadius: 20, whiteSpace: "nowrap", cursor: "pointer", color: "#000", backgroundColor: "rgb(231, 214, 0)", borderColor: "rgb(231, 214, 0)" }}
                                         to={{
-                                            pathname: `/Terms`,
+                                            pathname: `/Thanks`,
                                             state: { background: location }
                                         }}
                                     >
-                                        {locale.locale.btnby}
                                     </Link>
                                 </li>
                             </ul>

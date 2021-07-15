@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { useHistory } from 'react-router';
 import { Link } from 'react-router-dom';
+import RedSociales from '../../Components/Header/RedSociales';
 import { formatMoney } from '../../Helpers';
 
 function Terms(props) {
@@ -47,17 +48,15 @@ function Terms(props) {
                                 })}
                             </div>
                         </div>
+                        <RedSociales />
                         <div style={{ textAlign: "center" }}>
-                            <Link
+                            <button
                                 className="mfnrs_app2_button"
                                 style={{ zIndex: 10, fontSize: 20, borderRadius: 10, whiteSpace: "nowrap", cursor: "pointer", color: "#000", backgroundColor: "rgb(231, 214, 0)", borderColor: "rgb(231, 214, 0)" }}
-                                to={{
-                                    pathname: `/buyToken`,
-                                    state: { background: background }
-                                }}
+                                onClick={back}
                             >
-                                {locale.locale.iagree}
-                            </Link>
+                                Cerrar
+                            </button>
                         </div>
                     </div>
                 </div>

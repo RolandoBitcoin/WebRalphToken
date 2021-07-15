@@ -106,7 +106,7 @@ function Home(props) {
                                     </div>
                                     <hr class="no_line" style={{ margin: "0 auto 20px" }} />
                                     <h4 style={{ color: "#fff" }}>{locale.locale.holders}</h4>
-                                    <h5 style={{ color: "#fff" }}>2,407</h5>
+                                    <h5 style={{ color: "#fff" }}>2,632</h5>
                                 </div>
                             </div>
                             <div class="column mcb-column one-third column_column">
@@ -145,7 +145,7 @@ function Home(props) {
                                     </div>
                                     <hr class="no_line" style={{ margin: "0 auto 20px" }} />
                                     <h4 style={{ color: "#fff" }}>{locale.locale.transfers}</h4>
-                                    <h5 style={{ color: "#fff" }}>5,642</h5>
+                                    <h5 style={{ color: "#fff" }}>6,344</h5>
                                 </div>
                             </div>
                         </div>

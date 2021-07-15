@@ -43,8 +43,8 @@ function Navigation(props) {
                             </Switch>
                             {background &&
                                 <>
-                                    <Route path="/buyToken" children={<Formulario />} />
-                                    <Route path="/Terms" children={<Terms background={background} />} />
+                                    {/* <Route path="/buyToken" children={<Formulario />} /> */}
+                                    <Route path="/Thanks" children={<Terms background={background} />} />
                                 </>
                             }
 

@@ -45,17 +45,6 @@ function ActionBar(props) {
                                         <li class="">
                                             <a href="#LegalDisclaimer" data-hash="#LegalDisclaimer"><span>{locale.locale.LegalDisclaimer}</span></a>
                                         </li>
-                                        <li class="last">
-                                            <Link
-                                                data-hash="#Header_wrapper"
-                                                to={{
-                                                    pathname: `/buyToken`,
-                                                    state: { background: location }
-                                                }}
-                                            >
-                                                <span><span style={{ padding: 0, color: "rgb(231, 214, 0)" }}>{locale.locale.btnby}</span></span>
-                                            </Link>
-                                        </li>
                                         <li class="">
                                             <a className="animate__animated animate__pulse animate__infinite" href="#risk" data-hash="#join" style={{ color: "red" }}><span>{locale.locale.RiskDisclosure}</span></a>
                                         </li>
