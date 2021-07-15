@@ -9,12 +9,12 @@ import { BrowserRouter } from 'react-router-dom';
 import io from 'socket.io-client';
 const server = "https://dev.ralphswap.finance/";
 // const server = "http://localhost:3002";
-// const socket = io(server);
+// const socket = "";
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
       <BrowserRouter>
-        <App socket={socket} />
+        <App socket={""} />
       </BrowserRouter>
     </Provider>
   </React.StrictMode>,
