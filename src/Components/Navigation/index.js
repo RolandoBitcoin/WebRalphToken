@@ -32,7 +32,7 @@ function Navigation(props) {
                                         <About />
                                         <Carrot />
                                         <VideoFrame />
-                                        <WhitePaper />
+                                        {/* <WhitePaper /> */}
                                         <RiskDisclosure />
                                         <LegalDisclaimer />
                                     </>
