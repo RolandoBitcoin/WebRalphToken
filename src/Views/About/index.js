@@ -1,68 +1,63 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import token from '../../Assets/images/token.png';
 import mission from '../../Assets/images/mission.png';
-
 function About(props) {
-    const { locale } = props;
     return (
-        <>
-            <div class="section mcb-section" id="how" style={{ paddingTop: 90, paddingBottom: 0 }}>
-                <div class="section_wrapper mcb-section-inner">
-                    <div class="wrap mcb-wrap one-second  valign-top clearfix" style={{ padding: "0 4% 0 0" }}>
-                        <div class="mcb-wrap-inner">
-                            <div class="column mcb-column one column_image ">
-                                <div class="image_frame image_item no_link scale-with-grid no_border">
-                                    <div class="image_wrapper"><img class="scale-with-grid"
-                                        src={mission} alt="" width="460"
-                                        height="401" /> </div>
-                                </div>
-                            </div>
+        <section class="section section-3 position-relative overflow-hidden" style={{ backgroundColor: "#00BCB1" }}>
+            <div class="section-layer">
+                <svg class="layer layer-1" width="1487" height="1032" viewBox="0 0 1487 1032" fill="none">
+                    <path class="layer-item-1" d="M581 0H1281L701 929H0L581 0Z" fill="white" fill-opacity="0.1">
+                    </path>
+                    <path class="layer-item-2" d="M685.929 648H975L735.484 1032H446L685.929 648Z" fill="white"
+                        fill-opacity="0.1"></path>
+                    <path class="layer-item-3" d="M1364.5 0L949.5 668.5H1075L1487 0H1364.5Z" fill="#FFD600"></path>
+                    <path class="layer-item-4" d="M720.763 386L432 852H519.325L806 386H720.763Z" fill="#FFD600">
+                    </path>
+                    <path class="layer-item-5" d="M1184.5 124L1071 308H1105.32L1218 124H1184.5Z" fill="#FFD600">
+                    </path>
+                    <path class="layer-item-6"
+                        d="M713.826 552.669L715.524 553.726L604.023 732.859L602.325 731.802L713.826 552.669Z"
+                        fill="white"></path>
+                    <path class="layer-item-7"
+                        d="M883.826 552.669L885.524 553.726L621.304 978.212L619.607 977.155C722.791 811.383 780.642 718.441 883.826 552.669Z"
+                        fill="white"></path>
+                    <path class="layer-item-8" opacity="0.4"
+                        d="M923.826 502.669L925.524 503.726C822.34 669.498 764.488 762.44 661.304 928.212L659.607 927.155L923.826 502.669Z"
+                        fill="white"></path>
+                    <path class="layer-item-9" opacity="0.4"
+                        d="M933.826 502.669L935.524 503.726C832.34 669.498 774.488 762.44 671.304 928.212L669.607 927.155L933.826 502.669Z"
+                        fill="white"></path>
+                    <path class="layer-item-10"
+                        d="M1413.83 132.669L1415.52 133.726L1304.02 312.859L1302.33 311.802C1345.87 241.846 1370.28 202.625 1413.83 132.669Z"
+                        fill="white"></path>
+                    <path class="layer-item-11"
+                        d="M1423.83 132.669L1425.52 133.726C1381.98 203.682 1357.57 242.903 1314.02 312.859L1312.33 311.802L1423.83 132.669Z"
+                        fill="white"></path>
+                    <path class="layer-item-12"
+                        d="M1233.83 69.6693L1235.52 70.7261L1076.99 325.418L1075.29 324.361C1137.2 224.898 1171.92 169.132 1233.83 69.6693Z"
+                        fill="white"></path>
+                </svg>
+            </div>
+            <div class="container-wide">
+                <div class="row row-30 section-row">
+                    <div class="col-xs-8 col-sm-7 col-md-6 section-content"
+                        data-animate='{"in":{"class":"fadeInUpBig","delay":".3s"},"out":{"class":"fadeOutUpBig","delay":".3s"}}'>
+                        <h1>Nuestra Misión</h1>
+                        <p class="lead">Estamos decididos a construir el ecosistema descentralizado más seguro y confiable, nuestro objetivo y misión es ofrecer un lugar seguro para intercambiar sus valiosos activos sin dejar de ser confidenciales y descentralizados y brindar a nuestra comunidad las herramientas para los procesos de toma de decisiones descentralizados.</p>
+                        <div class="offset-md group-20 group-md-30">
+                            {/* <a
+                                    class="btn btn-round btn-lg btn-primary btn-anis" href="#">Buy Ticket</a><a
+                                    class="btn btn-outline btn-round btn-lg btn-anis" href="#">Learn More</a>  */}
                         </div>
                     </div>
-                    <div class="wrap mcb-wrap one-second  valign-top clearfix" style={{ padding: "30px 2% 0" }}>
-                        <div class="mcb-wrap-inner">
-                            <div class="column mcb-column two-two column_column">
-                                <div class="column_attr">
-                                    <h3>{locale.locale.mission}</h3>
-                                    <p style={{ textAlign: "justify" }}>{locale.locale.missionTXT}</p>
-                                </div>
-                            </div>
-                        </div>
+                    <div
+                        class="col-xs-4 col-sm-5 col-md-6 position-static d-flex align-items-center justify-content-center px-0 section-figure">
+                        <img class="section-image" src={mission} alt="" width="938" height="827"
+                            data-animate='{"in":{"class":"slideInRight","delay":".8s","duration":".7s"},"out":{"class":"slideOutRight","delay":"0s","duration":".4s"}}' />
                     </div>
                 </div>
             </div>
-            <div class="section mcb-section equal-height-wrap  "
-                style={{ paddingTop: 0, paddingBottom: 50 }}>
-                <div class="section_wrapper mcb-section-inner">
-                    <div class="wrap mcb-wrap one-second  valign-top clearfix" style={{ padding: "30px 2% 0" }}>
-                        <div class="mcb-wrap-inner">
-                            <div class="column mcb-column two-two column_column">
-                                <div class="column_attr">
-                                    <h3>{locale.locale.saveRabbit}</h3>
-                                    <p style={{ textAlign: "justify" }} dangerouslySetInnerHTML={{ __html: locale.locale.saveRabbitTXT }}></p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="wrap mcb-wrap one-second  valign-top clearfix" style={{ padding: "0 0 0 4%" }}>
-                        <div class="mcb-wrap-inner">
-                            <div class="column mcb-column one column_image ">
-                                <div
-                                    class="image_frame image_item no_link scale-with-grid alignright no_border">
-                                    <div class="image_wrapper"><img class="scale-with-grid"
-                                        src="https://img1.wsimg.com/isteam/stock/125688/:/cr=t:0%25,l:12.5%25,w:75%25,h:100%25/rs=w:800,h:800,cg:true" alt="" width="460"
-                                        height="401" /> </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </>
+        </section>
     )
+
 }
-const MapStateToProps = (state) => {
-    return { locale: state.locale }
-}
-export default connect(MapStateToProps)(About);
+export default About;

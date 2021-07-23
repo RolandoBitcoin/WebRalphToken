@@ -1,8 +1,6 @@
 export const appendScript = () => {
     const Scripts = [
-        // { id: "menu", script: '/js/mfn.menu.js' },
-        { id: "scripts", script: '/js/scripts.js' },
-        { id: "last", script: '/js/last.js' },
+        { id: "script", script: '/components/base/script.min.js' },
     ]
     Scripts.map((script) => {
         if (document.getElementById(script.id)) {

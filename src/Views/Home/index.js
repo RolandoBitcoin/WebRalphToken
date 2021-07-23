@@ -1,162 +1,94 @@
-import React, { useEffect } from 'react';
-import Logo from '../../Assets/images/logo.png';
-import Bg from '../../Assets/images/bg.jpg';
-import transfers from '../../Assets/images/transfer.png';
-import holders from '../../Assets/images/holders.png';
-import supply from '../../Assets/images/supply.png';
-import creators from '../../Assets/images/creators.png';
-import { connect } from 'react-redux';
-function Home(props) {
-    const { locale } = props;
+import React from 'react';
+import ing from '../../Assets/images/ing.png'
+import Lottie from 'react-lottie';
+import animationData from '../../Assets/images/01.json'
+import medium from '../../Assets/images/medium.png';
+function Home1(props) {
+    const defaultOptions = {
+        autoplay: true,
+        animationData: animationData,
+        speed: 0.2,
+        rendererSettings: {
+            preserveAspectRatio: 'xMidYMid meet',
+            backgroundColor: "transparent",
+            className: "tested"
+        }
+    };
     return (
-        <>
-            <div class="section mcb-section" id="features"
-                style={{ paddingTop: 70, paddingBottom: 50, backgroundImage: "url(content/app2/images/home_app2_sep.png)", backgroundRepeat: "no-repeat", backgroundPosition: "center top" }}>
-                <div class="section_wrapper mcb-section-inner">
-                    <div class="wrap mcb-wrap one  valign-top clearfix">
-                        <div class="mcb-wrap-inner">
-                            <div class="column mcb-column one column_column">
-                                <div class="column_attr align_center">
-                                    <h2>{locale.locale.welcome}</h2>
-                                </div>
-                            </div>
-                            <div class="column mcb-column one column_divider ">
-                                <hr class="no_line" style={{ margin: "0 auto 30px" }} />
-                            </div>
+        <section class="section section-1 position-relative overflow-hidden" style={{ backgroundColor: "#72B805" }}>
+            <div class="section-layer">
+                <svg class="layer layer-1" width="1487" height="1032" viewBox="0 0 1487 1032" fill="none">
+                    <path class="layer-item-1" d="M581 0H1281L701 929H0L581 0Z" fill="white" fill-opacity="0.1">
+                    </path>
+                    <path class="layer-item-2" d="M685.929 648H975L735.484 1032H446L685.929 648Z" fill="white"
+                        fill-opacity="0.1"></path>
+                    <path class="layer-item-3" d="M1364.5 0L949.5 668.5H1075L1487 0H1364.5Z" fill="#FFD600"></path>
+                    <path class="layer-item-4" d="M720.763 386L432 852H519.325L806 386H720.763Z" fill="#FFD600">
+                    </path>
+                    <path class="layer-item-5" d="M1184.5 124L1071 308H1105.32L1218 124H1184.5Z" fill="#FFD600">
+                    </path>
+                    <path class="layer-item-6"
+                        d="M713.826 552.669L715.524 553.726L604.023 732.859L602.325 731.802L713.826 552.669Z"
+                        fill="white"></path>
+                    <path class="layer-item-7"
+                        d="M883.826 552.669L885.524 553.726L621.304 978.212L619.607 977.155C722.791 811.383 780.642 718.441 883.826 552.669Z"
+                        fill="white"></path>
+                    <path class="layer-item-8" opacity="0.4"
+                        d="M923.826 502.669L925.524 503.726C822.34 669.498 764.488 762.44 661.304 928.212L659.607 927.155L923.826 502.669Z"
+                        fill="white"></path>
+                    <path class="layer-item-9" opacity="0.4"
+                        d="M933.826 502.669L935.524 503.726C832.34 669.498 774.488 762.44 671.304 928.212L669.607 927.155L933.826 502.669Z"
+                        fill="white"></path>
+                    <path class="layer-item-10"
+                        d="M1413.83 132.669L1415.52 133.726L1304.02 312.859L1302.33 311.802C1345.87 241.846 1370.28 202.625 1413.83 132.669Z"
+                        fill="white"></path>
+                    <path class="layer-item-11"
+                        d="M1423.83 132.669L1425.52 133.726C1381.98 203.682 1357.57 242.903 1314.02 312.859L1312.33 311.802L1423.83 132.669Z"
+                        fill="white"></path>
+                    <path class="layer-item-12"
+                        d="M1233.83 69.6693L1235.52 70.7261L1076.99 325.418L1075.29 324.361C1137.2 224.898 1171.92 169.132 1233.83 69.6693Z"
+                        fill="white"></path>
+                </svg>
+            </div>
+            <div class="container-wide">
+                <div class="row row-30 section-row">
+                    <div class="col-xs-10 col-sm-7 col-md-7 section-content"
+                        data-animate='{"in":{"class":"fadeInUpBig","delay":".3s"},"out":{"class":"fadeOutUpBig","delay":".3s"}}'>
+                        <h1 style={{ fontFamily: '"Nunito", cursive', fontWeight: 900, textShadow: "-11px 1px 12px black" }}> Welcome to Save Ralph Ecosystem</h1>
+                        {/* <p class="lead">Welcome to ecosystem!</p> */}
+                        <div>
+                            <a class="btn btnSocial btn-outline btn-round btn-lg btn-anis" style={{ backgroundColor: "rgb(34, 123, 196)" }} href="#!"><i
+                                class="fab fa-telegram-plane" style={{ fontSize: 25, padding: "10px" }}></i></a>
+                            <a class="btn btnSocial btn-outline btn-round btn-lg btn-anis" style={{ backgroundImage: `url(${ing})`, backgroundPosition: "center", backgroundSize: "100px,cover" }} href="#!">
+                                <i style={{ fontSize: 25, padding: "10px" }} class="fab fa-instagram"></i></a>
+                            <a class="btn btnSocial btn-outline btn-round btn-lg btn-anis" href="#!" style={{ backgroundColor: "rgb(255, 69, 0)" }}><i
+                                class="fab fa-reddit-alien" style={{ fontSize: 25, padding: "10px" }}></i></a>
+                            <a class="btn btnSocial btn-outline btn-round btn-lg btn-anis" href="#!" style={{ backgroundColor: "rgb(56, 168, 224)" }}><i
+                                className="fab fa-twitter" style={{ fontSize: 25, padding: "10px" }}></i></a>
+                            <a class="btn btnSocial btn-outline btn-round btn-lg btn-anis" href="#!" style={{ backgroundColor: "rgb(0, 0, 0)", margin: "0px 2px 0px 3px !important", top: " 14px" }}>
+                                <img src={medium} style={{ width: "50px", height: "50px", padding: "10px" }} />
+                                {/* <i className="fab fa-medium-m" style={{ fontSize: 25, padding: "10px" }}></i> */}
+                            </a>
+                            <a class="btn btnSocial btn-outline btn-round btn-lg btn-anis" href="#!" style={{ backgroundColor: "rgb(114, 137, 218)" }}><i
+                                className="fab fa-discord" style={{ fontSize: 25, padding: "10px" }}></i></a>
                         </div>
                     </div>
-                    <div class="wrap mcb-wrap one-second  valign-top clearfix" style={{ padding: "30px 2% 0" }}>
-                        <div class="mcb-wrap-inner">
-                            <div class="column mcb-column two-two column_column">
-                                <div class="column_attr">
-                                    <h3>{locale.locale.creator}</h3>
-                                    <p style={{ textAlign: "justify" }}>{locale.locale.creatorTXT}</p>
-                                </div>
-                            </div>
+                    <div class="col-xs-4 col-sm-5 col-md-4 position-static d-flex align-items-center px-0 section-figure">
+                        <div className="section-image lottie" data-animate='{"in":{"class":"slideInRight","delay":".8s","duration":".7s"},"out":{"class":"slideOutRight","delay":"0s","duration":".4s"}}'>
+                            <Lottie options={defaultOptions}
+                                class="section-image"
+                                width={"100%"}
+                                height={"80%"}
+                            />
                         </div>
-                    </div>
-                    <div class="wrap mcb-wrap one-second  valign-top clearfix" style={{ padding: "0 0 0 4%" }}>
-                        <div class="mcb-wrap-inner">
-                            <div class="column mcb-column one column_image ">
-                                <div
-                                    class="image_frame image_item no_link scale-with-grid alignright no_border">
-                                    <div class="image_wrapper"><img class="scale-with-grid"
-                                        src={creators} alt="" width="460"
-                                        height="401" /> </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="wrap mcb-wrap divider  valign-top clearfix">
-                        <div class="mcb-wrap-inner"></div>
-                    </div>
-                    <div class="wrap mcb-wrap one-second  valign-top clearfix" style={{ padding: "0 4% 0 0" }}>
-                        <div class="mcb-wrap-inner">
-                            <div class="column mcb-column one column_image ">
-                                <div class="image_frame image_item no_link scale-with-grid no_border">
-                                    <div class="image_wrapper"><img class="scale-with-grid"
-                                        src="https://img1.wsimg.com/isteam/ip/fe3a6801-4252-4a60-ac21-2964f3b7f4cd/20210526_145041_0000.png" alt="" width="460"
-                                        height="401" /> </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="wrap mcb-wrap one-second  valign-top clearfix" style={{ padding: "30px 2% 0" }}>
-                        <div class="mcb-wrap-inner">
-                            <div class="column mcb-column two-two column_column">
-                                <div class="column_attr">
-                                    <h3>{locale.locale.swap}</h3>
-                                    <p style={{ textAlign: "justify" }}>{locale.locale.swapTXT}</p>
-                                </div>
-                            </div>
-                        </div>
+                        {/* <img class="section-image" style={{ width: "30%" }} src={Rabbit} alt=""
+                            width="1049" height="897"
+                            data-animate='{"in":{"class":"slideInRight","delay":".8s","duration":".7s"},"out":{"class":"slideOutRight","delay":"0s","duration":".4s"}}' /> */}
                     </div>
                 </div>
             </div>
-
-            <div class="section mcb-section" id="new" style={{ paddingTop: 90, paddingBottom: 50 }}
-                data-parallax="3d"><img class="mfn-parallax"
-                    src={Bg} alt="parallax background" />
-                <div class="section_wrapper mcb-section-inner">
-                    <div class="wrap mcb-wrap one  valign-top clearfix">
-                        <div class="mcb-wrap-inner">
-                            <div class="column mcb-column one column_column">
-                                <div class="column_attr align_center">
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="wrap mcb-wrap one  valign-top clearfix">
-                        <div class="mcb-wrap-inner">
-                            <div class="column mcb-column one-third column_column">
-                                <div class="column_attr align_center"
-                                    style={{ backgroundColor: "#161616", backgroundImage: "url(content/app2/images/home_app2_box_border.png)", backgroundRepeat: "no-repeat", backgroundPosition: "center top", padding: "10px 5% 30px" }}>
-                                    <div class="image_frame image_item scale-with-grid alignnone no_border">
-                                        <a href="https://bscscan.com/token/0x02618C556d075D2C5ACA9021Be2773764969bb51" target="__blank">
-                                            <div class="image_wrapper">
-                                                <div class="mask"></div><img class="scale-with-grid"
-                                                    src={holders} alt=""
-                                                    style={{ width: 290, height: 300 }} />
-                                                <div class="image_links ">
-                                                    <a href="#" class="link"><i class="icon-link"></i></a>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </div>
-                                    <hr class="no_line" style={{ margin: "0 auto 20px" }} />
-                                    <h4 style={{ color: "#fff" }}>{locale.locale.holders}</h4>
-                                    <h5 style={{ color: "#fff" }}>2,632</h5>
-                                </div>
-                            </div>
-                            <div class="column mcb-column one-third column_column">
-                                <div class="column_attr align_center"
-                                    style={{ backgroundColor: "#161616", backgroundImage: "url(content/app2/images/home_app2_box_border.png)", backgroundRepeat: "no-repeat", backgroundPosition: "center top", padding: "10px 5% 30px" }}>
-                                    <div class="image_frame image_item scale-with-grid alignnone no_border">
-                                        <a href="https://bscscan.com/token/0x02618C556d075D2C5ACA9021Be2773764969bb51" target="__blank">
-                                            <div class="image_wrapper">
-                                                <div class="mask"></div><img class="scale-with-grid"
-                                                    src={supply} alt=""
-                                                    style={{ width: 290, height: 300 }} />
-                                                <div class="image_links ">
-                                                    <a href="#" class="link"><i class="icon-link"></i></a>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </div>
-                                    <hr class="no_line" style={{ margin: "0 auto 20px" }} />
-                                    <h4 style={{ color: "#fff" }}>{locale.locale.supply}</h4>
-                                    <h5 style={{ color: "#fff" }}>1,000,000,000,000,000</h5>
-                                </div>
-                            </div>
-                            <div class="column mcb-column one-third column_column">
-                                <div class="column_attr align_center"
-                                    style={{
-                                        backgroundColor: "#161616", backgroundImage: "url(content/app2/images/home_app2_box_border.png)", backgroundRepeat: "no-repeat", backgroundPosition: "center top", padding: "10px 5% 30px"
-                                    }}>
-                                    <div class="image_frame image_item scale-with-grid alignnone no_border">
-                                        <a href="https://bscscan.com/token/0x02618C556d075D2C5ACA9021Be2773764969bb51" target="__blank">
-                                            <div class="image_wrapper">
-                                                <div class="mask"></div><img class="scale-with-grid"
-                                                    src={transfers} alt=""
-                                                    style={{ width: 290, height: 300 }} />
-                                            </div>
-                                        </a>
-                                    </div>
-                                    <hr class="no_line" style={{ margin: "0 auto 20px" }} />
-                                    <h4 style={{ color: "#fff" }}>{locale.locale.transfers}</h4>
-                                    <h5 style={{ color: "#fff" }}>6,344</h5>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </>
+        </section>
     )
 
 }
-const MapStateToProps = (state) => {
-    return { locale: state.locale }
-}
-export default connect(MapStateToProps)(Home);
+export default Home1;
