@@ -141,7 +141,7 @@ function Bsc(props) {
                                             </svg>
                                         </div>
                                         <div class="blurb-title h6">Supply</div>
-                                        <div class="blurb-text">1,000,000,000,000,000</div>
+                                        <div class="blurb-text">672,721,482,544,000.496</div>
                                     </article>
                                 </div>
                             </div>
