@@ -57,19 +57,19 @@ function Home1(props) {
                         <h1 style={{ fontFamily: '"Nunito", cursive', fontWeight: 900, textShadow: "-11px 1px 12px black" }}> Welcome to Save Ralph Ecosystem</h1>
                         {/* <p class="lead">Welcome to ecosystem!</p> */}
                         <div>
-                            <a class="btn btnSocial btn-outline btn-round btn-lg btn-anis" style={{ backgroundColor: "rgb(34, 123, 196)" }} href="#!"><i
+                            <a class="btn btnSocial btn-outline btn-round btn-lg btn-anis" style={{ backgroundColor: "rgb(34, 123, 196)" }} href="https://t.me/Saveralphtoken" target="__blank"><i
                                 class="fab fa-telegram-plane" style={{ fontSize: 25, padding: "10px" }}></i></a>
-                            <a class="btn btnSocial btn-outline btn-round btn-lg btn-anis" style={{ backgroundImage: `url(${ing})`, backgroundPosition: "center", backgroundSize: "100px,cover" }} href="#!">
+                            <a class="btn btnSocial btn-outline btn-round btn-lg btn-anis" style={{ backgroundImage: `url(${ing})`, backgroundPosition: "center", backgroundSize: "100px,cover" }} href="https://www.instagram.com/saveralphtoken/" target="__blank">
                                 <i style={{ fontSize: 25, padding: "10px" }} class="fab fa-instagram"></i></a>
-                            <a class="btn btnSocial btn-outline btn-round btn-lg btn-anis" href="#!" style={{ backgroundColor: "rgb(255, 69, 0)" }}><i
+                            <a class="btn btnSocial btn-outline btn-round btn-lg btn-anis" href="https://www.reddit.com/user/saveralphtoken/" target="__blank" style={{ backgroundColor: "rgb(255, 69, 0)" }}><i
                                 class="fab fa-reddit-alien" style={{ fontSize: 25, padding: "10px" }}></i></a>
-                            <a class="btn btnSocial btn-outline btn-round btn-lg btn-anis" href="#!" style={{ backgroundColor: "rgb(56, 168, 224)" }}><i
+                            <a class="btn btnSocial btn-outline btn-round btn-lg btn-anis" href="https://twitter.com/RalphToken" target="__blank" style={{ backgroundColor: "rgb(56, 168, 224)" }}><i
                                 className="fab fa-twitter" style={{ fontSize: 25, padding: "10px" }}></i></a>
-                            <a class="btn btnSocial btn-outline btn-round btn-lg btn-anis" href="#!" style={{ backgroundColor: "rgb(0, 0, 0)", margin: "0px 2px 0px 3px !important", top: " 14px" }}>
+                            <a class="btn btnSocial btn-outline btn-round btn-lg btn-anis" href="https://saveralphtoken.medium.com/" target="__blank" style={{ backgroundColor: "rgb(0, 0, 0)", margin: "0px 2px 0px 3px !important", top: " 14px" }}>
                                 <img src={medium} style={{ width: "50px", height: "50px", padding: "10px" }} />
                                 {/* <i className="fab fa-medium-m" style={{ fontSize: 25, padding: "10px" }}></i> */}
                             </a>
-                            <a class="btn btnSocial btn-outline btn-round btn-lg btn-anis" href="#!" style={{ backgroundColor: "rgb(114, 137, 218)" }}><i
+                            <a class="btn btnSocial btn-outline btn-round btn-lg btn-anis" href="https://discord.gg/fyvMRU4j5n" target="__blank" style={{ backgroundColor: "rgb(114, 137, 218)" }}><i
                                 className="fab fa-discord" style={{ fontSize: 25, padding: "10px" }}></i></a>
                         </div>
                     </div>
