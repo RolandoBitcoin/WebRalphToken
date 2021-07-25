@@ -56,7 +56,7 @@ function Bsc(props) {
                             address: '0x02618C556d075D2C5ACA9021Be2773764969bb51',
                             symbol: 'Ralph',
                             decimals: 18,
-                            image: 'https://www.saveralphtoken.com/static/media/logo.37a165e9.png',
+                            image: 'https://files-ralph.s3.us-east-2.amazonaws.com/logoralph.svg',
                         },
                     },
                 })
