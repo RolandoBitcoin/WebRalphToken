@@ -126,7 +126,7 @@ function Bsc(props) {
                                             </svg>
                                         </div>
                                         <div class="blurb-title h6">Holders</div>
-                                        <div class="blurb-text">3,122</div>
+                                        <div class="blurb-text">3,239</div>
                                     </article>
                                 </div>
                                 <div class="col-6 col-xl-12">
@@ -157,7 +157,7 @@ function Bsc(props) {
                                             </svg>
                                         </div>
                                         <div class="blurb-title h6">Transfers</div>
-                                        <div class="blurb-text">9,573</div>
+                                        <div class="blurb-text">10,333</div>
                                     </article>
                                 </div>
                                 <div class="col-6 col-xl-12">
