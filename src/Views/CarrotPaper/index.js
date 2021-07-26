@@ -33,7 +33,7 @@ function CarrotPaper() {
                         fill="white"></path>
                 </svg>
             </div>
-            <div class="container-wide pdfView" style={{ maxWidth: "none" }}
+            {/* <div class="container-wide pdfView" style={{ maxWidth: "none" }}
                 data-animate='{"in":{"class":"fadeInUp","delay":".7s","duration":".7s"},"out":{"class":"fadeOutUp","delay":"0s","duration":".4s"}}'>
                 <h2 style={{ textAlign: "center" }}>Carrot Paper</h2>
                 <div
@@ -102,7 +102,7 @@ function CarrotPaper() {
                     </div>
                     <Worker workerUrl="https://unpkg.com/pdfjs-dist@2.6.347/build/pdf.worker.min.js">
                         <Viewer
-                            fileUrl={`https://files-ralph.s3.us-east-2.amazonaws.com/Ralph(ING.pdf`}
+                            fileUrl={`https://files-ralph.s3.us-east-2.amazonaws.com/Ralph(ING).pdf`}
                             initialPage={0}
                             options={{
                                 httpHeaders: {
@@ -126,7 +126,7 @@ function CarrotPaper() {
                         />
                     </Worker>
                 </div>
-            </div>
+            </div> */}
         </section>
     )
 
