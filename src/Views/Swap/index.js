@@ -55,7 +55,7 @@ function Swap(props) {
                     <div class="col-xs-8 col-sm-7 col-md-6 section-content"
                         data-animate='{"in":{"class":"fadeInUpBig","delay":".3s"},"out":{"class":"fadeOutUpBig","delay":".3s"}}'>
                         <h1>RalphSwap</h1>
-                        <p class="lead">Un sistema de comparación de pares comerciales que permite a las personas realizar pedidos y comerciar con criptomonedas sin depender de una institución intermediaria para administrar el libro mayor y retener los fondos de los clientes. En cambio, los intercambios ocurren directamente entre usuarios (de igual a igual) a través de un proceso automatizado.</p>
+                        <p class="lead">A trading pair matching system that allows people to place orders and trade cryptocurrencies without relying on an intermediary institution to manage the ledger and hold customers' funds. Instead, trades occur directly between users (peer to peer) through an automated process.</p>
                         {/* <div class="offset-md group-20 group-md-30"><a
                                     class="btn btn-round btn-lg btn-primary btn-anis" href="#">Buy Ticket</a><a
                                     class="btn btn-outline btn-round btn-lg btn-anis" href="#">Learn More</a></div>  */}

@@ -41,9 +41,8 @@ function Carrot(props) {
                 <div class="row row-30 section-row">
                     <div class="col-xs-8 col-sm-7 col-md-6 section-content"
                         data-animate='{"in":{"class":"fadeInUpBig","delay":".3s"},"out":{"class":"fadeOutUpBig","delay":".3s"}}'>
-                        <h1>Carrot, el token de gobernanza comunitaria</h1>
-                        <p class="lead">Se utilizará para las tarifas de transacción en Save RalphSwap y se utilizará para la gobernanza en el proceso de toma de decisiones de la comunidad en el ecosistema.
-                        <br/>La plataforma y el protocolo Save Ralph apuntan a ser un ecosistema autónomo que estará gobernado por Los titulares de Carrot Token, que tendrán la tarea de votar sobre las propuestas de gobernanza, a tiempo Save Ralph y los tokens de Carrot tienen la intención de hacer la transición a una estructura completamente descentralizada.</p>
+                        <h1>Carrot the community governance token</h1>
+                        <p class="lead">Will  be used for transaction fees in the Save RalphSwap and It will be used for governance in the decision making process by the community in the ecosystem.<br/>The Save Ralph platform and protocol aim to be an autonomous ecosystem that will be governed by Carrot Token holders, who will be tasked with voting on governance proposals, in time Save Ralph and Carrot tokens intends to transition to a fully decentralized structure.</p>
                         {/* <div class="offset-md group-20 group-md-30"><a
                                     class="btn btn-round btn-lg btn-primary btn-anis" href="#">Buy Ticket</a><a
                                     class="btn btn-outline btn-round btn-lg btn-anis" href="#">Learn More</a></div>  */}

@@ -52,7 +52,7 @@ function Creators(props) {
                     <div class="col-xs-8 col-sm-7 col-md-6 section-content"
                         data-animate='{"in":{"class":"fadeInUpBig","delay":".3s"},"out":{"class":"fadeOutUpBig","delay":".3s"}}'>
                         <h1>Ralph for Creators</h1>
-                        <p class="lead">Save Ralph tiene como objetivo utilizar parte de los ingresos para subsidiar la primera transacción de menta (transacción de creación de NFT) para los usuarios, además de otras estrategias comerciales para impulsar el crecimiento de la plataforma. El proyecto Save Ralph Token es una solución a las limitaciones que enfrenta el mercado de la propiedad intelectual, como los desafiantes requisitos de licencias y trámites. En cambio, los NFT representan una alternativa de fácil acceso disponible para cualquier persona con solo unos pocos clics.</p>
+                        <p class="lead">Save Ralph is aiming to use part of the revenue to subsidize the first mint transaction (NFT creation transaction) for users, in addition to other business strategies to fuel the growth of the platform. The Save Ralph Token Project is a solution to the limitations faced by the intellectual property market, such as challenging licensing and paperwork requirements. NFTs instead represent an easily accessible alternative available to anyone with just a few clicks..</p>
                         <div class="offset-md group-20 group-md-30">
                             {/* <a
                                     class="btn btn-round btn-lg btn-primary btn-anis" href="#">Buy Ticket</a><a

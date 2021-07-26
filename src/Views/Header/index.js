@@ -52,8 +52,8 @@ function Header(props) {
                             <div class="navbar-subpanel-item">
                                 <button class="navbar-button"
                                     data-multi-switch='{"targets":".rd-navbar","scope":".rd-navbar","class":"navbar-info-active","isolate":"[data-multi-switch]"}'>
-                                        <i class="fas fa-ellipsis-v"></i>
-                                    </button>
+                                    <i class="fas fa-ellipsis-v"></i>
+                                </button>
                                 <div class="navbar-info">
                                     <a style={{ fontSize: "1.2rem" }} class="btn btn-round btn-primary btn-anis navbar-action-button animate__animated animate__pulse animate__delay-2s animate__infinite" data-menuanchor="buy"
                                         href="#buy">Buy Ralph</a>

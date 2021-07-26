@@ -41,8 +41,8 @@ function About(props) {
                 <div class="row row-30 section-row">
                     <div class="col-xs-8 col-sm-7 col-md-6 section-content"
                         data-animate='{"in":{"class":"fadeInUpBig","delay":".3s"},"out":{"class":"fadeOutUpBig","delay":".3s"}}'>
-                        <h1>Nuestra Misión</h1>
-                        <p class="lead">Estamos decididos a construir el ecosistema descentralizado más seguro y confiable, nuestro objetivo y misión es ofrecer un lugar seguro para intercambiar sus valiosos activos sin dejar de ser confidenciales y descentralizados y brindar a nuestra comunidad las herramientas para los procesos de toma de decisiones descentralizados.</p>
+                        <h1>Our Mission</h1>
+                        <p class="lead">We are determined to build the most secure and trusted Decentralized Ecosystem, our goal and mission is to offer a secure place to trade your valuable assets while remaining confidential and decentralized and to give to our community the tools for decentralized decision making processes.</p>
                         <div class="offset-md group-20 group-md-30">
                             {/* <a
                                     class="btn btn-round btn-lg btn-primary btn-anis" href="#">Buy Ticket</a><a

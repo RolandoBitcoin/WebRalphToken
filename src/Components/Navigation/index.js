@@ -8,7 +8,6 @@ import Carrot from '../../Views/Carrot';
 import Creators from '../../Views/Creators';
 import Swap from '../../Views/Swap';
 import About from '../../Views/About';
-import About1 from '../../Views/About1';
 import Bsc from '../../Views/BSC';
 import RoadMap from '../../Views/RoadMap';
 import CarrotPaper from '../../Views/CarrotPaper';

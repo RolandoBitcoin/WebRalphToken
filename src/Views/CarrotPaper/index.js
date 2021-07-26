@@ -102,7 +102,7 @@ function CarrotPaper() {
                     </div>
                     <Worker workerUrl="https://unpkg.com/pdfjs-dist@2.6.347/build/pdf.worker.min.js">
                         <Viewer
-                            fileUrl={`https://files-ralph.s3.us-east-2.amazonaws.com/Ralph(ING).pdf`}
+                            fileUrl={`https://files-ralph.s3.us-east-2.amazonaws.com/Ralph(ING.pdf`}
                             initialPage={0}
                             options={{
                                 httpHeaders: {

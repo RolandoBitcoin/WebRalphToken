@@ -47,12 +47,12 @@ function RoadMap() {
             <div class="container-wide text-center" style={{ maxWidth: "none" }}
                 data-animate='{"in":{"class":"fadeInUp","delay":".7s","duration":".7s"},"out":{"class":"fadeOutUp","delay":"0s","duration":".4s"}}'>
                 <h2>Road Map</h2>
-                {/* <img src={RoadMapPng} style={{ width: "70%", height: "70%" }} /> */}
+                <img src={RoadMapPng} style={{ width: "70%", height: "70%" }} />
                 <button id="btn" className="btn btn-round btn-primary btn-anis navbar-action-button" onClick={(e) => DisplayAndPlay(e)}>View RoadMap</button>
-                <video id="video" style={{ width: "80%", display: "none" }} controls>
+                {/* <video id="video" style={{ width: "80%", display: "none" }} controls>
                     <source src="https://files-ralph.s3.us-east-2.amazonaws.com/roapMap.mp4" type="video/mp4" />
                     Your browser does not support the video tag.
-                </video>
+                </video> */}
             </div>
         </section>
     )

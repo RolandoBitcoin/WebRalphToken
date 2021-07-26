@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@google-cloud/translate": "^6.2.6",
     "@metamask/detect-provider": "^1.2.0",
     "@react-pdf-viewer/core": "^2.5.0",
     "@react-pdf-viewer/default-layout": "^2.5.0",
@@ -21,6 +22,7 @@
     "react-bootstrap": "^1.6.1",
     "react-countdown": "^2.3.2",
     "react-dom": "^17.0.2",
+    "react-google-translate": "^1.0.11",
     "react-lottie": "^1.2.3",
     "react-redux": "^7.2.4",
     "react-router-dom": "^5.2.0",
