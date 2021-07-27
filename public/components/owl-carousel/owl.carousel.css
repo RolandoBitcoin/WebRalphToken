@@ -140,7 +140,7 @@
 .owl-carousel .owl-next::before,
 .owl-carousel .owl-next::after {
     display: block;
-    font-family: 'Font Awesome 5 Free';
+    /* font-family: 'Font Awesome 5 Free'; */
 }
 
 .owl-carousel .owl-prev:hover,
@@ -161,7 +161,7 @@
 }
 
 .owl-carousel .owl-prev::before {
-    content: '\ec3b';
+    content: '\f053';
 }
 
 @media (min-width: 576px) {

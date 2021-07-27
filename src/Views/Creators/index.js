@@ -1,7 +1,9 @@
 import React from 'react';
 import Lottie from 'react-lottie';
+import { connect } from 'react-redux';
 import animationData from '../../Assets/images/09.json'
 function Creators(props) {
+    const { locale } = props;
     const defaultOptions = {
         autoplay: true,
         animationData: animationData,
@@ -51,8 +53,8 @@ function Creators(props) {
                 <div class="row row-30 section-row">
                     <div class="col-xs-8 col-sm-7 col-md-6 section-content"
                         data-animate='{"in":{"class":"fadeInUpBig","delay":".3s"},"out":{"class":"fadeOutUpBig","delay":".3s"}}'>
-                        <h1>Ralph for Creators</h1>
-                        <p class="lead">Save Ralph is aiming to use part of the revenue to subsidize the first mint transaction (NFT creation transaction) for users, in addition to other business strategies to fuel the growth of the platform. The Save Ralph Token Project is a solution to the limitations faced by the intellectual property market, such as challenging licensing and paperwork requirements. NFTs instead represent an easily accessible alternative available to anyone with just a few clicks..</p>
+                        <h1>{locale.locale.creator}</h1>
+                        <p class="lead">{locale.locale.creatorTXT}</p>
                         <div class="offset-md group-20 group-md-30">
                             {/* <a
                                     class="btn btn-round btn-lg btn-primary btn-anis" href="#">Buy Ticket</a><a
@@ -75,4 +77,7 @@ function Creators(props) {
     )
 
 }
-export default Creators;
+const MapStateToProps = (state) => {
+    return { locale: state.locale }
+}
+export default connect(MapStateToProps)(Creators);

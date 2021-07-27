@@ -1,9 +1,14 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import ing from '../../Assets/images/ing.png'
 import Lottie from 'react-lottie';
 import animationData from '../../Assets/images/01.json'
 import medium from '../../Assets/images/medium.png';
+import { connect } from 'react-redux';
+import axios from 'axios';
+import AnimatedNumber from "animated-number-react";
 function Home1(props) {
+    const { locale } = props;
+    const [price, setPrice] = useState(0)
     const defaultOptions = {
         autoplay: true,
         animationData: animationData,
@@ -14,6 +19,17 @@ function Home1(props) {
             className: "tested"
         }
     };
+
+    function UpdatePrice() {
+        axios.get("https://api.pancakeswap.info/api/v2/tokens/0x02618c556d075d2c5aca9021be2773764969bb51").then((r) => { setPrice(parseFloat(r.data.data.price).toFixed(12));console.log(r.data.data.price) })
+    }
+    const formatValue = (value) => value.toFixed(12);
+    useEffect(() => {
+        UpdatePrice()
+        setInterval(() => {
+            UpdatePrice()
+        }, 30000);
+    }, [])
     return (
         <section class="section section-1 position-relative overflow-hidden" style={{ backgroundColor: "#72B805" }}>
             <div class="section-layer">
@@ -54,10 +70,15 @@ function Home1(props) {
                 <div class="row row-30 section-row">
                     <div class="col-xs-10 col-sm-7 col-md-7 section-content"
                         data-animate='{"in":{"class":"fadeInUpBig","delay":".3s"},"out":{"class":"fadeOutUpBig","delay":".3s"}}'>
+                        <p className="lead">
+                            Ralph Price: <AnimatedNumber
+                                value={price}
+                                formatValue={formatValue}
+                            /> $</p>
                         <h1 style={{ fontFamily: '"Nunito", cursive', fontWeight: 900, textShadow: "-11px 1px 12px black" }}> Welcome to Save Ralph Ecosystem</h1>
-                        {/* <p class="lead">Welcome to ecosystem!</p> */}
                         <div>
-                            <a class="btn btnSocial btn-outline btn-round btn-lg btn-anis" style={{ backgroundColor: "rgb(34, 123, 196)" }} href="https://t.me/Saveralphtoken" target="__blank"><i
+
+                            <a class="btn btnSocial btn-outline btn-round btn-lg btn-anis" style={{ backgroundColor: "rgb(34, 123, 196)" }} href={locale.locale.in8 == "Español" ? "https://t.me/Saveralphtoken" : "https://t.me/ralphtoken"} target="__blank"><i
                                 class="fab fa-telegram-plane" style={{ fontSize: 25, padding: "10px" }}></i></a>
                             <a class="btn btnSocial btn-outline btn-round btn-lg btn-anis" style={{ backgroundImage: `url(${ing})`, backgroundPosition: "center", backgroundSize: "100px,cover" }} href="https://www.instagram.com/saveralphtoken/" target="__blank">
                                 <i style={{ fontSize: 25, padding: "10px" }} class="fab fa-instagram"></i></a>
@@ -71,10 +92,12 @@ function Home1(props) {
                             </a>
                             <a class="btn btnSocial btn-outline btn-round btn-lg btn-anis" href="https://discord.gg/fyvMRU4j5n" target="__blank" style={{ backgroundColor: "rgb(114, 137, 218)" }}><i
                                 className="fab fa-discord" style={{ fontSize: 25, padding: "10px" }}></i></a>
+
                         </div>
                     </div>
                     <div class="col-xs-4 col-sm-5 col-md-4 position-static d-flex align-items-center px-0 section-figure">
                         <div className="section-image lottie" data-animate='{"in":{"class":"slideInRight","delay":".8s","duration":".7s"},"out":{"class":"slideOutRight","delay":"0s","duration":".4s"}}'>
+
                             <Lottie options={defaultOptions}
                                 class="section-image"
                                 width={"100%"}
@@ -91,4 +114,7 @@ function Home1(props) {
     )
 
 }
-export default Home1;
+const MapStateToProps = (state) => {
+    return { locale: state.locale }
+}
+export default connect(MapStateToProps)(Home1);

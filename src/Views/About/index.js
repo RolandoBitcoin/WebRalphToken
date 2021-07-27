@@ -1,6 +1,9 @@
 import React from 'react';
 import mission from '../../Assets/images/mission.png';
+import { connect } from 'react-redux';
+
 function About(props) {
+    const { locale } = props;
     return (
         <section class="section section-3 position-relative overflow-hidden" style={{ backgroundColor: "#00BCB1" }}>
             <div class="section-layer">
@@ -41,8 +44,8 @@ function About(props) {
                 <div class="row row-30 section-row">
                     <div class="col-xs-8 col-sm-7 col-md-6 section-content"
                         data-animate='{"in":{"class":"fadeInUpBig","delay":".3s"},"out":{"class":"fadeOutUpBig","delay":".3s"}}'>
-                        <h1>Our Mission</h1>
-                        <p class="lead">We are determined to build the most secure and trusted Decentralized Ecosystem, our goal and mission is to offer a secure place to trade your valuable assets while remaining confidential and decentralized and to give to our community the tools for decentralized decision making processes.</p>
+                        <h1>{locale.locale.mission}</h1>
+                        <p class="lead">{locale.locale.missionTXT}</p>
                         <div class="offset-md group-20 group-md-30">
                             {/* <a
                                     class="btn btn-round btn-lg btn-primary btn-anis" href="#">Buy Ticket</a><a
@@ -60,4 +63,7 @@ function About(props) {
     )
 
 }
-export default About;
+const MapStateToProps = (state) => {
+    return { locale: state.locale }
+}
+export default connect(MapStateToProps)(About);

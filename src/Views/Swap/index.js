@@ -1,10 +1,9 @@
 import React from 'react';
 import Lottie from 'react-lottie';
+import { connect } from 'react-redux';
 import animationData from '../../Assets/images/04.json'
 function Swap(props) {
-    const a = "text";
-    const b = "text";
-    console.log(typeof (a, b));
+    const { locale } = props;
     const defaultOptions = {
         autoplay: true,
         animationData: animationData,
@@ -54,8 +53,8 @@ function Swap(props) {
                 <div class="row row-30 section-row">
                     <div class="col-xs-8 col-sm-7 col-md-6 section-content"
                         data-animate='{"in":{"class":"fadeInUpBig","delay":".3s"},"out":{"class":"fadeOutUpBig","delay":".3s"}}'>
-                        <h1>RalphSwap</h1>
-                        <p class="lead">A trading pair matching system that allows people to place orders and trade cryptocurrencies without relying on an intermediary institution to manage the ledger and hold customers' funds. Instead, trades occur directly between users (peer to peer) through an automated process.</p>
+                        <h1>{locale.locale.swap}</h1>
+                        <p class="lead">{locale.locale.swapTXT}</p>
                         {/* <div class="offset-md group-20 group-md-30"><a
                                     class="btn btn-round btn-lg btn-primary btn-anis" href="#">Buy Ticket</a><a
                                     class="btn btn-outline btn-round btn-lg btn-anis" href="#">Learn More</a></div>  */}
@@ -63,18 +62,21 @@ function Swap(props) {
                     <div
                         class="col-xs-4 col-sm-5 col-md-6 position-static d-flex justify-content-center px-0 section-figure">
                         <div className="section-image" data-animate='{"in":{"class":"slideInLeft","delay":".8s","duration":".7s"},"out":{"class":"slideOutLeft","delay":"0s","duration":".4s"}}'>
-                        <Lottie options={defaultOptions}
-                            class="section-image"
-                            width={"100%"}
-                            height={"70%"}
-                        />
+                            <Lottie options={defaultOptions}
+                                class="section-image"
+                                width={"100%"}
+                                height={"70%"}
+                            />
+                        </div>
                     </div>
                 </div>
-            </div>
             </div>
         </section >
     )
 
 }
 
-export default Swap;
+const MapStateToProps = (state) => {
+    return { locale: state.locale }
+}
+export default connect(MapStateToProps)(Swap);

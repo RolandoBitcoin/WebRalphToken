@@ -1,6 +1,8 @@
 import React from 'react';
 import carrot from '../../Assets/images/carrot.png'
+import { connect } from 'react-redux';
 function Carrot(props) {
+    const { locale } = props;
     return (
         <section class="section section-2 position-relative overflow-hidden" style={{ backgroundColor: "#FFC700" }}>
             <div class="section-layer">
@@ -41,8 +43,8 @@ function Carrot(props) {
                 <div class="row row-30 section-row">
                     <div class="col-xs-8 col-sm-7 col-md-6 section-content"
                         data-animate='{"in":{"class":"fadeInUpBig","delay":".3s"},"out":{"class":"fadeOutUpBig","delay":".3s"}}'>
-                        <h1>Carrot the community governance token</h1>
-                        <p class="lead">Will  be used for transaction fees in the Save RalphSwap and It will be used for governance in the decision making process by the community in the ecosystem.<br/>The Save Ralph platform and protocol aim to be an autonomous ecosystem that will be governed by Carrot Token holders, who will be tasked with voting on governance proposals, in time Save Ralph and Carrot tokens intends to transition to a fully decentralized structure.</p>
+                        <h1>{locale.locale.carrot}</h1>
+                        <p class="lead" dangerouslySetInnerHTML={{ __html: locale.locale.carrotTXT }}></p>
                         {/* <div class="offset-md group-20 group-md-30"><a
                                     class="btn btn-round btn-lg btn-primary btn-anis" href="#">Buy Ticket</a><a
                                     class="btn btn-outline btn-round btn-lg btn-anis" href="#">Learn More</a></div>  */}
@@ -60,4 +62,7 @@ function Carrot(props) {
 
 }
 
-export default Carrot;
+const MapStateToProps = (state) => {
+    return { locale: state.locale }
+}
+export default connect(MapStateToProps)(Carrot);

@@ -1345,9 +1345,9 @@
         position: static;
         display: inline-block;
     }
-    .rd-navbar-fullwidth .navbar-info-link:hover {
-        color: #FF7A00;
-    }
+    /* .rd-navbar-fullwidth .navbar-info-link:hover {
+        color: #fff;
+    } */
     .rd-navbar-fullwidth .navbar-info-link:hover .navbar-info-text {
         margin-top: 0;
     }
@@ -1399,7 +1399,8 @@
 }
 
 .rd-navbar-languaje span:hover {
-    background-color: red;
+    background-color: #FF7A00;
+    color: #fff;
 }
 
 .rd-navbar-languaje span {

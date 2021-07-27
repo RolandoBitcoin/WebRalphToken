@@ -1,8 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import LogoSvg from '../../Assets/images/logo-default-253x50.svg'
+import { setLocale } from '../../Redux/reducers/Locale';
 function Header(props) {
-    const { locale } = props;
+    const { locale, setLocale } = props;
     return (
         <header class="section rd-navbar-wrap">
             <nav class="rd-navbar">
@@ -56,15 +57,15 @@ function Header(props) {
                                 </button>
                                 <div class="navbar-info">
                                     <a style={{ fontSize: "1.2rem" }} class="btn btn-round btn-primary btn-anis navbar-action-button animate__animated animate__pulse animate__delay-2s animate__infinite" data-menuanchor="buy"
-                                        href="#buy">Buy Ralph</a>
-                                    {/* <a class="navbar-info-link" href="#!">
-                                        <span class="navbar-info-icon">Lenguaje</span>
+                                        href="#buy">{locale.locale.btnby}</a>
+                                    <a class="navbar-info-link" href="#!">
+                                        <span class="navbar-info-icon">{locale.locale.languaje}</span>
                                         <span class="navbar-info-text rd-navbar-languaje">
-                                            <span>Español</span>
-                                            <span>Ingles</span>
-                                            <span>Chino</span>
+                                            <span onClick={(e) => { e.preventDefault(); setLocale("es"); }}> {locale.locale.es}</span>
+                                            <span onClick={(e) => { e.preventDefault(); setLocale("en"); }}> {locale.locale.en}</span>
+                                            <span onClick={(e) => { e.preventDefault(); setLocale("ch"); }}> {locale.locale.ch}</span>
                                         </span>
-                                    </a> */}
+                                    </a>
 
                                 </div>
                             </div>
@@ -79,5 +80,7 @@ function Header(props) {
 const MapStateToProps = (state) => {
     return { locale: state.locale }
 }
-
-export default connect(MapStateToProps)(Header);
+const MapDispacthToProps = dispatch => ({
+    setLocale: (in8) => dispatch(setLocale(in8)),
+})
+export default connect(MapStateToProps, MapDispacthToProps)(Header);
