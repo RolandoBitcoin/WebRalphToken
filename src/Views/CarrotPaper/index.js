@@ -1,13 +1,13 @@
 import React from 'react';
-import { Button, Icon, Position, SpecialZoomLevel, Tooltip, Viewer, Worker, ProgressBar } from '@react-pdf-viewer/core';
-import { pageNavigationPlugin, RenderGoToNextPageProps, RenderGoToPreviousPageProps } from '@react-pdf-viewer/page-navigation';
-import '@react-pdf-viewer/core/lib/styles/index.css';
-import '@react-pdf-viewer/page-navigation/lib/styles/index.css';
-import disableScrollPlugin from './disable';
+// import { Button, Icon, Position, SpecialZoomLevel, Tooltip, Viewer, Worker, ProgressBar } from '@react-pdf-viewer/core';
+// import { pageNavigationPlugin, RenderGoToNextPageProps, RenderGoToPreviousPageProps } from '@react-pdf-viewer/page-navigation';
+// import '@react-pdf-viewer/core/lib/styles/index.css';
+// import '@react-pdf-viewer/page-navigation/lib/styles/index.css';
+// import disableScrollPlugin from './disable';
 function CarrotPaper() {
-    const disableScrollPluginInstance = disableScrollPlugin();
-    const pageNavigationPluginInstance = pageNavigationPlugin();
-    const { GoToNextPage, GoToPreviousPage } = pageNavigationPluginInstance;
+    // const disableScrollPluginInstance = disableScrollPlugin();
+    // const pageNavigationPluginInstance = pageNavigationPlugin();
+    // const { GoToNextPage, GoToPreviousPage } = pageNavigationPluginInstance;
     return (
         <section class="section section-6 position-relative overflow-hidden" style={{ backgroundColor: "#DB5151" }}>
             <div class="section-layer">
