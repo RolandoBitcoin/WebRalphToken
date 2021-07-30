@@ -21,7 +21,7 @@ function Home1(props) {
     };
 
     function UpdatePrice() {
-        axios.get("https://api.pancakeswap.info/api/v2/tokens/0x02618c556d075d2c5aca9021be2773764969bb51").then((r) => { setPrice(parseFloat(r.data.data.price).toFixed(12));console.log(r.data.data.price) })
+        axios.get("https://api.pancakeswap.info/api/v2/tokens/0x02618c556d075d2c5aca9021be2773764969bb51").then((r) => { setPrice(parseFloat(r.data.data.price).toFixed(12));})
     }
     const formatValue = (value) => value.toFixed(12);
     useEffect(() => {
