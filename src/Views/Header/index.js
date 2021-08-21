@@ -40,6 +40,10 @@ function Header(props) {
                             <li class="navbar-navigation-root-item" data-menuanchor="carrotPaper"><a
                                 class="navbar-navigation-root-link" href="#carrotPaper">Carrot Paper</a>
                             </li>
+                            <li class="navbar-navigation-root-item" data-menuanchor="announcement"><a
+                                class="navbar-navigation-root-link" href="#announcement">Announcement</a>
+                            </li>
+                            
                             <li class="navbar-navigation-root-item active" data-menuanchor="home"><a
                                 class="navbar-navigation-root-link" href="#home">Home</a>
                             </li>

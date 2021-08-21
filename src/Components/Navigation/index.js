@@ -23,6 +23,7 @@ import walletbtc from '../../Assets/images/walletbtc.png'
 import walletbusd from '../../Assets/images/walletbusd.png'
 import walleteth from '../../Assets/images/walleteth.png'
 import walletRalph from '../../Assets/images/walletRalph.png'
+import Announcement from '../../Views/Announcement';
 
 function Navigation(props) {
     let location = useLocation();
@@ -54,6 +55,7 @@ function Navigation(props) {
                             <Bsc />
                             <RoadMap />
                             <CarrotPaper />
+                            <Announcement />
                             <BuyRalph />
                         </div>
                     </>
