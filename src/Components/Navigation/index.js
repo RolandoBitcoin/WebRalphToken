@@ -10,7 +10,7 @@ import Swap from '../../Views/Swap';
 import About from '../../Views/About';
 import Bsc from '../../Views/BSC';
 import RoadMap from '../../Views/RoadMap';
-import CarrotPaper from '../../Views/CarrotPaper';
+import CarrotPaper from '../..;
 import BuyRalph from '../../Views/BuyRalph';
 import usdt from '../../Assets/images/usdt.png';
 import bnb from '../../Assets/images/bnb.png';
