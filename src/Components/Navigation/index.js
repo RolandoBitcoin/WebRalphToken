@@ -53,7 +53,7 @@ function Navigation(props) {
                             <About />
                             <Bsc />
                             <RoadMap />
-                            <Announcement />
+                           
                             <BuyRalph />
                         </div>
                     </>
