@@ -54,7 +54,7 @@ function Navigation(props) {
                             <About />
                             <Bsc />
                             <RoadMap />
-                            <CarrotPaper />
+                        
                             <Announcement />
                             <BuyRalph />
                         </div>
