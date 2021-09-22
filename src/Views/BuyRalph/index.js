@@ -44,7 +44,7 @@ function BuyRalph() {
                             <article class="price">
                                 <div class="price-title h3">Hotbit</div>
                                 <img src={Hotbit} style={{ width: "100%", height: "100%" }} />
-                                <a class="btn btn-outline btn-block btn-round price-btn" href="https://www.hotbit.io/exchange?symbol=RALPH_USDT" target="__blank">Buy Ralph</a>
+                                <a class="btn btn-outline btn-block btn-round price-btn" href="https://www.hotbit.io/exchange?symbol=RALPH_nUSD" target="__blank">Buy Ralph</a>
                             </article>
                             <article class="price">
                                 <div class="price-title h3">PancakeSwap</div>
