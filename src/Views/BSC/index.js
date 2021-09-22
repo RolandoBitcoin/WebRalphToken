@@ -53,7 +53,7 @@ function Bsc(props) {
                     params: {
                         type: 'ERC20',
                         options: {
-                            address: '0x02618C556d075D2C5ACA9021Be2773764969bb51',
+                            address: '0x923101173d6a7DEc73435adc465fB800aFa880da',
                             symbol: 'Ralph',
                             decimals: 18,
                             image: 'https://files-ralph.s3.us-east-2.amazonaws.com/logoralph.svg',
