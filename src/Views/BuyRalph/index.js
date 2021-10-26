@@ -49,7 +49,7 @@ function BuyRalph() {
                             <article class="price">
                                 <div class="price-title h3">PancakeSwap</div>
                                 <img src={PancakeSwap} style={{ width: "100%", height: "100%" }} />
-                                <a class="btn btn-outline btn-block btn-round price-btn" href="https://exchange.pancakeswap.finance/#/swap?outputCurrency=0x923101173d6a7DEc73435adc465fB800aFa880da" target="__blank">Buy Ralph</a>
+                                <a class="btn btn-outline btn-block btn-round price-btn" href="https://pancakeswap.finance/swap?outputCurrency=0x923101173d6a7DEc73435adc465fB800aFa880da" target="__blank">Buy Ralph</a>
                             </article>
                         </div>
 
