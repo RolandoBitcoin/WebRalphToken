@@ -37,13 +37,7 @@ function Header(props) {
                             <li class="navbar-navigation-root-item" data-menuanchor="roadMap"><a
                                 class="navbar-navigation-root-link" href="#roadMap">Road Map</a>
                             </li>
-                            <li class="navbar-navigation-root-item" data-menuanchor="carrotPaper"><a
-                                class="navbar-navigation-root-link" href="#carrotPaper">Carrot Paper</a>
-                            </li>
-                            <li class="navbar-navigation-root-item" data-menuanchor="announcement"><a
-                                class="navbar-navigation-root-link" href="#announcement">Announcement</a>
-                            </li>
-                            
+
                             <li class="navbar-navigation-root-item active" data-menuanchor="home"><a
                                 class="navbar-navigation-root-link" href="#home">Home</a>
                             </li>
@@ -60,8 +54,8 @@ function Header(props) {
                                     <i class="fas fa-ellipsis-v"></i>
                                 </button>
                                 <div class="navbar-info">
-                                    <a style={{ fontSize: "1.2rem" }} class="btn btn-round btn-primary btn-anis navbar-action-button animate__animated animate__pulse animate__delay-2s animate__infinite" data-menuanchor="buy"
-                                        href="#buy">{locale.locale.btnby}</a>
+                                    <a style={{ fontSize: "1.2rem" }} class="btn btn-round btn-primary btn-anis navbar-action-button animate__animated animate__pulse animate__delay-2s animate__infinite" data-menuanchor="BuyRalph"
+                                        href="#BuyRalph">{locale.locale.btnby}</a>
                                     <a class="navbar-info-link" href="#!">
                                         <span class="navbar-info-icon">{locale.locale.languaje}</span>
                                         <span class="navbar-info-text rd-navbar-languaje">
