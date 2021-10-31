@@ -76,7 +76,7 @@ function Home1(props) {
                                 value={price}
                                 formatValue={formatValue}
                             /> $</p>
-
+<p>test</p>
                         <a href="https://carrotgov.com" target="_blank"><img src={carrot_preventa} style={{ width: "100%", max-width="200px" }}></a>
 
                         <h1 style={{ fontFamily: '"Nunito", cursive', fontWeight: 900, textShadow: "-11px 1px 12px black" }}> Welcome to Save Ralph Ecosystem</h1>
