@@ -26,7 +26,7 @@ function Header(props) {
                                 class="navbar-navigation-root-link" href="#home-3">{locale.locale.home}</a>
                             </li> */}
                             <li class="navbar-navigation-root-item" data-menuanchor="creators"><a
-                                class="navbar-navigation-root-link" href="#creators">Creatorsx</a>
+                                class="navbar-navigation-root-link" href="#creators">Creators</a>
                             </li>
                             <li class="navbar-navigation-root-item" data-menuanchor="swap"><a
                                 class="navbar-navigation-root-link" href="#swap">Swap</a>
