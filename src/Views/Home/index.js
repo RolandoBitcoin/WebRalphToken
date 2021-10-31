@@ -71,7 +71,7 @@ function Home1(props) {
                 <div class="row row-30 section-row">
                     <div class="col-xs-10 col-sm-7 col-md-7 section-content"
                         data-animate='{"in":{"class":"fadeInUpBig","delay":".3s"},"out":{"class":"fadeOutUpBig","delay":".3s"}}'>
-                        <p style="display:none;" className="lead">
+                        <p className="lead">
                             Ralph Price: <AnimatedNumber
                                 value={price}
                                 formatValue={formatValue}
