@@ -3,7 +3,7 @@ import ing from '../../Assets/images/ing.png'
 import Lottie from 'react-lottie';
 import animationData from '../../Assets/images/01.json'
 import medium from '../../Assets/images/medium.png';
-
+import carrot_preventa from '../../Assets/images/carrot_preventa.png';
 import { connect } from 'react-redux';
 import axios from 'axios';
 import AnimatedNumber from "animated-number-react";
@@ -71,7 +71,13 @@ function Home1(props) {
                 <div class="row row-30 section-row">
                     <div class="col-xs-10 col-sm-7 col-md-7 section-content"
                         data-animate='{"in":{"class":"fadeInUpBig","delay":".3s"},"out":{"class":"fadeOutUpBig","delay":".3s"}}'>
-                        <p className="lead">
+
+<div style={{ "text-align": "center" }}>
+<a href="https://carrotgov.com/" target="_blank"><img id="carrot_presale_img" src={carrot_preventa} style={{ width: "100%","max-width": "350px","margin-bottom": "-30px", "transition": "0.3s" }} /></a>
+</div>
+
+
+                        <p className="lead" style={{ display: "none" }}>
                             Ralph Price: <AnimatedNumber
                                 value={price}
                                 formatValue={formatValue}

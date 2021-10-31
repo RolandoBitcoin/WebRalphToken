@@ -5802,3 +5802,7 @@ a.text-900:hover, a.text-900:focus {
     text-rendering: auto !important;
     line-height: 1 !important;
 }
+
+img#carrot_presale_img:hover {
+    transform: scale(1.2);
+}
