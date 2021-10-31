@@ -38,7 +38,9 @@ function Header(props) {
                                 class="navbar-navigation-root-link" href="#roadMap">Road Map</a>
                             </li>
 
-
+                            <li class="navbar-navigation-root-item active" data-menuanchor="home"><a
+                                class="navbar-navigation-root-link" href="#home">Home</a>
+                            </li>
                         </ul>
 
                         <p class="rights navbar-rights py-3 d-block d-xl-none"><span>&copy;
