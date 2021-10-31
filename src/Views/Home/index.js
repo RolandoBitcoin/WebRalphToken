@@ -3,7 +3,7 @@ import ing from '../../Assets/images/ing.png'
 import Lottie from 'react-lottie';
 import animationData from '../../Assets/images/01.json'
 import medium from '../../Assets/images/medium.png';
-import carrot_preventa from '../../Assets/images/carrot_preventa.png';
+
 import { connect } from 'react-redux';
 import axios from 'axios';
 import AnimatedNumber from "animated-number-react";
@@ -77,7 +77,7 @@ function Home1(props) {
                                 formatValue={formatValue}
                             /> $</p>
 
-                        <a href="https://carrotgov.com" target="_blank"><img src={carrot_preventa} style={{ width: "200px" }} /></a>
+
 
                         <h1 style={{ fontFamily: '"Nunito", cursive', fontWeight: 900, textShadow: "-11px 1px 12px black" }}> Welcome to Save Ralph Ecosystem</h1>
                         <div>
