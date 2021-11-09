@@ -5814,3 +5814,11 @@ img#carrot_presale_img:hover {
 }
 
 }
+
+@media (orientation: portrait){
+  .section-1 .section-image.lottie, .section-3 .section-image.lottie {
+      width: 35%!important;
+      bottom: 0!important;
+      right: 10%!important;
+  }
+}
