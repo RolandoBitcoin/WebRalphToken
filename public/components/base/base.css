@@ -5810,14 +5810,14 @@ img#carrot_presale_img:hover {
 @media (max-width: 600px) {
 
 #carrot_presale_img_container{
-  padding-top: 5rem;
+  padding-top: 3rem;
 }
 
 }
 
 @media (orientation: portrait){
   .section-1 .section-image.lottie, .section-3 .section-image.lottie {
-      width: 35%!important;
+      width: 40%!important;
       bottom: 0!important;
       right: 10%!important;
   }
