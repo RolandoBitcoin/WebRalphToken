@@ -72,7 +72,7 @@ function Home1(props) {
                     <div class="col-xs-10 col-sm-7 col-md-7 section-content"
                         data-animate='{"in":{"class":"fadeInUpBig","delay":".3s"},"out":{"class":"fadeOutUpBig","delay":".3s"}}'>
 
-<div style={{ "text-align": "center" }}>
+<div id="carrot_presale_img_container" style={{ "text-align": "center" }}>
 <a href="https://carrotgov.com/" target="_blank"><img id="carrot_presale_img" src={carrot_preventa} style={{ width: "100%","max-width": "350px","margin-bottom": "-30px", "transition": "0.3s" }} /></a>
 </div>
 

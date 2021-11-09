@@ -5806,3 +5806,11 @@ a.text-900:hover, a.text-900:focus {
 img#carrot_presale_img:hover {
     transform: scale(1.2);
 }
+
+@media (max-width: 600px) {
+
+#carrot_presale_img_container{
+  padding-top: 5rem;
+}
+
+}
