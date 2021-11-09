@@ -69,7 +69,7 @@ function Home1(props) {
             </div>
             <div class="container-wide">
                 <div class="row row-30 section-row">
-                    <div class="col-xs-10 col-sm-7 col-md-7 section-content"
+                    <div style={{ "z-index": "1" }} class="col-xs-10 col-sm-7 col-md-7 section-content"
                         data-animate='{"in":{"class":"fadeInUpBig","delay":".3s"},"out":{"class":"fadeOutUpBig","delay":".3s"}}'>
 
 <div id="carrot_presale_img_container" style={{ "text-align": "center" }}>
