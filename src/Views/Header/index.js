@@ -19,6 +19,8 @@ function Header(props) {
                     </div>
                     <div class="navbar-cell navbar-sidebar">
                         <ul class="navbar-navigation rd-navbar-nav fullpage-navigation">
+
+
                             <li class="navbar-navigation-root-item" data-menuanchor="carrot"><a
                                 class="navbar-navigation-root-link" href="#carrot">Carrot</a>
                             </li>
@@ -36,6 +38,10 @@ function Header(props) {
                             </li>
                             <li class="navbar-navigation-root-item" data-menuanchor="roadMap"><a
                                 class="navbar-navigation-root-link" href="#roadMap">Road Map</a>
+                            </li>
+
+                            <li class="navbar-navigation-root-item" data-menuanchor="whitepaper"><a
+                                class="navbar-navigation-root-link" target="_blank" href="https://save-ralph-ecosystem.gitbook.io/carrot-paper/">Whitepaper</a>
                             </li>
 
                             <li class="navbar-navigation-root-item active" data-menuanchor="home"><a
