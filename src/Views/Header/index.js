@@ -41,7 +41,7 @@ function Header(props) {
                             </li>
 
                             <li class="navbar-navigation-root-item" data-menuanchor="whitepaper"><a
-                                class="navbar-navigation-root-link" target="_blank" href="https://save-ralph-ecosystem.gitbook.io/carrot-paper/">Whitepaper</a>
+                                class="navbar-navigation-root-link" target="_blank" href="https://save-ralph-ecosystem.gitbook.io/carrot-paper/">Carrot Paper</a>
                             </li>
 
                             <li class="navbar-navigation-root-item active" data-menuanchor="home"><a
